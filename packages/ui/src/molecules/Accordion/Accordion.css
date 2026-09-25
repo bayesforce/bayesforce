@@ -1,0 +1,65 @@
+/* ==========================================================================
+   BayesForce Accordion
+   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   ========================================================================== */
+
+.bf-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  width: 100%;
+}
+
+.bf-accordion-item {
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-lg);
+  background: var(--bf-surface);
+  transition: all var(--bf-transition-base);
+  overflow: hidden;
+  box-shadow: var(--bf-shadow-xs);
+}
+
+.bf-accordion-item:hover {
+  border-color: var(--bf-brand-primary);
+}
+
+.bf-accordion-item--open {
+  border-color: var(--bf-brand-primary);
+  box-shadow: var(--bf-shadow-sm);
+}
+
+.bf-accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--bf-font-display);
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  color: var(--bf-ink-900);
+  gap: 1.25rem;
+  letter-spacing: -0.015em;
+}
+
+.bf-accordion-icon {
+  color: var(--bf-brand-primary);
+  transition: transform var(--bf-transition-base);
+  flex-shrink: 0;
+}
+
+.bf-accordion-item--open .bf-accordion-icon {
+  transform: rotate(180deg);
+}
+
+.bf-accordion-content {
+  padding: 0 1.75rem 1.5rem 1.75rem;
+  font-family: var(--bf-font-sans);
+  font-size: 1rem; /* 16px */
+  line-height: 1.65;
+  color: var(--bf-ink-600);
+}

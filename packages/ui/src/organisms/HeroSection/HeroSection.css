@@ -1,0 +1,155 @@
+/* ==========================================================================
+   BayesForce Hero Section
+   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   ========================================================================== */
+
+.bf-hero {
+  position: relative;
+  padding: clamp(4rem, 8vw, 7.5rem) 1.5rem clamp(3.5rem, 6vw, 6rem);
+  background: radial-gradient(circle at 50% -20%, rgba(22, 55, 245, 0.08) 0%, rgba(255, 255, 255, 0) 65%), var(--bf-canvas);
+  overflow: hidden;
+  border-bottom: 1px solid var(--bf-line);
+}
+
+.bf-hero__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.bf-hero__badge-row {
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bf-hero__title {
+  max-width: 1060px;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.038em;
+}
+
+.bf-hero__subtitle {
+  max-width: 840px;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  line-height: 1.6;
+  color: var(--bf-ink-600);
+  margin-bottom: 2.75rem;
+}
+
+.bf-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.bf-hero__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1180px;
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  .bf-hero__stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .bf-hero__stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bf-hero__card-preview {
+  margin-top: 4rem;
+  width: 100%;
+  max-width: 1100px;
+  background: var(--bf-void-900);
+  border: 1px solid var(--bf-dark-line);
+  border-radius: var(--bf-radius-xl);
+  padding: 1.75rem 2rem 2rem 2rem;
+  box-shadow: var(--bf-shadow-xl), 0 0 50px -15px rgba(22, 55, 245, 0.25);
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.bf-hero__card-preview-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bf-hero__card-preview-title {
+  font-family: var(--bf-font-mono);
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  font-weight: 700;
+  color: #93C5FD;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.bf-hero__card-preview-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.bf-hero__card-preview-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.bf-hero__preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 840px) {
+  .bf-hero__preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bf-hero__preview-item {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--bf-radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bf-hero__preview-item-kicker {
+  font-family: var(--bf-font-mono);
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.bf-hero__preview-item-desc {
+  font-family: var(--bf-font-sans);
+  font-size: 0.96875rem; /* 15.5px / 11.6pt */
+  line-height: 1.55;
+  color: var(--bf-dark-text-secondary);
+}

@@ -1,0 +1,22 @@
+/* ==========================================================================
+   BayesForce Anti-Legacy Structural Advantage Section
+   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   ========================================================================== */
+
+.bf-difference-section {
+  padding: clamp(5rem, 9vw, 8rem) 1.5rem;
+  background: #FFFFFF;
+  position: relative;
+  border-top: 1px solid var(--bf-line);
+}
+
+.bf-difference-section__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.bf-difference-section__header {
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto 4.5rem auto;
+}

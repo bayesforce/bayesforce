@@ -1,0 +1,156 @@
+/* ==========================================================================
+   BayesForce Design System (Contemporary Executive Intelligence)
+   Aesthetic Benchmark: Apple Typographic Discipline & Google Product Restraint
+   Typography: Manrope (Display & Sans) + JetBrains Mono
+   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+
+:root {
+  /* ==========================================================================
+     Fresh Signature Consulting Palette
+     ========================================================================== */
+
+  /* Pitch Carbon & Void Obsidian */
+  --bf-void-950: #040507;
+  --bf-void-900: #08090C;
+  --bf-void-850: #0E1015;
+  --bf-void-800: #14171F;
+  --bf-void-700: #1C202B;
+
+  /* Signature Electric Ultramarine (Modern Intelligence & Velocity) */
+  --bf-brand-primary: #1637F5;
+  --bf-brand-primary-hover: #0F2ED9;
+  --bf-brand-primary-light: #EFF3FF;
+  --bf-brand-primary-subtle: #DBE5FE;
+  --bf-brand-primary-glow: rgba(22, 55, 245, 0.22);
+
+  /* Signal Flame / Persimmon (Delta Multiplier, Live Pulse, Critical Alerts) */
+  --bf-brand-accent: #FF4D26;
+  --bf-brand-accent-hover: #E53E17;
+  --bf-brand-accent-light: #FFF2EE;
+  --bf-brand-accent-glow: rgba(255, 77, 38, 0.22);
+
+  /* Glacial Mint (Operational Health & Verified Action) */
+  --bf-status-success: #10B981;
+  --bf-status-success-light: #ECFDF5;
+  --bf-status-warning: #F59E0B;
+  --bf-status-danger: #EF4444;
+
+  /* Architectural Light Surfaces */
+  --bf-canvas: #FFFFFF;              /* Pure Architectural Gallery White */
+  --bf-canvas-subtle: #F8FAFC;       /* Luminous Mist */
+  --bf-canvas-elevated: #F1F4F9;     /* Titanium Tone */
+  --bf-surface: #FFFFFF;
+  --bf-surface-elevated: #FFFFFF;
+
+  /* Inks & Contrast */
+  --bf-ink-900: #08090C;             /* Deepest Carbon */
+  --bf-ink-800: #11141A;
+  --bf-ink-700: #1E232F;
+  --bf-ink-600: #3E4759;             /* Balanced Body Ink */
+  --bf-ink-500: #626D82;
+  --bf-ink: var(--bf-ink-900);
+  --bf-ink-secondary: var(--bf-ink-600);
+  --bf-muted: #64748B;
+
+  /* Gossamer Hairlines & Structural Dividers */
+  --bf-line: #E6E9EE;
+  --bf-line-subtle: rgba(8, 9, 12, 0.07);
+  --bf-line-strong: #CBD2DC;
+
+  /* Dark Monolith Section Tokens */
+  --bf-dark-bg: var(--bf-void-900);
+  --bf-dark-surface: var(--bf-void-850);
+  --bf-dark-surface-hover: var(--bf-void-800);
+  --bf-dark-line: rgba(255, 255, 255, 0.09);
+  --bf-dark-line-bright: rgba(255, 255, 255, 0.18);
+  --bf-dark-text-primary: #FFFFFF;
+  --bf-dark-text-secondary: #CBD5E1;
+  --bf-dark-text-muted: #94A3B8;
+
+  /* ==========================================================================
+     Typography System (Manrope Primary - Strictly No Serif, Min 11pt)
+     ========================================================================== */
+  --bf-font-display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bf-font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bf-font-mono: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Radii - Architectural, Clean, Human */
+  --bf-radius-xs: 4px;
+  --bf-radius-sm: 8px;
+  --bf-radius-md: 12px;
+  --bf-radius-lg: 16px;
+  --bf-radius-xl: 20px;
+  --bf-radius-2xl: 28px;
+  --bf-radius-full: 9999px;
+
+  /* Shadows - Apple-Grade Diffuse Elevation */
+  --bf-shadow-xs: 0 1px 3px rgba(8, 9, 12, 0.04);
+  --bf-shadow-sm: 0 4px 12px rgba(8, 9, 12, 0.05);
+  --bf-shadow-md: 0 12px 32px -6px rgba(8, 9, 12, 0.07), 0 4px 12px -2px rgba(8, 9, 12, 0.03);
+  --bf-shadow-lg: 0 24px 56px -12px rgba(8, 9, 12, 0.1), 0 6px 16px -4px rgba(8, 9, 12, 0.04);
+  --bf-shadow-xl: 0 36px 72px -16px rgba(8, 9, 12, 0.18);
+
+  /* Transitions - Apple-Style Responsive Easing */
+  --bf-transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --bf-transition-base: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  --bf-transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base resets & typography smoothing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--bf-font-sans);
+  background-color: var(--bf-canvas);
+  color: var(--bf-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Strict rule: No text below 11pt (14.67px / 0.9375rem) */
+  font-size: 1.0625rem; /* 17px default body */
+  line-height: 1.6;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(8, 9, 12, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bf-brand-primary);
+}
+
+/* Architectural Utilities */
+.bf-hairline-card {
+  background: #FFFFFF;
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-lg);
+  padding: 2.25rem;
+  transition: all var(--bf-transition-base);
+  box-shadow: var(--bf-shadow-xs);
+}
+
+.bf-hairline-card:hover {
+  border-color: var(--bf-brand-primary);
+  box-shadow: var(--bf-shadow-md);
+  transform: translateY(-2px);
+}

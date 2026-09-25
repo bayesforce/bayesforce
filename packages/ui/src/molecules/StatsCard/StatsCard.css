@@ -1,0 +1,79 @@
+/* ==========================================================================
+   BayesForce Stats Card
+   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   ========================================================================== */
+
+.bf-stats-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1.75rem;
+  background: var(--bf-surface);
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-lg);
+  box-shadow: var(--bf-shadow-xs);
+  transition: all var(--bf-transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.bf-stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--bf-shadow-md);
+  border-color: var(--bf-brand-primary);
+}
+
+.bf-stats-card--dark {
+  background: var(--bf-void-850);
+  border-color: var(--bf-dark-line);
+  box-shadow: none;
+}
+
+.bf-stats-card--dark:hover {
+  border-color: var(--bf-dark-line-bright);
+}
+
+.bf-stats-card__value {
+  font-family: var(--bf-font-display);
+  font-size: clamp(2.25rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--bf-ink-900);
+}
+
+.bf-stats-card__value--cobalt {
+  color: var(--bf-brand-primary);
+}
+
+.bf-stats-card__value--gold {
+  color: var(--bf-brand-accent);
+}
+
+.bf-stats-card__value--dark {
+  color: #FFFFFF;
+}
+
+.bf-stats-card__label {
+  font-family: var(--bf-font-sans);
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 700;
+  color: var(--bf-ink-900);
+  letter-spacing: -0.015em;
+}
+
+.bf-stats-card__label--dark {
+  color: #FFFFFF;
+}
+
+/* Strict rule: minimum 15px (11.25pt) */
+.bf-stats-card__description {
+  font-family: var(--bf-font-sans);
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  line-height: 1.55;
+  color: var(--bf-ink-600);
+}
+
+.bf-stats-card__description--dark {
+  color: var(--bf-dark-text-secondary);
+}

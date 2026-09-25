@@ -1,0 +1,90 @@
+/* ==========================================================================
+   BayesForce Input Atoms
+   Google-Grade Thoughtful Precision & Minimum 11pt Typography
+   ========================================================================== */
+
+.bf-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.bf-input-label {
+  font-family: var(--bf-font-sans);
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  font-weight: 600;
+  color: var(--bf-ink-800);
+  letter-spacing: -0.01em;
+}
+
+.bf-input-label--dark {
+  color: #FFFFFF;
+}
+
+.bf-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.bf-input,
+.bf-select,
+.bf-textarea {
+  width: 100%;
+  font-family: var(--bf-font-sans);
+  font-size: 1rem; /* 16px */
+  color: var(--bf-ink-900);
+  background: var(--bf-surface);
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-sm);
+  padding: 0.8125rem 1rem;
+  outline: none;
+  transition: all var(--bf-transition-base);
+  box-shadow: var(--bf-shadow-xs);
+}
+
+.bf-input:focus,
+.bf-select:focus,
+.bf-textarea:focus {
+  border-color: var(--bf-brand-primary);
+  box-shadow: 0 0 0 3px var(--bf-brand-primary-glow);
+}
+
+.bf-input::placeholder,
+.bf-textarea::placeholder {
+  color: #94A3B8;
+}
+
+.bf-input--dark,
+.bf-select--dark,
+.bf-textarea--dark {
+  background: var(--bf-void-850);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.bf-input--dark:focus,
+.bf-select--dark:focus,
+.bf-textarea--dark:focus {
+  border-color: var(--bf-brand-primary);
+  box-shadow: 0 0 0 3px var(--bf-brand-primary-glow);
+}
+
+.bf-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.bf-input-helper {
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  color: var(--bf-muted);
+  margin-top: 0.375rem;
+}
+
+.bf-input-error {
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  color: var(--bf-status-danger);
+  margin-top: 0.375rem;
+}

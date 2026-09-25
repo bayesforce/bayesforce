@@ -1,0 +1,21 @@
+node_modules/
+.next/
+.next-stale-build-cache/
+out/
+dist/
+storybook-static/
+*.log
+.env*
+!.env.example
+
+# Tooling and caches
+.turbo/
+.DS_Store
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

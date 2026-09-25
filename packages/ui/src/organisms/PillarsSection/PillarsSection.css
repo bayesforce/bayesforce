@@ -1,0 +1,111 @@
+/* ==========================================================================
+   BayesForce Pillars Section
+   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   ========================================================================== */
+
+.bf-pillars-section {
+  padding: clamp(5rem, 9vw, 8rem) 1.5rem;
+  background: #FFFFFF;
+  position: relative;
+  border-top: 1px solid var(--bf-line);
+}
+
+.bf-pillars-section__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.bf-pillars-section__header {
+  margin-bottom: 4.5rem;
+  max-width: 880px;
+}
+
+.bf-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1040px) {
+  .bf-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.bf-pillar-card {
+  background: var(--bf-canvas-subtle);
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-xl);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--bf-transition-base);
+  position: relative;
+}
+
+.bf-pillar-card:hover {
+  background: #FFFFFF;
+  border-color: var(--bf-brand-primary);
+  box-shadow: var(--bf-shadow-md);
+  transform: translateY(-3px);
+}
+
+.bf-pillar-card__top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bf-pillar-card__number {
+  font-family: var(--bf-font-mono);
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  font-weight: 700;
+  color: var(--bf-brand-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bf-pillar-card__title {
+  font-family: var(--bf-font-display);
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--bf-ink-900);
+  letter-spacing: -0.025em;
+}
+
+.bf-pillar-card__desc {
+  font-family: var(--bf-font-sans);
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.65;
+  color: var(--bf-ink-600);
+}
+
+.bf-pillar-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  border-top: 1px solid var(--bf-line);
+  padding-top: 1.75rem;
+}
+
+.bf-pillar-card__feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  font-family: var(--bf-font-sans);
+  font-size: 0.96875rem; /* 15.5px / 11.6pt */
+  color: var(--bf-ink-700);
+  line-height: 1.5;
+}
+
+.bf-pillar-card__feature-icon {
+  color: var(--bf-brand-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}

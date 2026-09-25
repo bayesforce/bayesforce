@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: var(--bf-canvas, #F8FAFC);
+  color: var(--bf-ink, #0F172A);
+  font-family: var(--bf-font-sans, 'Inter', sans-serif);
+}
+
+.sb-story-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

@@ -1,0 +1,13 @@
+.bf-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.bf-icon svg {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,51 @@
+.bf-offerings-section {
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  background: var(--bf-dark-bg);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.bf-offerings-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.bf-offerings-section__header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.bf-offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .bf-offerings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .bf-offerings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bf-offerings-staircase-banner {
+  margin-top: 3.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--bf-radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}

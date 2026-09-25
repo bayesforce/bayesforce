@@ -1,0 +1,94 @@
+/* ==========================================================================
+   BayesForce Display Atoms (Cards, Glass Panels, Grid Canvases)
+   Apple/Google Design Language & Restraint
+   ========================================================================== */
+
+.bf-card {
+  position: relative;
+  background: var(--bf-surface);
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--bf-shadow-xs);
+  transition: all var(--bf-transition-base);
+  overflow: hidden;
+}
+
+.bf-card--hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--bf-shadow-md);
+  border-color: var(--bf-brand-primary);
+}
+
+.bf-card--bordered {
+  border: 1px solid var(--bf-line);
+}
+
+.bf-card--dark {
+  background: var(--bf-void-850);
+  border-color: var(--bf-dark-line);
+  color: var(--bf-dark-text-primary);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+.bf-card--dark.bf-card--hover-lift:hover {
+  border-color: var(--bf-dark-line-bright);
+  box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.6), 0 0 20px -4px var(--bf-brand-primary-glow);
+}
+
+.bf-card--gold-accent {
+  border-top: 3px solid var(--bf-brand-accent);
+}
+
+.bf-card--cobalt-accent {
+  border-top: 3px solid var(--bf-brand-primary);
+}
+
+.bf-card--subtle {
+  background: var(--bf-canvas-subtle);
+  border-color: var(--bf-line-subtle);
+}
+
+/* Glass Panel */
+.bf-glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(230, 233, 238, 0.8);
+  border-radius: var(--bf-radius-lg);
+  box-shadow: var(--bf-shadow-sm);
+}
+
+.bf-glass-panel--dark {
+  background: rgba(14, 16, 21, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* Grid Canvas background */
+.bf-grid-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.bf-grid-canvas--dots {
+  background-image: radial-gradient(rgba(22, 55, 245, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bf-grid-canvas--dots-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bf-grid-canvas--lines {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(8, 9, 12, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 9, 12, 0.04) 1px, transparent 1px);
+}

@@ -1,0 +1,176 @@
+/* ==========================================================================
+   BayesForce Elite Button Styles
+   Apple-Grade Tactile Precision & Minimum 11pt Typography
+   ========================================================================== */
+
+.bf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  position: relative;
+  white-space: nowrap;
+  font-family: var(--bf-font-sans);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--bf-radius-sm);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  letter-spacing: -0.015em;
+  transition: all var(--bf-transition-base);
+}
+
+.bf-button:focus-visible {
+  outline: 2px solid var(--bf-brand-primary);
+  outline-offset: 2px;
+}
+
+.bf-button:disabled,
+.bf-button--disabled,
+.bf-button--loading {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.bf-button--full-width {
+  width: 100%;
+}
+
+.bf-button--rounded-full {
+  border-radius: var(--bf-radius-full);
+}
+
+/* Sizes: Minimum 15px (11.25pt) everywhere */
+.bf-button--size-sm {
+  height: 2.625rem; /* 42px */
+  padding: 0 1.25rem;
+  font-size: 0.9375rem; /* 15px */
+  gap: 0.5rem;
+}
+
+.bf-button--size-md {
+  height: 3rem; /* 48px */
+  padding: 0 1.625rem;
+  font-size: 1rem; /* 16px */
+  gap: 0.625rem;
+}
+
+.bf-button--size-lg {
+  height: 3.5rem; /* 56px */
+  padding: 0 2rem;
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 700;
+  gap: 0.75rem;
+}
+
+.bf-button--size-xl {
+  height: 4rem; /* 64px */
+  padding: 0 2.5rem;
+  font-size: 1.125rem; /* 18px */
+  gap: 0.875rem;
+  font-weight: 700;
+}
+
+/* Variants */
+/* 1. Primary - Luminous Electric Ultramarine */
+.bf-button--variant-primary {
+  background: var(--bf-brand-primary);
+  color: #FFFFFF;
+  border-color: var(--bf-brand-primary);
+  box-shadow: 0 2px 8px rgba(22, 55, 245, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.bf-button--variant-primary:hover:not(:disabled) {
+  background: var(--bf-brand-primary-hover);
+  border-color: var(--bf-brand-primary-hover);
+  box-shadow: 0 6px 18px rgba(22, 55, 245, 0.35);
+  transform: translateY(-1px);
+}
+
+/* 2. Secondary - Ultramarine Subtle */
+.bf-button--variant-secondary {
+  background: var(--bf-brand-primary-light);
+  color: var(--bf-brand-primary);
+  border-color: var(--bf-brand-primary-subtle);
+}
+
+.bf-button--variant-secondary:hover:not(:disabled) {
+  background: var(--bf-brand-primary-subtle);
+  color: var(--bf-brand-primary-hover);
+}
+
+/* 3. Gold / Signal Accent */
+.bf-button--variant-gold {
+  background: var(--bf-brand-accent);
+  color: #FFFFFF;
+  border-color: var(--bf-brand-accent);
+  box-shadow: 0 2px 8px rgba(255, 77, 38, 0.25);
+}
+
+.bf-button--variant-gold:hover:not(:disabled) {
+  background: var(--bf-brand-accent-hover);
+  border-color: var(--bf-brand-accent-hover);
+  box-shadow: 0 6px 18px rgba(255, 77, 38, 0.35);
+  transform: translateY(-1px);
+}
+
+/* 4. Outline - Architectural Hairline */
+.bf-button--variant-outline {
+  background: #FFFFFF;
+  color: var(--bf-ink-900);
+  border-color: var(--bf-line);
+}
+
+.bf-button--variant-outline:hover:not(:disabled) {
+  background: var(--bf-canvas-subtle);
+  border-color: var(--bf-ink-900);
+  box-shadow: var(--bf-shadow-xs);
+}
+
+/* 5. Dark Void Obsidian */
+.bf-button--variant-dark {
+  background: var(--bf-void-900);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bf-button--variant-dark:hover:not(:disabled) {
+  background: var(--bf-void-850);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* 6. Ghost */
+.bf-button--variant-ghost {
+  background: transparent;
+  color: var(--bf-ink-700);
+  border-color: transparent;
+}
+
+.bf-button--variant-ghost:hover:not(:disabled) {
+  background: rgba(8, 9, 12, 0.04);
+  color: var(--bf-ink-900);
+}
+
+/* 7. Ghost Dark */
+.bf-button--variant-ghost-dark {
+  background: transparent;
+  color: var(--bf-dark-text-secondary);
+  border-color: transparent;
+}
+
+.bf-button--variant-ghost-dark:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.bf-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

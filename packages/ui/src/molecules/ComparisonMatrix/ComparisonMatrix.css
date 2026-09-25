@@ -1,0 +1,73 @@
+/* ==========================================================================
+   BayesForce Comparison Matrix
+   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   ========================================================================== */
+
+.bf-matrix-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--bf-surface);
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-xl);
+  box-shadow: var(--bf-shadow-xs);
+}
+
+.bf-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 720px;
+}
+
+.bf-matrix th,
+.bf-matrix td {
+  padding: 1.35rem 1.75rem;
+  border-bottom: 1px solid var(--bf-line);
+  font-family: var(--bf-font-sans);
+  font-size: 0.96875rem; /* 15.5px / 11.6pt */
+  line-height: 1.55;
+}
+
+.bf-matrix th {
+  background: var(--bf-canvas-subtle);
+  font-family: var(--bf-font-display);
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 700;
+  color: var(--bf-ink-900);
+  letter-spacing: -0.015em;
+}
+
+.bf-matrix th.bf-matrix__bayesforce,
+.bf-matrix td.bf-matrix__bayesforce {
+  background: var(--bf-brand-primary-light);
+  border-left: 2px solid var(--bf-brand-primary);
+  border-right: 2px solid var(--bf-brand-primary);
+  color: var(--bf-ink-900);
+  font-weight: 600;
+}
+
+.bf-matrix th.bf-matrix__bayesforce {
+  border-top: 2px solid var(--bf-brand-primary);
+  color: var(--bf-brand-primary);
+  font-weight: 800;
+}
+
+.bf-matrix tr:last-child td {
+  border-bottom: none;
+}
+
+.bf-matrix tr:last-child td.bf-matrix__bayesforce {
+  border-bottom: 2px solid var(--bf-brand-primary);
+}
+
+.bf-matrix__dimension {
+  font-weight: 700;
+  color: var(--bf-ink-900);
+  width: 25%;
+}
+
+.bf-matrix__legacy,
+.bf-matrix__point {
+  color: var(--bf-ink-600);
+  width: 25%;
+}

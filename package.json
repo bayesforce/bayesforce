@@ -1,0 +1,38 @@
+{
+  "name": "bayesforce",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.23.0",
+  "scripts": {
+    "start": "./scripts/start-local.sh",
+    "start:all": "./scripts/start-local.sh --all",
+    "start:landing": "./scripts/start-local.sh --landing",
+    "start:ui": "./scripts/start-local.sh --ui",
+    "stop": "./scripts/start-local.sh --stop",
+    "stop:landing": "./scripts/start-local.sh stop landing",
+    "stop:ui": "./scripts/start-local.sh stop ui",
+    "status": "./scripts/start-local.sh status",
+    "dev": "./scripts/start-local.sh",
+    "dev:all": "turbo run dev --parallel",
+    "dev:landing": "./scripts/start-local.sh --landing",
+    "dev:ui": "./scripts/start-local.sh --ui",
+    "storybook": "pnpm --filter @bayesforce/ui storybook",
+    "build": "turbo run build",
+    "build-storybook": "pnpm --filter @bayesforce/ui build-storybook",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "typecheck:landing": "./scripts/start-local.sh check landing",
+    "typecheck:ui": "./scripts/start-local.sh check ui"
+  },
+  "devDependencies": {
+    "@storybook/react": "^10.5.10",
+    "@storybook/react-vite": "^10.5.10",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "turbo": "^2.5.6",
+    "typescript": "^5.7.0"
+  }
+}

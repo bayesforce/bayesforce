@@ -1,0 +1,79 @@
+/* ==========================================================================
+   BayesForce Distribution Card
+   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   ========================================================================== */
+
+.bf-distribution-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem;
+  background: var(--bf-surface);
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-xl);
+  box-shadow: var(--bf-shadow-xs);
+  transition: all var(--bf-transition-base);
+}
+
+.bf-distribution-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--bf-shadow-md);
+  border-color: var(--bf-brand-primary);
+}
+
+.bf-distribution-card--active {
+  border-color: var(--bf-brand-primary);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--bf-brand-primary-light) 100%);
+  box-shadow: var(--bf-shadow-md), 0 0 24px -4px var(--bf-brand-primary-glow);
+}
+
+.bf-distribution-card__badge {
+  align-self: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.bf-distribution-card__title {
+  font-family: var(--bf-font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--bf-ink-900);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.bf-distribution-card__shape {
+  font-family: var(--bf-font-mono);
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  color: var(--bf-brand-primary);
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.bf-distribution-card__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--bf-line);
+}
+
+.bf-distribution-card__metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.9375rem; /* 15px / 11.25pt */
+  line-height: 1.5;
+  gap: 0.75rem;
+}
+
+.bf-distribution-card__metric-label {
+  color: var(--bf-ink-500);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.bf-distribution-card__metric-value {
+  color: var(--bf-ink-900);
+  font-weight: 600;
+  text-align: right;
+}
