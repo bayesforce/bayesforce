@@ -10,3 +10,7 @@
 1. **[01_initial_thoughts/](01_initial_thoughts/README.md)**  
    - Foundational philosophy, vision, mission, and the core Bayesian thesis on organizational amplification.
    - **Lead Document:** [`01_vision_mission_and_thesis.md`](01_initial_thoughts/01_vision_mission_and_thesis.md)
+
+2. **[02_design_principles/](02_design_principles/README.md)**  
+   - Authoritative brand identity, design principles, Cobalt Blue & Obsidian Black color system, tokens, and UI guidelines.
+   - **Lead Document:** [`design_principles.md`](02_design_principles/design_principles.md)

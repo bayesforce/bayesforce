@@ -132,16 +132,16 @@ export const UniversalWorkflowDiagram: React.FC = () => {
   return (
     <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden">
       {/* Header & Filter Controls */}
-      <div className="p-6 md:p-8 bg-slate-900 text-white border-b border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+      <div className="p-6 md:p-8 bg-[#11151B] text-white border-b border-[#2A3441] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-blue-400 uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-xs font-sans text-blue-400 uppercase tracking-wider mb-2 font-bold">
             <Icon name="git-branch" size={14} />
             The Bayesforce Universal Workflow
           </div>
           <h3 className="text-2xl font-black text-white">
             From Information Arriving to Action Being Completed
           </h3>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl">
+          <p className="text-slate-400 text-sm mt-1 max-w-2xl font-normal">
             A 13-stage linear execution pipeline. Some stages are deterministic, others require probabilistic AI, and consequential decisions remain human.
           </p>
         </div>
@@ -150,9 +150,9 @@ export const UniversalWorkflowDiagram: React.FC = () => {
         <div className="flex flex-wrap items-center gap-2 shrink-0">
           <button
             onClick={() => setActiveFilter("all")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-sans font-bold transition-all ${
               activeFilter === "all"
-                ? "bg-[#1637F5] text-white"
+                ? "bg-[#013EFA] text-white shadow-sm"
                 : "bg-white/10 text-slate-300 hover:bg-white/20"
             }`}
           >
@@ -160,9 +160,9 @@ export const UniversalWorkflowDiagram: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveFilter("Deterministic")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-sans font-bold transition-all ${
               activeFilter === "Deterministic"
-                ? "bg-blue-600 text-white"
+                ? "bg-blue-600 text-white shadow-sm"
                 : "bg-white/10 text-slate-300 hover:bg-white/20"
             }`}
           >
@@ -170,9 +170,9 @@ export const UniversalWorkflowDiagram: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveFilter("Probabilistic AI")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-sans font-bold transition-all ${
               activeFilter === "Probabilistic AI"
-                ? "bg-purple-600 text-white"
+                ? "bg-purple-600 text-white shadow-sm"
                 : "bg-white/10 text-slate-300 hover:bg-white/20"
             }`}
           >
@@ -180,9 +180,9 @@ export const UniversalWorkflowDiagram: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveFilter("Human Gate")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-sans font-bold transition-all ${
               activeFilter === "Human Gate"
-                ? "bg-amber-600 text-white"
+                ? "bg-amber-600 text-white shadow-sm"
                 : "bg-white/10 text-slate-300 hover:bg-white/20"
             }`}
           >
@@ -204,15 +204,15 @@ export const UniversalWorkflowDiagram: React.FC = () => {
                   onClick={() => setSelectedStage(stage)}
                   className={`p-3.5 rounded-xl border transition-all cursor-pointer flex items-center justify-between gap-3 ${
                     isSelected
-                      ? "bg-white border-[#1637F5] shadow-md ring-1 ring-[#1637F5]"
+                      ? "bg-white border-[#013EFA] shadow-md ring-1 ring-[#013EFA]"
                       : "bg-white border-slate-200/80 hover:border-blue-300 hover:bg-blue-50/20"
                   }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <span
-                      className={`w-7 h-7 rounded-lg font-mono text-xs font-bold flex items-center justify-center shrink-0 ${
+                      className={`w-7 h-7 rounded-lg font-sans text-xs font-bold flex items-center justify-center shrink-0 ${
                         isSelected
-                          ? "bg-[#1637F5] text-white"
+                          ? "bg-[#013EFA] text-white"
                           : "bg-slate-100 text-slate-700"
                       }`}
                     >
@@ -222,20 +222,20 @@ export const UniversalWorkflowDiagram: React.FC = () => {
                       <div className="text-xs font-bold text-slate-900 truncate">
                         {stage.name}
                       </div>
-                      <div className="text-[11px] text-slate-500 font-mono truncate">
+                      <div className="text-[11px] text-slate-500 font-sans truncate">
                         {stage.category}
                       </div>
                     </div>
                   </div>
 
                   <span
-                    className={`px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold shrink-0 ${
+                    className={`px-2.5 py-0.5 rounded-md text-[11px] font-sans font-bold shrink-0 ${
                       stage.nature === "Deterministic"
                         ? "bg-blue-50 text-blue-700 border border-blue-200"
                         : stage.nature === "Probabilistic AI"
                         ? "bg-purple-50 text-purple-700 border border-purple-200"
                         : stage.nature === "Human Gate"
-                        ? "bg-amber-50 text-amber-700 border border-amber-200"
+                        ? "bg-amber-50 text-amber-800 border border-amber-200"
                         : "bg-emerald-50 text-emerald-700 border border-emerald-200"
                     }`}
                   >
@@ -250,11 +250,11 @@ export const UniversalWorkflowDiagram: React.FC = () => {
           <div className="lg:col-span-5 bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-lg space-y-6">
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
               <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-xl bg-blue-50 text-[#1637F5] font-mono font-black text-lg flex items-center justify-center border border-blue-100">
+                <span className="w-10 h-10 rounded-xl bg-blue-50 text-[#013EFA] font-sans font-black text-lg flex items-center justify-center border border-blue-100">
                   {selectedStage.step < 10 ? `0${selectedStage.step}` : selectedStage.step}
                 </span>
                 <div>
-                  <span className="font-mono text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                  <span className="font-sans text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
                     {selectedStage.category}
                   </span>
                   <h4 className="text-lg font-black text-slate-900 leading-tight">
@@ -263,13 +263,13 @@ export const UniversalWorkflowDiagram: React.FC = () => {
                 </div>
               </div>
               <span
-                className={`px-2.5 py-1 rounded-md text-xs font-mono font-bold ${
+                className={`px-2.5 py-1 rounded-md text-xs font-sans font-bold ${
                   selectedStage.nature === "Deterministic"
                     ? "bg-blue-50 text-blue-700 border border-blue-200"
                     : selectedStage.nature === "Probabilistic AI"
                     ? "bg-purple-50 text-purple-700 border border-purple-200"
                     : selectedStage.nature === "Human Gate"
-                    ? "bg-amber-50 text-amber-700 border border-amber-200"
+                    ? "bg-amber-50 text-amber-800 border border-amber-200"
                     : "bg-emerald-50 text-emerald-700 border border-emerald-200"
                 }`}
               >
@@ -278,25 +278,25 @@ export const UniversalWorkflowDiagram: React.FC = () => {
             </div>
 
             <div>
-              <h5 className="font-mono text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">
+              <h5 className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">
                 Stage Execution Architecture
               </h5>
-              <p className="text-sm text-slate-700 leading-relaxed">
+              <p className="text-sm text-slate-700 leading-relaxed font-normal">
                 {selectedStage.description}
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
-              <div className="font-mono text-xs font-bold text-slate-900 flex items-center gap-1.5">
+              <div className="font-sans text-xs font-bold text-slate-900 flex items-center gap-1.5">
                 <Icon name="check-circle" size={14} className="text-emerald-600" />
                 Live Workflow Example
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
                 {selectedStage.example}
               </p>
             </div>
 
-            <div className="pt-2 border-t border-slate-100 text-xs text-slate-500 font-mono">
+            <div className="pt-2 border-t border-slate-100 text-xs text-slate-500 font-sans">
               Sensible automation: Not all workflows need all 13 stages.
             </div>
           </div>
@@ -304,8 +304,8 @@ export const UniversalWorkflowDiagram: React.FC = () => {
       </div>
 
       {/* Philosophy Callout Footer */}
-      <div className="p-5 md:p-6 bg-blue-50/70 border-t border-blue-100 flex items-center gap-4 text-xs md:text-sm text-slate-800">
-        <div className="w-8 h-8 rounded-lg bg-[#1637F5] text-white flex items-center justify-center shrink-0">
+      <div className="p-5 md:p-6 bg-[#013EFA]/5 border-t border-[#013EFA]/15 flex items-center gap-4 text-xs md:text-sm text-slate-800">
+        <div className="w-8 h-8 rounded-lg bg-[#013EFA] text-white flex items-center justify-center shrink-0 shadow-sm">
           <Icon name="sparkles" size={16} />
         </div>
         <p className="leading-relaxed">

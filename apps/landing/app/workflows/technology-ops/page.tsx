@@ -1,14 +1,19 @@
 import React from "react";
-import { WorkflowDetailTemplate } from "../../components/WorkflowDetailTemplate";
-import { WORKFLOWS } from "../../data/site-data";
+import type { Metadata } from "next";
+import { RoutePlaceholder } from "../../components/RoutePlaceholder";
 
-export const metadata = {
-  title: "Technology Operations AI Workflows | BayesForce",
+export const metadata: Metadata = {
+  title: "Technology Operations | Bayesforce",
   description:
-    "Accelerate incident root-cause triage, automate AST codebase refactoring migrations, and enforce real-time LLM token FinOps governors.",
+    "Accelerate incident response, runbook execution, and infrastructure telemetry reasoning across developer and IT workflows.",
 };
 
-export default function TechnologyOpsWorkflowPage() {
-  const workflow = WORKFLOWS.find((w) => w.slug === "technology-ops")!;
-  return <WorkflowDetailTemplate workflow={workflow} />;
+export default function TechnologyOpsPage() {
+  return (
+    <RoutePlaceholder
+      route="/workflows/technology-ops"
+      title="Technology Operations"
+      description="Accelerate incident response, runbook execution, and infrastructure telemetry reasoning across modern developer and IT systems."
+    />
+  );
 }

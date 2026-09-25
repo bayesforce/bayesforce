@@ -1,0 +1,80 @@
+/* ==========================================================================
+   BayesForce Tables
+   Cobalt Blue & Obsidian Black Design System
+   ========================================================================== */
+
+.bf-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-lg);
+  background: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.bf-table-container--dark {
+  background: var(--bf-obsidian-850);
+  border-color: var(--bf-dark-line);
+}
+
+.bf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--bf-font-sans);
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.bf-table-head {
+  background: var(--bf-canvas-subtle);
+  border-bottom: 1px solid var(--bf-line);
+}
+
+.bf-table-container--dark .bf-table-head {
+  background: var(--bf-obsidian-900);
+  border-bottom-color: var(--bf-dark-line);
+}
+
+.bf-table-th {
+  padding: 0.875rem 1.25rem;
+  font-family: var(--bf-font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem; /* 12px */
+  letter-spacing: 0.05em;
+  color: #64748B;
+}
+
+.bf-table-container--dark .bf-table-th {
+  color: #94A3B8;
+}
+
+.bf-table-row {
+  border-bottom: 1px solid var(--bf-line);
+  transition: background-color var(--bf-transition-fast);
+}
+
+.bf-table-container--dark .bf-table-row {
+  border-bottom-color: var(--bf-dark-line);
+}
+
+.bf-table-row:hover {
+  background-color: var(--bf-canvas-subtle);
+}
+
+.bf-table-container--dark .bf-table-row:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.bf-table-row:last-child {
+  border-bottom: none;
+}
+
+.bf-table-td {
+  padding: 1rem 1.25rem;
+  color: var(--bf-ink-900);
+}
+
+.bf-table-container--dark .bf-table-td {
+  color: #F8FAFC;
+}

@@ -48,52 +48,52 @@ const TRUST_FEATURES: TrustFeature[] = [
     icon: "terminal",
   },
   {
-    title: "AI FinOps & Cost Monitoring",
+    title: "Cost & Token Tracking (FinOps)",
     category: "Observability & FinOps",
-    description: "Granular token attribution per workflow with semantic caching and dynamic model routing.",
-    metric: "58% Cost Optimization",
-    icon: "trending-up",
+    description: "Granular cost attribution per workflow run, token caching ratios, and ROI analytics.",
+    metric: "40% Cost Optimization",
+    icon: "chart-bar",
   },
   {
-    title: "Permissions & Access Controls",
+    title: "Model Routing & Fallbacks",
+    category: "Observability & FinOps",
+    description: "Dynamic routing across frontier models, private SLMs, and deterministic rules for cost/speed.",
+    metric: "<250ms Routing Overhead",
+    icon: "git-branch",
+  },
+  {
+    title: "Deterministic Guardrails",
     category: "Security & Governance",
-    description: "Role-based authorization ensuring agents only access records the human user is cleared to view.",
-    metric: "Least-Privilege Scopes",
+    description: "Hard constraints that prevent hallucinated schema writes, unauthorized actions, and scope creep.",
+    metric: "0 Constraint Breaches",
+    icon: "shield-check",
+  },
+  {
+    title: "Audit Logs & Version History",
+    category: "Security & Governance",
+    description: "Immutable versioning of prompt templates, model versions, datasets, and human overrides.",
+    metric: "SOC2 & ISO 27001 Ready",
+    icon: "file-text",
+  },
+  {
+    title: "Role-Based Access Control (RBAC)",
+    category: "Security & Governance",
+    description: "Enterprise SSO, fine-grained action permissions, and credential vault isolation.",
+    metric: "Zero-Trust Architecture",
     icon: "lock",
   },
   {
-    title: "Agent Boundaries & Sandboxing",
+    title: "Data Sovereignty & Privacy",
     category: "Security & Governance",
-    description: "eBPF-isolated microVM sandboxes preventing unauthorized system modifications or escape.",
-    metric: "Isolated Runtime",
-    icon: "shield-check",
+    description: "Zero training on client data agreements, private VPC deployment, and encrypted state storage.",
+    metric: "100% On-Prem / VPC",
+    icon: "database",
   },
   {
-    title: "Data Protection & Privacy",
+    title: "Human Approval Gates",
     category: "Security & Governance",
-    description: "Zero data retention on foundation models; automatic PII/PCI masking before tokenization.",
-    metric: "Zero Model Training",
-    icon: "shield-check",
-  },
-  {
-    title: "Security & Red-Teaming Testing",
-    category: "Security & Governance",
-    description: "Continuous automated adversarial probing defending against direct and indirect prompt injection.",
-    metric: "99.96% Attack Block Rate",
-    icon: "zap",
-  },
-  {
-    title: "Governance & Policy Enforcement",
-    category: "Security & Governance",
-    description: "Deterministic guardrail firewalls ensuring outputs strictly follow corporate compliance rules.",
-    metric: "Deterministic Enforcement",
-    icon: "scale",
-  },
-  {
-    title: "Human Approval & Auditability",
-    category: "Security & Governance",
-    description: "1-click review gates for high-stakes actions with immutable, timestamped audit logs.",
-    metric: "SOC2 & ISO Ready",
+    description: "Configurable confidence thresholds that route ambiguous edge-cases to human supervisors in Slack/Teams.",
+    metric: "Configurable Thresholds",
     icon: "users",
   },
 ];
@@ -101,97 +101,101 @@ const TRUST_FEATURES: TrustFeature[] = [
 export const ProductionTrustGrid: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
-  const filtered = activeCategory === "all"
-    ? TRUST_FEATURES
-    : TRUST_FEATURES.filter((f) => f.category === activeCategory);
+  const filtered =
+    activeCategory === "all"
+      ? TRUST_FEATURES
+      : TRUST_FEATURES.filter((f) => f.category === activeCategory);
 
   return (
-    <section className="py-20 px-4 sm:px-6 bg-slate-50/70 border-t border-slate-200">
-      <div className="max-w-[1240px] mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <Kicker variant="cobalt" icon={<Icon name="shield-check" size={15} />}>
-            Production Engineering
+    <section className="py-20 md:py-28 px-4 sm:px-6 bg-[#11151B] text-white border-t border-[#2A3441] relative overflow-hidden">
+      {/* Subtle radial ambient illumination */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[300px] bg-[#013EFA]/10 blur-[130px] rounded-full pointer-events-none" />
+
+      <div className="max-w-[1240px] mx-auto relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <Kicker variant="dark" icon={<Icon name="shield-check" size={15} />}>
+            Production Integrity Standard
           </Kicker>
-          <Heading level="h2" className="mb-3 text-3xl md:text-4xl">
-            AI that works beyond the demo.
+          <Heading level="h2" dark className="mb-3 text-3xl md:text-4xl text-[#F8FAFC]">
+            Production Trust &amp; Governance
           </Heading>
-          <Text variant="lead">
-            Production AI needs to be measurable, observable, controllable, secure, and economically viable.
+          <Text variant="lead" dark className="text-slate-400">
+            Enterprise operations cannot run on probabilistic bets. We wrap every workflow in rigorous evaluation harnesses, observability, and deterministic controls.
           </Text>
 
           {/* Filter Pill Navigation */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
             <button
               onClick={() => setActiveCategory("all")}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 activeCategory === "all"
-                  ? "bg-[#1637F5] text-white shadow-sm"
-                  : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
+                  ? "bg-[#013EFA] text-white shadow-xs"
+                  : "bg-[#161B23] text-slate-400 border border-[#2A3441] hover:text-white hover:border-slate-500"
               }`}
             >
               All Controls ({TRUST_FEATURES.length})
             </button>
             <button
               onClick={() => setActiveCategory("Evaluations & Quality")}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 activeCategory === "Evaluations & Quality"
-                  ? "bg-[#1637F5] text-white shadow-sm"
-                  : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
+                  ? "bg-[#013EFA] text-white shadow-xs"
+                  : "bg-[#161B23] text-slate-400 border border-[#2A3441] hover:text-white hover:border-slate-500"
               }`}
             >
-              Evals & Quality
+              Evals &amp; Quality
             </button>
             <button
               onClick={() => setActiveCategory("Observability & FinOps")}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 activeCategory === "Observability & FinOps"
-                  ? "bg-[#1637F5] text-white shadow-sm"
-                  : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
+                  ? "bg-[#013EFA] text-white shadow-xs"
+                  : "bg-[#161B23] text-slate-400 border border-[#2A3441] hover:text-white hover:border-slate-500"
               }`}
             >
-              Observability & FinOps
+              Observability &amp; FinOps
             </button>
             <button
               onClick={() => setActiveCategory("Security & Governance")}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 activeCategory === "Security & Governance"
-                  ? "bg-[#1637F5] text-white shadow-sm"
-                  : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
+                  ? "bg-[#013EFA] text-white shadow-xs"
+                  : "bg-[#161B23] text-slate-400 border border-[#2A3441] hover:text-white hover:border-slate-500"
               }`}
             >
-              Security & Governance
+              Security &amp; Governance
             </button>
           </div>
         </div>
 
-        {/* 12-Card Grid */}
+        {/* 12-Card Grid: Dark Cards (Section 11: bg #161B23, border #2A3441, text #F8FAFC) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 md:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all flex flex-col justify-between group"
+              className="p-6 md:p-8 rounded-2xl bg-[#161B23] border border-[#2A3441] hover:border-[#013EFA]/60 transition-all flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1637F5] flex items-center justify-center border border-blue-100 group-hover:bg-[#1637F5] group-hover:text-white transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] text-[#7DB0FF] border border-[#2A3441] flex items-center justify-center group-hover:bg-[#013EFA] group-hover:text-white group-hover:border-[#013EFA] transition-all">
                     <Icon name={item.icon as any} size={20} />
                   </div>
-                  <span className="font-mono text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
                     {item.category.split(" ")[0]}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1637F5] transition-colors">
+                <h3 className="text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#7DB0FF] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed mb-6">
+                <p className="text-xs text-slate-400 leading-relaxed mb-6 font-normal">
                   {item.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between font-mono text-xs">
-                <span className="text-slate-400">Standard:</span>
-                <span className="font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">
+              <div className="pt-4 border-t border-[#2A3441] flex items-center justify-between text-xs">
+                <span className="text-slate-400 font-medium">Standard:</span>
+                <span className="font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-md">
                   {item.metric}
                 </span>
               </div>

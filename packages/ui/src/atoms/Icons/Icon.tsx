@@ -3,6 +3,7 @@ import "./Icon.css";
 
 export type IconName =
   | "bayes-logo"
+  | "arrow-left"
   | "arrow-right"
   | "arrow-up-right"
   | "check"
@@ -42,7 +43,19 @@ export type IconName =
   | "globe"
   | "compass"
   | "filter"
-  | "external-link";
+  | "external-link"
+  | "home"
+  | "chevron-up"
+  | "chevron-left"
+  | "info"
+  | "alert-triangle"
+  | "trash"
+  | "edit"
+  | "copy"
+  | "bell"
+  | "plus"
+  | "minus"
+  | "help-circle";
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
   name: IconName;
@@ -76,6 +89,13 @@ export const Icon: React.FC<IconProps> = ({
               d="M 571 302 L 555 320 L 547 335 L 530 390 L 514 425 L 499 448 L 477 472 L 531 447 L 553 440 L 575 439 L 599 445 L 615 455 L 634 477 L 643 496 L 652 527 L 662 549 L 672 564 L 690 582 L 708 594 L 736 607 L 757 614 L 806 625 L 804 629 L 766 639 L 728 653 L 706 664 L 684 680 L 664 701 L 647 728 L 643 746 L 650 765 L 663 776 L 673 780 L 704 780 L 822 735 L 863 724 L 916 714 L 943 699 L 957 685 L 971 661 L 977 638 L 975 604 L 971 592 L 957 568 L 933 547 L 916 539 L 871 528 L 837 515 L 810 500 L 784 480 L 760 455 L 739 424 L 720 382 L 705 333 L 697 318 L 680 300 L 668 292 L 651 285 L 636 282 L 619 282 L 594 288 Z"
               fill="#013EFA"
             />
+          </svg>
+        );
+      case "arrow-left":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
           </svg>
         );
       case "arrow-right":
@@ -361,6 +381,82 @@ export const Icon: React.FC<IconProps> = ({
             <path d="M15 3h6v6" />
             <path d="M10 14 21 3" />
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          </svg>
+        );
+      case "home":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        );
+      case "chevron-up":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+          </svg>
+        );
+      case "chevron-left":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        );
+      case "info":
+      case "help-circle":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" x2="12" y1="16" y2="12" />
+            <line x1="12" x2="12.01" y1="8" y2="8" />
+          </svg>
+        );
+      case "alert-triangle":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+            <line x1="12" x2="12" y1="9" y2="13" />
+            <line x1="12" x2="12.01" y1="17" y2="17" />
+          </svg>
+        );
+      case "trash":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="3 6 5 6 21 6" />
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+          </svg>
+        );
+      case "edit":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+          </svg>
+        );
+      case "copy":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+          </svg>
+        );
+      case "bell":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+          </svg>
+        );
+      case "plus":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="12" x2="12" y1="5" y2="19" />
+            <line x1="5" x2="19" y1="12" y2="12" />
+          </svg>
+        );
+      case "minus":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="5" x2="19" y1="12" y2="12" />
           </svg>
         );
       default:

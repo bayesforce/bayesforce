@@ -49,16 +49,16 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
           </div>
 
           <div className="lg:col-span-5 p-6 md:p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
-            <div className="font-mono text-xs font-bold uppercase tracking-wider text-slate-400">
+            <div className="font-sans text-xs font-bold uppercase tracking-wider text-slate-400">
               Department Classification
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1637F5] flex items-center justify-center border border-blue-100">
+              <div className="w-10 h-10 rounded-xl bg-[#013EFA]/10 text-[#013EFA] flex items-center justify-center border border-[#013EFA]/20">
                 <Icon name={workflow.icon as any} size={20} />
               </div>
               <div>
                 <h4 className="text-lg font-bold text-slate-900">{workflow.shortTitle}</h4>
-                <span className="text-xs font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">
+                <span className="text-xs font-sans text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">
                   {workflow.category}
                 </span>
               </div>
@@ -92,14 +92,14 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
                 className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3 flex flex-col justify-between"
               >
                 <div className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-red-50 text-red-600 font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 border border-red-100">
+                  <span className="w-6 h-6 rounded-full bg-red-50 text-red-600 font-sans font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 border border-red-100">
                     0{idx + 1}
                   </span>
                   <p className="text-sm text-slate-700 leading-relaxed font-medium">
                     {item}
                   </p>
                 </div>
-                <div className="pt-2 text-[11px] font-mono text-slate-400">
+                <div className="pt-2 text-xs font-sans font-semibold text-slate-400">
                   Friction Vector #{idx + 1}
                 </div>
               </div>
@@ -131,22 +131,22 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-xs font-bold text-[#1637F5] bg-blue-50 px-2.5 py-0.5 rounded border border-blue-100">
+                    <span className="font-sans text-xs font-bold text-[#013EFA] bg-[#013EFA]/10 px-2.5 py-0.5 rounded border border-[#013EFA]/20">
                       Workflow 0{idx + 1}
                     </span>
                     <span
-                      className={`px-2.5 py-0.5 rounded text-[11px] font-mono font-bold ${
+                      className={`px-2.5 py-0.5 rounded text-xs font-sans font-bold ${
                         rep.mode === "Deterministic"
-                          ? "bg-blue-50 text-blue-700 border border-blue-200"
+                          ? "bg-blue-50 text-[#013EFA] border border-blue-200"
                           : rep.mode === "Probabilistic AI"
                           ? "bg-purple-50 text-purple-700 border border-purple-200"
-                          : "bg-amber-50 text-amber-700 border border-amber-200"
+                          : "bg-amber-50 text-amber-800 border border-amber-200"
                       }`}
                     >
                       {rep.mode}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#1637F5] transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#013EFA] transition-colors">
                     {rep.name}
                   </h3>
                   <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
@@ -160,7 +160,7 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
       </section>
 
       {/* 5. How Bayesforce approaches them & 6. Relevant Capabilities */}
-      <section className="py-20 px-4 sm:px-6 bg-slate-900 text-white">
+      <section className="py-20 px-4 sm:px-6 bg-[#11151B] text-white border-t border-[#2A3441]">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
             <div className="lg:col-span-6 space-y-4">
@@ -176,7 +176,7 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
             </div>
 
             <div className="lg:col-span-6 p-6 md:p-8 rounded-3xl bg-white/5 border border-white/10 space-y-4">
-              <div className="font-mono text-xs font-bold uppercase tracking-wider text-blue-400">
+              <div className="font-sans text-xs font-bold uppercase tracking-wider text-blue-400">
                 Core Capabilities Utilized
               </div>
               <div className="space-y-3">
@@ -210,14 +210,14 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
 
           {/* 7. Relevant Systems */}
           <div className="pt-10 border-t border-white/10">
-            <div className="font-mono text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
+            <div className="font-sans text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
               Relevant Systems & Integrations Layered for {workflow.shortTitle}:
             </div>
             <div className="flex flex-wrap gap-2.5">
               {workflow.relevantSystems.map((sys, idx) => (
                 <span
                   key={idx}
-                  className="px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-slate-200"
+                  className="px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-sans font-medium text-slate-200"
                 >
                   {sys}
                 </span>
@@ -245,9 +245,9 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
             <div className="flex flex-wrap justify-center gap-2 mt-6">
               <button
                 onClick={() => setActiveTab("deterministic")}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+                className={`px-4 py-2 rounded-xl text-xs font-sans font-bold transition-all ${
                   activeTab === "deterministic"
-                    ? "bg-blue-600 text-white shadow-sm"
+                    ? "bg-[#013EFA] text-white shadow-sm"
                     : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
                 }`}
               >
@@ -255,7 +255,7 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
               </button>
               <button
                 onClick={() => setActiveTab("probabilistic")}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+                className={`px-4 py-2 rounded-xl text-xs font-sans font-bold transition-all ${
                   activeTab === "probabilistic"
                     ? "bg-purple-600 text-white shadow-sm"
                     : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
@@ -265,7 +265,7 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
               </button>
               <button
                 onClick={() => setActiveTab("human")}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+                className={`px-4 py-2 rounded-xl text-xs font-sans font-bold transition-all ${
                   activeTab === "human"
                     ? "bg-amber-600 text-white shadow-sm"
                     : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
@@ -285,14 +285,14 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
                   : "bg-white/80 border-slate-200 opacity-80"
               }`}
             >
-              <div className="flex items-center gap-2 font-mono text-xs font-bold text-blue-700 uppercase mb-4 pb-2 border-b border-slate-100">
+              <div className="flex items-center gap-2 font-sans text-xs font-bold text-[#013EFA] uppercase mb-4 pb-2 border-b border-slate-100">
                 <Icon name="code" size={16} />
                 Deterministic Tasks (Code & Rules)
               </div>
-              <ul className="space-y-2.5 text-xs md:text-sm text-slate-700">
+              <ul className="space-y-2.5 text-xs md:text-sm text-slate-700 font-medium">
                 {workflow.humanVsAi.deterministicTasks.map((t, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <Icon name="check" size={14} className="text-blue-600 shrink-0 mt-0.5" />
+                    <Icon name="check" size={14} className="text-[#013EFA] shrink-0 mt-0.5" />
                     <span>{t}</span>
                   </li>
                 ))}
@@ -307,11 +307,11 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
                   : "bg-white/80 border-slate-200 opacity-80"
               }`}
             >
-              <div className="flex items-center gap-2 font-mono text-xs font-bold text-purple-700 uppercase mb-4 pb-2 border-b border-slate-100">
+              <div className="flex items-center gap-2 font-sans text-xs font-bold text-purple-700 uppercase mb-4 pb-2 border-b border-slate-100">
                 <Icon name="sparkles" size={16} />
                 Probabilistic AI Tasks (Reasoning)
               </div>
-              <ul className="space-y-2.5 text-xs md:text-sm text-slate-700">
+              <ul className="space-y-2.5 text-xs md:text-sm text-slate-700 font-medium">
                 {workflow.humanVsAi.probabilisticAiTasks.map((t, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <Icon name="check" size={14} className="text-purple-600 shrink-0 mt-0.5" />
@@ -329,11 +329,11 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
                   : "bg-white/80 border-slate-200 opacity-80"
               }`}
             >
-              <div className="flex items-center gap-2 font-mono text-xs font-bold text-amber-700 uppercase mb-4 pb-2 border-b border-slate-100">
+              <div className="flex items-center gap-2 font-sans text-xs font-bold text-amber-700 uppercase mb-4 pb-2 border-b border-slate-100">
                 <Icon name="users" size={16} />
                 Human Review (Consequential Judgment)
               </div>
-              <ul className="space-y-2.5 text-xs md:text-sm text-slate-700">
+              <ul className="space-y-2.5 text-xs md:text-sm text-slate-700 font-medium">
                 {workflow.humanVsAi.humanResponsibility.map((t, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <Icon name="shield-check" size={14} className="text-amber-600 shrink-0 mt-0.5" />
@@ -360,32 +360,36 @@ export const WorkflowDetailTemplate: React.FC<WorkflowDetailTemplateProps> = ({ 
           {prevWorkflow ? (
             <Link
               href={`/workflows/${prevWorkflow.slug}`}
-              className="text-xs font-mono font-bold text-slate-600 hover:text-[#1637F5] flex items-center gap-1.5"
+              className="text-xs font-sans font-bold text-slate-600 hover:text-[#013EFA] flex items-center gap-1.5 transition-colors"
             >
-              ← Prev: {prevWorkflow.shortTitle}
+              <Icon name="arrow-left" size={13} />
+              <span>Prev: {prevWorkflow.shortTitle}</span>
             </Link>
           ) : (
             <Link
               href="/workflows"
-              className="text-xs font-mono font-bold text-slate-600 hover:text-[#1637F5]"
+              className="text-xs font-sans font-bold text-slate-600 hover:text-[#013EFA] flex items-center gap-1.5 transition-colors"
             >
-              ← All Workflows
+              <Icon name="arrow-left" size={13} />
+              <span>All Workflows</span>
             </Link>
           )}
 
           {nextWorkflow ? (
             <Link
               href={`/workflows/${nextWorkflow.slug}`}
-              className="text-xs font-mono font-bold text-[#1637F5] hover:underline flex items-center gap-1.5"
+              className="text-xs font-sans font-bold text-[#013EFA] hover:underline flex items-center gap-1.5 transition-colors"
             >
-              Next: {nextWorkflow.shortTitle} →
+              <span>Next: {nextWorkflow.shortTitle}</span>
+              <Icon name="arrow-right" size={13} />
             </Link>
           ) : (
             <Link
               href="/insights"
-              className="text-xs font-mono font-bold text-[#1637F5] hover:underline"
+              className="text-xs font-sans font-bold text-[#013EFA] hover:underline flex items-center gap-1.5 transition-colors"
             >
-              Explore Insights →
+              <span>Explore Insights</span>
+              <Icon name="arrow-right" size={13} />
             </Link>
           )}
         </div>

@@ -1,126 +1,168 @@
 /* ==========================================================================
-   BayesForce Design System (Contemporary Executive Intelligence)
-   Aesthetic Benchmark: Apple Typographic Discipline & Google Product Restraint
-   Typography: Manrope (Display & Sans) + JetBrains Mono
-   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   BayesForce Design System Tokens & Foundations
+   Authoritative Specification: docs/bayesforce/02_design_principles/design_principles.md
+   Palette: Cobalt Blue (#013EFA) × Obsidian Black (#11151B)
+   Typography: Outfit (Display/Headings/Labels) & Inter (Body/UI)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
 
 :root {
   /* ==========================================================================
-     Fresh Signature Consulting Palette
+     1. Canonical Design Principles Tokens (Section 28)
      ========================================================================== */
+  --color-brand: #013EFA;
+  --color-brand-dark: #0029A8;
+  --color-brand-light: #7DB0FF;
 
-  /* Pitch Carbon & Void Obsidian */
-  --bf-void-950: #040507;
-  --bf-void-900: #08090C;
-  --bf-void-850: #0E1015;
-  --bf-void-800: #14171F;
-  --bf-void-700: #1C202B;
+  --color-obsidian: #11151B;
+  --color-obsidian-deep: #080B0F;
+  --color-obsidian-soft: #161B23;
+  --color-obsidian-border: #2A3441;
 
-  /* Signature Electric Ultramarine (Modern Intelligence & Velocity) */
-  --bf-brand-primary: #1637F5;
-  --bf-brand-primary-hover: #0F2ED9;
-  --bf-brand-primary-light: #EFF3FF;
-  --bf-brand-primary-subtle: #DBE5FE;
-  --bf-brand-primary-glow: rgba(22, 55, 245, 0.22);
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F7F9FC;
+  --color-surface-blue: #F1F5FF;
 
-  /* Signal Flame / Persimmon (Delta Multiplier, Live Pulse, Critical Alerts) */
-  --bf-brand-accent: #FF4D26;
-  --bf-brand-accent-hover: #E53E17;
-  --bf-brand-accent-light: #FFF2EE;
-  --bf-brand-accent-glow: rgba(255, 77, 38, 0.22);
+  --color-text: #11151B;
+  --color-text-secondary: #64748B;
+  --color-text-muted: #94A3B8;
+  --color-text-on-dark: #F8FAFC;
 
-  /* Glacial Mint (Operational Health & Verified Action) */
-  --bf-status-success: #10B981;
-  --bf-status-success-light: #ECFDF5;
-  --bf-status-warning: #F59E0B;
-  --bf-status-danger: #EF4444;
-
-  /* Architectural Light Surfaces */
-  --bf-canvas: #FFFFFF;              /* Pure Architectural Gallery White */
-  --bf-canvas-subtle: #F8FAFC;       /* Luminous Mist */
-  --bf-canvas-elevated: #F1F4F9;     /* Titanium Tone */
-  --bf-surface: #FFFFFF;
-  --bf-surface-elevated: #FFFFFF;
-
-  /* Inks & Contrast */
-  --bf-ink-900: #08090C;             /* Deepest Carbon */
-  --bf-ink-800: #11141A;
-  --bf-ink-700: #1E232F;
-  --bf-ink-600: #3E4759;             /* Balanced Body Ink */
-  --bf-ink-500: #626D82;
-  --bf-ink: var(--bf-ink-900);
-  --bf-ink-secondary: var(--bf-ink-600);
-  --bf-muted: #64748B;
-
-  /* Gossamer Hairlines & Structural Dividers */
-  --bf-line: #E6E9EE;
-  --bf-line-subtle: rgba(8, 9, 12, 0.07);
-  --bf-line-strong: #CBD2DC;
-
-  /* Dark Monolith Section Tokens */
-  --bf-dark-bg: var(--bf-void-900);
-  --bf-dark-surface: var(--bf-void-850);
-  --bf-dark-surface-hover: var(--bf-void-800);
-  --bf-dark-line: rgba(255, 255, 255, 0.09);
-  --bf-dark-line-bright: rgba(255, 255, 255, 0.18);
-  --bf-dark-text-primary: #FFFFFF;
-  --bf-dark-text-secondary: #CBD5E1;
-  --bf-dark-text-muted: #94A3B8;
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
 
   /* ==========================================================================
-     Typography System (Manrope Primary - Strictly No Serif, Min 11pt)
+     2. Extended Color Scales (Section 2.1)
      ========================================================================== */
-  --bf-font-display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --bf-font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --bf-font-mono: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Radii - Architectural, Clean, Human */
+  /* Cobalt Scale */
+  --bf-cobalt-900: #0029A8;
+  --bf-cobalt-700: #0036D9;
+  --bf-cobalt-600: #0036D9;
+  --bf-cobalt-500: #013EFA; /* Canonical Brand Blue */
+  --bf-cobalt-400: #2463FF;
+  --bf-cobalt-300: #7DB0FF;
+  --bf-cobalt-200: #B3C6FF;
+  --bf-cobalt-100: #E6EEFF;
+  --bf-cobalt-50:  #F1F5FF;
+
+  /* Obsidian Scale */
+  --bf-obsidian-950: #080B0F;
+  --bf-obsidian-900: #11151B; /* Canonical Brand Dark */
+  --bf-obsidian-850: #161B23;
+  --bf-obsidian-800: #161B23;
+  --bf-obsidian-750: #202833;
+  --bf-obsidian-700: #202833;
+  --bf-obsidian-600: #2A3441;
+
+  /* Void token aliases */
+  --bf-void-950: var(--bf-obsidian-950);
+  --bf-void-900: var(--bf-obsidian-900);
+  --bf-void-850: var(--bf-obsidian-850);
+  --bf-void-800: var(--bf-obsidian-800);
+  --bf-void-700: var(--bf-obsidian-700);
+
+  /* Primary Brand Aliases */
+  --bf-brand-primary: var(--color-brand);
+  --bf-brand-primary-hover: var(--bf-cobalt-700);
+  --bf-brand-primary-light: var(--bf-cobalt-50);
+  --bf-brand-primary-subtle: var(--bf-cobalt-100);
+  --bf-brand-primary-glow: rgba(1, 62, 250, 0.24);
+
+  /* BayesStack UI Token Compatibility Aliases */
+  --bs-ui-brand: var(--color-brand);
+  --bs-ui-brand-deep: var(--bf-cobalt-700);
+  --bs-ui-brand-soft: var(--bf-cobalt-50);
+  --bs-ui-ink: var(--color-text);
+  --bs-ui-muted: var(--color-text-secondary);
+  --bs-ui-line: #E2E8F0;
+  --bs-ui-surface: var(--color-surface);
+  --bs-ui-canvas: var(--color-surface-subtle);
+  --bs-color-teal-primary: var(--color-brand);
+  --bs-color-interactive: var(--color-brand);
+
+  /* Status Tokens */
+  --bf-status-success: #10B981;
+  --bf-status-success-light: #ECFDF5;
+  --bf-status-success-border: #A7F3D0;
+  --bf-status-warning: #F59E0B;
+  --bf-status-warning-light: #FFFBEB;
+  --bf-status-warning-border: #FDE68A;
+  --bf-status-danger: #EF4444;
+  --bf-status-danger-light: #FEF2F2;
+  --bf-status-danger-border: #FECACA;
+  --bf-status-info: var(--color-brand);
+  --bf-status-info-light: var(--bf-cobalt-50);
+
+  /* Light Architectural Surfaces */
+  --bf-canvas: var(--color-surface);
+  --bf-canvas-subtle: var(--color-surface-subtle);
+  --bf-canvas-elevated: #EEF2F7;
+  --bf-surface: var(--color-surface);
+  --bf-surface-elevated: var(--color-surface);
+
+  /* Inks & Text Colors */
+  --bf-ink-900: var(--color-text);
+  --bf-ink-800: var(--color-text);
+  --bf-ink-700: #202833;
+  --bf-ink-600: var(--color-text-secondary);
+  --bf-ink-500: var(--color-text-secondary);
+  --bf-ink-400: var(--color-text-muted);
+  --bf-ink: var(--color-text);
+  --bf-ink-secondary: var(--color-text-secondary);
+  --bf-muted: var(--color-text-muted);
+
+  /* Dividers & Borders */
+  --bf-line: #E2E8F0;
+  --bf-line-subtle: rgba(17, 21, 27, 0.06);
+  --bf-line-strong: #CBD5E1;
+
+  /* Obsidian Dark Section Tokens */
+  --bf-dark-bg: var(--color-obsidian);
+  --bf-dark-surface: var(--color-obsidian-soft);
+  --bf-dark-surface-hover: var(--bf-obsidian-700);
+  --bf-dark-line: var(--color-obsidian-border);
+  --bf-dark-line-bright: rgba(255, 255, 255, 0.16);
+  --bf-dark-text-primary: var(--color-text-on-dark);
+  --bf-dark-text-secondary: #CBD5E1;
+  --bf-dark-text-muted: var(--color-text-muted);
+
+  /* ==========================================================================
+     3. Typography System (Outfit + Inter)
+     ========================================================================== */
+  --bf-font-display: var(--font-display);
+  --bf-font-sans: var(--font-body);
+  --bf-font-mono: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --bs-ui-font-sans: var(--bf-font-sans);
+  --bs-ui-font-mono: var(--bf-font-mono);
+
+  /* ==========================================================================
+     4. Border Radii (Section 12: Buttons 8-12px, Cards 12-18px, Large 16-24px)
+     ========================================================================== */
   --bf-radius-xs: 4px;
-  --bf-radius-sm: 8px;
-  --bf-radius-md: 12px;
-  --bf-radius-lg: 16px;
-  --bf-radius-xl: 20px;
-  --bf-radius-2xl: 28px;
+  --bf-radius-sm: 8px;   /* buttons default */
+  --bf-radius-md: 10px;  /* buttons medium */
+  --bf-radius-lg: 16px;  /* cards */
+  --bf-radius-xl: 20px;  /* large containers */
+  --bf-radius-2xl: 24px; /* modal/hero panels */
   --bf-radius-full: 9999px;
 
-  /* Shadows - Apple-Grade Diffuse Elevation */
-  --bf-shadow-xs: 0 1px 3px rgba(8, 9, 12, 0.04);
-  --bf-shadow-sm: 0 4px 12px rgba(8, 9, 12, 0.05);
-  --bf-shadow-md: 0 12px 32px -6px rgba(8, 9, 12, 0.07), 0 4px 12px -2px rgba(8, 9, 12, 0.03);
-  --bf-shadow-lg: 0 24px 56px -12px rgba(8, 9, 12, 0.1), 0 6px 16px -4px rgba(8, 9, 12, 0.04);
-  --bf-shadow-xl: 0 36px 72px -16px rgba(8, 9, 12, 0.18);
+  /* Elevation Shadows (Restrained: contrast + spacing over large shadows) */
+  --bf-shadow-xs: 0 1px 2px rgba(17, 21, 27, 0.04);
+  --bf-shadow-sm: 0 2px 8px rgba(17, 21, 27, 0.05);
+  --bf-shadow-md: 0 8px 24px -4px rgba(17, 21, 27, 0.08), 0 2px 6px -1px rgba(17, 21, 27, 0.04);
+  --bf-shadow-lg: 0 16px 40px -8px rgba(17, 21, 27, 0.12), 0 4px 12px -2px rgba(17, 21, 27, 0.04);
+  --bf-shadow-xl: 0 24px 56px -12px rgba(17, 21, 27, 0.16);
+  --bf-shadow-cobalt: 0 6px 20px -4px rgba(1, 62, 250, 0.28);
 
-  /* Transitions - Apple-Style Responsive Easing */
+  /* Transitions */
   --bf-transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  --bf-transition-base: 240ms cubic-bezier(0.16, 1, 0.3, 1);
-  --bf-transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --bf-transition-base: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  --bf-transition-slow: 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Base resets & typography smoothing */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: var(--bf-font-sans);
-  background-color: var(--bf-canvas);
-  color: var(--bf-ink);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Strict rule: No text below 11pt (14.67px / 0.9375rem) */
-  font-size: 1.0625rem; /* 17px default body */
-  line-height: 1.6;
-}
-
-/* Custom Scrollbars */
+/* Global scrollbars */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -131,26 +173,37 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(8, 9, 12, 0.15);
+  background: rgba(17, 21, 27, 0.16);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--bf-brand-primary);
+  background: var(--color-brand);
 }
 
-/* Architectural Utilities */
-.bf-hairline-card {
-  background: #FFFFFF;
+/* Common architectural cards (Section 11) */
+.bf-card {
+  background: var(--color-surface);
   border: 1px solid var(--bf-line);
   border-radius: var(--bf-radius-lg);
-  padding: 2.25rem;
+  padding: 1.75rem;
   transition: all var(--bf-transition-base);
   box-shadow: var(--bf-shadow-xs);
 }
 
-.bf-hairline-card:hover {
-  border-color: var(--bf-brand-primary);
+.bf-card:hover {
+  border-color: var(--color-brand-light);
   box-shadow: var(--bf-shadow-md);
   transform: translateY(-2px);
+}
+
+.bf-card--dark {
+  background: var(--color-obsidian-soft);
+  border-color: var(--color-obsidian-border);
+  color: var(--color-text-on-dark);
+}
+
+.bf-card--dark:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--bf-obsidian-750);
 }

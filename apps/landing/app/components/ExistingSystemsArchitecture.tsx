@@ -10,7 +10,7 @@ const SYSTEM_NODES = [
   { id: "desk", name: "Helpdesks & Service", examples: "Zendesk, Intercom, ServiceNow", icon: "users", color: "text-amber-500 bg-amber-50 border-amber-200" },
   { id: "docs", name: "Document Stores", examples: "PDFs, Drive, SharePoint, Contracts", icon: "file-text", color: "text-rose-500 bg-rose-50 border-rose-200" },
   { id: "comm", name: "Email & Chat", examples: "Outlook, Gmail, Slack, Teams", icon: "mail", color: "text-indigo-500 bg-indigo-50 border-indigo-200" },
-  { id: "proj", name: "Project Management", examples: "Jira, Asana, Linear, Monday", icon: "activity", color: "text-teal-500 bg-teal-50 border-teal-200" },
+  { id: "proj", name: "Project Management", examples: "Jira, Asana, Linear, Monday", icon: "activity", color: "text-blue-500 bg-blue-50 border-blue-200" },
   { id: "bi", name: "BI & Telemetry", examples: "Mixpanel, Datadog, PowerBI", icon: "terminal", color: "text-cyan-500 bg-cyan-50 border-cyan-200" },
 ];
 
@@ -36,9 +36,9 @@ export const ExistingSystemsArchitecture: React.FC = () => {
   const [activeSystem, setActiveSystem] = useState<string>("crm");
 
   return (
-    <div className="bg-[#08090C] text-white rounded-3xl border border-white/10 shadow-2xl p-6 md:p-12 overflow-hidden relative">
+    <div className="bg-[#11151B] text-white rounded-3xl border border-[#2A3441] shadow-2xl p-6 md:p-12 overflow-hidden relative">
       {/* Background ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#013EFA]/10 blur-[120px] pointer-events-none rounded-full" />
 
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-12">
@@ -57,7 +57,7 @@ export const ExistingSystemsArchitecture: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
         {/* Left: Existing Systems Grid */}
         <div className="lg:col-span-4 space-y-2.5">
-          <div className="font-mono text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-2">
+          <div className="font-sans text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-slate-400" />
             Your Systems of Record
           </div>
@@ -79,7 +79,7 @@ export const ExistingSystemsArchitecture: React.FC = () => {
                     <Icon name={sys.icon as any} size={16} className={isActive ? "text-blue-400" : "text-slate-400"} />
                     <span className="text-xs font-bold text-white leading-tight">{sys.name}</span>
                   </div>
-                  <span className="text-[10px] text-slate-400 font-mono line-clamp-1">{sys.examples}</span>
+                  <span className="text-[11px] text-slate-400 font-sans font-medium line-clamp-1">{sys.examples}</span>
                 </button>
               );
             })}
@@ -87,13 +87,13 @@ export const ExistingSystemsArchitecture: React.FC = () => {
         </div>
 
         {/* Center: Connective Bidirectional Stream */}
-        <div className="lg:col-span-4 p-6 rounded-2xl bg-white/5 border border-white/10 text-center space-y-4 backdrop-blur-sm">
-          <div className="w-12 h-12 rounded-xl bg-[#1637F5] text-white flex items-center justify-center mx-auto shadow-lg shadow-blue-500/30">
+        <div className="lg:col-span-4 p-6 rounded-2xl bg-white/5 border border-white/10 text-center space-y-4 backdrop-blur-sm shadow-xl">
+          <div className="w-12 h-12 rounded-xl bg-[#013EFA] text-white flex items-center justify-center mx-auto shadow-lg shadow-blue-500/30">
             <Icon name="bayes-logo" size={26} />
           </div>
 
           <div>
-            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-blue-400 block mb-1">
+            <span className="font-sans text-xs font-bold uppercase tracking-wider text-blue-400 block mb-1">
               The System of Action Layer
             </span>
             <h4 className="text-xl font-black text-white">Bayesforce Intelligence</h4>
@@ -104,11 +104,11 @@ export const ExistingSystemsArchitecture: React.FC = () => {
               <div key={i} className="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
                 <div className="flex items-center justify-between text-xs">
                   <span className="font-bold text-white">{layer.title}</span>
-                  <span className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-blue-500/20 text-blue-300">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-sans font-bold bg-[#013EFA]/20 text-blue-300">
                     {layer.badge}
                   </span>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed">{layer.desc}</p>
+                <p className="text-[11px] text-slate-400 leading-relaxed font-normal">{layer.desc}</p>
               </div>
             ))}
           </div>
@@ -116,7 +116,7 @@ export const ExistingSystemsArchitecture: React.FC = () => {
 
         {/* Right: Operational Outcomes & Record Updates */}
         <div className="lg:col-span-4 space-y-3">
-          <div className="font-mono text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2 flex items-center gap-2">
+          <div className="font-sans text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             Verified Action & Updates
           </div>

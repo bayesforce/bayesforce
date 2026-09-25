@@ -1,0 +1,121 @@
+/* ==========================================================================
+   BayesForce Drawers & Slide-overs
+   Cobalt Blue & Obsidian Black Design System
+   ========================================================================== */
+
+.bf-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background-color: rgba(8, 11, 15, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: bf-drawer-fade 180ms ease-out;
+}
+
+@keyframes bf-drawer-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bf-drawer {
+  position: fixed;
+  z-index: 9999;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 32px rgba(17, 21, 27, 0.2);
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--bf-font-sans);
+  box-sizing: border-box;
+}
+
+.bf-drawer--dark {
+  background: var(--bf-obsidian-900);
+  border-left: 1px solid var(--bf-dark-line);
+  color: #FFFFFF;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Placements */
+.bf-drawer--right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+}
+
+.bf-drawer--left {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+}
+
+.bf-drawer--bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+/* Sizes */
+.bf-drawer--size-sm { width: 340px; }
+.bf-drawer--size-md { width: 440px; }
+.bf-drawer--size-lg { width: 620px; }
+.bf-drawer--size-full { width: 100vw; }
+
+.bf-drawer--bottom.bf-drawer--size-sm { height: 260px; width: 100vw; }
+.bf-drawer--bottom.bf-drawer--size-md { height: 420px; width: 100vw; }
+.bf-drawer--bottom.bf-drawer--size-lg { height: 600px; width: 100vw; }
+
+.bf-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--bf-line);
+}
+
+.bf-drawer--dark .bf-drawer-header {
+  border-bottom-color: var(--bf-dark-line);
+}
+
+.bf-drawer-title {
+  font-family: var(--bf-font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--bf-ink-900);
+}
+
+.bf-drawer--dark .bf-drawer-title {
+  color: #FFFFFF;
+}
+
+.bf-drawer-body {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--bf-ink-700);
+}
+
+.bf-drawer--dark .bf-drawer-body {
+  color: var(--bf-dark-text-secondary);
+}
+
+.bf-drawer-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--bf-line);
+  background: var(--bf-canvas-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.bf-drawer--dark .bf-drawer-footer {
+  border-top-color: var(--bf-dark-line);
+  background: var(--bf-obsidian-850);
+}

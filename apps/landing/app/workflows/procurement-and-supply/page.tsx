@@ -1,14 +1,19 @@
 import React from "react";
-import { WorkflowDetailTemplate } from "../../components/WorkflowDetailTemplate";
-import { WORKFLOWS } from "../../data/site-data";
+import type { Metadata } from "next";
+import { RoutePlaceholder } from "../../components/RoutePlaceholder";
 
-export const metadata = {
-  title: "Procurement & Supply AI Workflows | BayesForce",
+export const metadata: Metadata = {
+  title: "Procurement & Supply Chain | Bayesforce",
   description:
-    "Accelerate RFQ synthesis, monitor real-time supplier disruption risks, and automate purchase order compliance with procurement AI coworkers.",
+    "Optimize vendor intake, purchase order matching, and supply chain exception handling in real time.",
 };
 
-export default function ProcurementAndSupplyWorkflowPage() {
-  const workflow = WORKFLOWS.find((w) => w.slug === "procurement-and-supply")!;
-  return <WorkflowDetailTemplate workflow={workflow} />;
+export default function ProcurementAndSupplyPage() {
+  return (
+    <RoutePlaceholder
+      route="/workflows/procurement-and-supply"
+      title="Procurement & Supply Chain"
+      description="Optimize vendor intake, purchase order matching, and supply chain exception handling in real time across fragmented supplier portals."
+    />
+  );
 }

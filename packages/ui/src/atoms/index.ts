@@ -5,3 +5,4 @@ export * from "./Icons";
 export * from "./Display";
 export * from "./Inputs";
 export * from "./Loading";
+export * from "./Layout";

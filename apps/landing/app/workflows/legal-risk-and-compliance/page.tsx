@@ -1,14 +1,19 @@
 import React from "react";
-import { WorkflowDetailTemplate } from "../../components/WorkflowDetailTemplate";
-import { WORKFLOWS } from "../../data/site-data";
+import type { Metadata } from "next";
+import { RoutePlaceholder } from "../../components/RoutePlaceholder";
 
-export const metadata = {
-  title: "Legal, Risk & Compliance AI Workflows | BayesForce",
+export const metadata: Metadata = {
+  title: "Legal, Risk & Compliance | Bayesforce",
   description:
-    "Automate commercial contract review, playbook-governed Word track changes redlining, and proactive obligation tracking with legal AI coworkers.",
+    "Accelerate contract analysis, regulatory monitoring, and compliance verification with high-fidelity audit trails.",
 };
 
-export default function LegalRiskAndComplianceWorkflowPage() {
-  const workflow = WORKFLOWS.find((w) => w.slug === "legal-risk-and-compliance")!;
-  return <WorkflowDetailTemplate workflow={workflow} />;
+export default function LegalRiskAndCompliancePage() {
+  return (
+    <RoutePlaceholder
+      route="/workflows/legal-risk-and-compliance"
+      title="Legal, Risk & Compliance"
+      description="Accelerate contract analysis, regulatory monitoring, and compliance verification with high-fidelity audit trails and human sign-off gates."
+    />
+  );
 }

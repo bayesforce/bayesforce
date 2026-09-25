@@ -1,6 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import { InsightArticleTemplate } from "../../../components/InsightArticleTemplate";
+import { RoutePlaceholder } from "../../../components/RoutePlaceholder";
 import { INSIGHTS } from "../../../data/site-data";
 
 interface PageProps {
@@ -18,10 +18,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const item = INSIGHTS.find((i) => i.type === "case-studies" && i.slug === slug);
-  if (!item) return { title: "Case Study Not Found | BayesForce" };
+  if (!item) return { title: "Case Study Not Found | Bayesforce" };
 
   return {
-    title: `${item.title} | BayesForce Case Study`,
+    title: `${item.title} | Bayesforce`,
     description: item.summary,
   };
 }
@@ -34,5 +34,11 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  return <InsightArticleTemplate insight={item} />;
+  return (
+    <RoutePlaceholder
+      route={`/insights/case-studies/${slug}`}
+      title={item.title}
+      description={item.summary}
+    />
+  );
 }

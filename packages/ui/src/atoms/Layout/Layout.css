@@ -1,0 +1,153 @@
+/* ==========================================================================
+   BayesForce Layout Suite (Box, Stack, Paper & Divider)
+   Cobalt Blue & Obsidian Black Design System
+   ========================================================================== */
+
+/* Box Block Container */
+.bf-box, .bs-box {
+  box-sizing: border-box;
+}
+
+/* Stack Flex Container */
+.bf-stack, .bs-stack {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.bf-stack--row, .bs-stack--row { flex-direction: row; }
+.bf-stack--column, .bs-stack--column { flex-direction: column; }
+
+.bf-stack--gap-xs, .bs-stack--gap-xs { gap: 4px; }
+.bf-stack--gap-sm, .bs-stack--gap-sm { gap: 8px; }
+.bf-stack--gap-md, .bs-stack--gap-md { gap: 16px; }
+.bf-stack--gap-lg, .bs-stack--gap-lg { gap: 24px; }
+.bf-stack--gap-xl, .bs-stack--gap-xl { gap: 32px; }
+
+/* ==========================================================================
+   Paper Card Surface
+   ========================================================================== */
+.bf-paper, .bs-paper {
+  box-sizing: border-box;
+  transition: transform var(--bf-transition-base),
+              box-shadow var(--bf-transition-base),
+              border-color var(--bf-transition-base),
+              background-color var(--bf-transition-base);
+}
+
+/* Radius Variants */
+.bf-paper--radius-none, .bs-paper--radius-none { border-radius: 0; }
+.bf-paper--radius-sm, .bs-paper--radius-sm     { border-radius: var(--bf-radius-sm); }
+.bf-paper--radius-md, .bs-paper--radius-md     { border-radius: var(--bf-radius-md); }
+.bf-paper--radius-lg, .bs-paper--radius-lg     { border-radius: var(--bf-radius-lg); }
+.bf-paper--radius-xl, .bs-paper--radius-xl     { border-radius: var(--bf-radius-xl); }
+
+/* Surface Variants */
+.bf-paper--variant-default, .bs-paper--variant-default {
+  background: #FFFFFF;
+}
+
+.bf-paper--variant-glass, .bs-paper--variant-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.bf-paper--variant-obsidian {
+  background: var(--bf-obsidian-850);
+  color: #FFFFFF;
+  border-color: var(--bf-dark-line);
+}
+
+.bf-paper--variant-subtle, .bs-paper--variant-subtle {
+  background: var(--bf-canvas-subtle);
+}
+
+.bf-paper--variant-ghost, .bs-paper--variant-ghost {
+  background: transparent;
+}
+
+/* Border Outline */
+.bf-paper--bordered, .bs-paper--bordered {
+  border: 1px solid var(--bf-line);
+}
+
+.bf-paper--variant-obsidian.bf-paper--bordered {
+  border-color: var(--bf-dark-line);
+}
+
+/* Elevation Dropshadows */
+.bf-paper--elevation-none, .bs-paper--elevation-none { box-shadow: none; }
+.bf-paper--elevation-sm, .bs-paper--elevation-sm   { box-shadow: var(--bf-shadow-xs); }
+.bf-paper--elevation-md, .bs-paper--elevation-md   { box-shadow: var(--bf-shadow-sm); }
+.bf-paper--elevation-lg, .bs-paper--elevation-lg   { box-shadow: var(--bf-shadow-md); }
+
+/* Hoverable Card Elevation */
+.bf-paper--hoverable:hover, .bs-paper--hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--bf-shadow-lg);
+  border-color: var(--bf-cobalt-400);
+  cursor: pointer;
+}
+
+.bf-paper--variant-obsidian.bf-paper--hoverable:hover {
+  border-color: var(--bf-cobalt-500);
+  box-shadow: 0 12px 32px rgba(1, 62, 250, 0.15);
+}
+
+/* ==========================================================================
+   Divider Component
+   ========================================================================== */
+.bf-divider, .bs-divider {
+  display: flex;
+  align-items: center;
+  color: var(--bf-ink-secondary);
+  font-family: var(--bf-font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bf-divider--horizontal, .bs-divider--horizontal {
+  width: 100%;
+  margin: 16px 0;
+}
+
+.bf-divider--horizontal::before,
+.bf-divider--horizontal::after,
+.bs-divider--horizontal::before,
+.bs-divider--horizontal::after {
+  content: "";
+  flex: 1;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--bf-line);
+}
+
+.bf-divider--variant-solid::before,
+.bf-divider--variant-solid::after,
+.bs-divider--variant-solid::before,
+.bs-divider--variant-solid::after {
+  border-bottom-style: solid;
+}
+
+.bf-divider--variant-dashed::before,
+.bf-divider--variant-dashed::after,
+.bs-divider--variant-dashed::before,
+.bs-divider--variant-dashed::after {
+  border-bottom-style: dashed;
+}
+
+.bf-divider--horizontal:not(:empty)::before,
+.bs-divider--horizontal:not(:empty)::before { margin-right: 16px; }
+.bf-divider--horizontal:not(:empty)::after,
+.bs-divider--horizontal:not(:empty)::after  { margin-left: 16px; }
+
+.bf-divider--vertical, .bs-divider--vertical {
+  display: inline-block;
+  height: 1.2em;
+  width: 1px;
+  background-color: var(--bf-line);
+  margin: 0 12px;
+  vertical-align: middle;
+}

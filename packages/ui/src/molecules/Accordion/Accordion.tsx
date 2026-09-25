@@ -13,12 +13,14 @@ export interface AccordionItemData {
 export interface AccordionProps {
   items: AccordionItemData[];
   allowMultiple?: boolean;
+  dark?: boolean;
   className?: string;
 }
 
 export const Accordion: React.FC<AccordionProps> = ({
   items,
   allowMultiple = false,
+  dark = false,
   className = "",
 }) => {
   const [openIds, setOpenIds] = useState<string[]>([]);
@@ -34,7 +36,15 @@ export const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <div className={["bf-accordion", className].filter(Boolean).join(" ")}>
+    <div
+      className={[
+        "bf-accordion",
+        dark ? "bf-accordion--dark" : "",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       {items.map((item) => {
         const isOpen = openIds.includes(item.id);
         return (

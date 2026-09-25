@@ -36,14 +36,14 @@ export const Overview: StoryObj = {
       </Heading>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem", marginBottom: "3rem" }}>
         <Card>
-          <div style={{ height: 60, background: "#2563EB", borderRadius: 8, marginBottom: 8 }} />
-          <div style={{ fontWeight: 700 }}>Precision Cobalt</div>
-          <div style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#64748B" }}>#2563EB (Primary)</div>
+          <div style={{ height: 60, background: "#013EFA", borderRadius: 8, marginBottom: 8 }} />
+          <div style={{ fontWeight: 700 }}>Signature Cobalt Blue</div>
+          <div style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#64748B" }}>#013EFA (Logo Brand)</div>
         </Card>
         <Card>
-          <div style={{ height: 60, background: "#090D16", borderRadius: 8, marginBottom: 8 }} />
-          <div style={{ fontWeight: 700 }}>Obsidian Navy</div>
-          <div style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#64748B" }}>#090D16 (Deep Ink)</div>
+          <div style={{ height: 60, background: "#11151B", borderRadius: 8, marginBottom: 8 }} />
+          <div style={{ fontWeight: 700 }}>Obsidian Black</div>
+          <div style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#64748B" }}>#11151B (Obsidian Canvas)</div>
         </Card>
         <Card>
           <div style={{ height: 60, background: "#F59E0B", borderRadius: 8, marginBottom: 8 }} />

@@ -1,14 +1,19 @@
 import React from "react";
-import { WorkflowDetailTemplate } from "../../components/WorkflowDetailTemplate";
-import { WORKFLOWS } from "../../data/site-data";
+import type { Metadata } from "next";
+import { RoutePlaceholder } from "../../components/RoutePlaceholder";
 
-export const metadata = {
-  title: "Customer Operations AI Workflows | BayesForce",
+export const metadata: Metadata = {
+  title: "Customer Operations | Bayesforce",
   description:
-    "Deliver instant resolution support desks and proactive account retention interventions with governed AI customer coworkers.",
+    "Deliver high-precision customer resolutions, intelligent ticket triaging, and real-time support knowledge synthesis.",
 };
 
-export default function CustomerOpsWorkflowPage() {
-  const workflow = WORKFLOWS.find((w) => w.slug === "customer-ops")!;
-  return <WorkflowDetailTemplate workflow={workflow} />;
+export default function CustomerOpsPage() {
+  return (
+    <RoutePlaceholder
+      route="/workflows/customer-ops"
+      title="Customer Operations"
+      description="Deliver high-precision customer resolutions, intelligent ticket triaging, and real-time support knowledge synthesis across support systems."
+    />
+  );
 }

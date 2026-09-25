@@ -1,14 +1,19 @@
 import React from "react";
-import { WorkflowDetailTemplate } from "../../components/WorkflowDetailTemplate";
-import { WORKFLOWS } from "../../data/site-data";
+import type { Metadata } from "next";
+import { RoutePlaceholder } from "../../components/RoutePlaceholder";
 
-export const metadata = {
-  title: "People Operations AI Workflows | BayesForce",
+export const metadata: Metadata = {
+  title: "People Operations | Bayesforce",
   description:
-    "Streamline blind candidate skill screening, automated multi-system IT onboarding provisioning, and instant employee HR guidance.",
+    "Orchestrate employee onboarding, internal policy navigation, and HR service delivery with verified compliance.",
 };
 
-export default function PeopleOpsWorkflowPage() {
-  const workflow = WORKFLOWS.find((w) => w.slug === "people-ops")!;
-  return <WorkflowDetailTemplate workflow={workflow} />;
+export default function PeopleOpsPage() {
+  return (
+    <RoutePlaceholder
+      route="/workflows/people-ops"
+      title="People Operations"
+      description="Orchestrate employee onboarding, internal policy navigation, and HR service delivery with verified compliance and zero manual handoffs."
+    />
+  );
 }

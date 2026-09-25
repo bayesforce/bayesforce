@@ -14,9 +14,9 @@ export const DiagnosticCTA: React.FC<{
   dark = true,
 }) => {
   return (
-    <section className={`py-20 px-4 sm:px-6 relative overflow-hidden ${dark ? "bg-[#08090C] text-white border-t border-white/10" : "bg-blue-50/50 border-t border-slate-200"}`}>
+    <section className={`py-20 px-4 sm:px-6 relative overflow-hidden ${dark ? "bg-[#11151B] text-white border-t border-[#2A3441]" : "bg-blue-50/50 border-t border-slate-200"}`}>
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#1637F5]/15 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#013EFA]/12 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-[1100px] mx-auto relative z-10 text-center">
         <div className="inline-flex mb-4">
@@ -41,7 +41,7 @@ export const DiagnosticCTA: React.FC<{
               className="font-bold shadow-lg shadow-blue-500/20"
               rightIcon={<Icon name="arrow-right" size={16} />}
             >
-              Show us your workflow →
+              Show us your workflow
             </Button>
           </Link>
           <Link href="/what-we-build">
@@ -56,7 +56,7 @@ export const DiagnosticCTA: React.FC<{
           </Link>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-8 text-xs font-mono text-slate-400">
+        <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-8 text-xs font-medium text-slate-400">
           <div className="flex items-center gap-2">
             <Icon name="check" size={14} className="text-emerald-400" />
             <span>100% Client Source Code & IP Ownership</span>

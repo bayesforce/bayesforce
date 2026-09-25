@@ -1,4 +1,5 @@
 import React, { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
+import { Spinner } from "../Loading/Spinner";
 import "./Button.css";
 
 export type ButtonVariant =
@@ -12,8 +13,7 @@ export type ButtonVariant =
 
 export type ButtonSize = "sm" | "md" | "lg" | "xl";
 
-export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -58,6 +58,26 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       .filter(Boolean)
       .join(" ");
 
+    // Gracefully clean redundant arrow characters from string children if rightIcon is provided
+    let renderedChildren = children;
+    if (rightIcon && typeof children === "string") {
+      renderedChildren = children.replace(/(\s*(?:→|->|>>|&rarr;))+\s*$/, "").trim();
+    }
+
+    const content = (
+      <>
+        {isLoading ? (
+          <Spinner size={size === "sm" ? "sm" : "md"} className="bf-button__spinner" />
+        ) : (
+          leftIcon && <span className="bf-button__icon bf-button__icon--left">{leftIcon}</span>
+        )}
+        <span>{renderedChildren}</span>
+        {!isLoading && rightIcon && (
+          <span className="bf-button__icon bf-button__icon--right">{rightIcon}</span>
+        )}
+      </>
+    );
+
     if (as === "a" && href) {
       return (
         <a
@@ -66,9 +86,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           aria-disabled={disabled || isLoading}
           {...(props as any)}
         >
-          {leftIcon && <span className="bf-button__icon bf-button__icon--left">{leftIcon}</span>}
-          <span>{children}</span>
-          {rightIcon && <span className="bf-button__icon bf-button__icon--right">{rightIcon}</span>}
+          {content}
         </a>
       );
     }
@@ -81,9 +99,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled || isLoading}
         {...props}
       >
-        {leftIcon && <span className="bf-button__icon bf-button__icon--left">{leftIcon}</span>}
-        <span>{children}</span>
-        {rightIcon && <span className="bf-button__icon bf-button__icon--right">{rightIcon}</span>}
+        {content}
       </button>
     );
   }

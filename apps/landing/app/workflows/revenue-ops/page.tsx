@@ -1,14 +1,19 @@
 import React from "react";
-import { WorkflowDetailTemplate } from "../../components/WorkflowDetailTemplate";
-import { WORKFLOWS } from "../../data/site-data";
+import type { Metadata } from "next";
+import { RoutePlaceholder } from "../../components/RoutePlaceholder";
 
-export const metadata = {
-  title: "Revenue Operations AI Workflows | BayesForce",
+export const metadata: Metadata = {
+  title: "Revenue Operations | Bayesforce",
   description:
-    "Scale outbound pipeline, automate deep account research, and eliminate CRM data entry overhead with governed AI revenue coworkers.",
+    "Automate pipeline hygiene, deal qualification, and multi-system CRM orchestration to accelerate revenue velocity.",
 };
 
-export default function RevenueOpsWorkflowPage() {
-  const workflow = WORKFLOWS.find((w) => w.slug === "revenue-ops")!;
-  return <WorkflowDetailTemplate workflow={workflow} />;
+export default function RevenueOpsPage() {
+  return (
+    <RoutePlaceholder
+      route="/workflows/revenue-ops"
+      title="Revenue Operations"
+      description="Automate pipeline hygiene, deal qualification, and multi-system CRM orchestration to accelerate revenue velocity and eliminate rep friction."
+    />
+  );
 }

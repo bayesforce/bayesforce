@@ -24,7 +24,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <section
       className={`py-16 md:py-24 px-4 sm:px-6 relative overflow-hidden ${
-        dark ? "bg-[#08090C] text-white border-b border-white/10" : "bg-gradient-to-b from-blue-50/40 via-white to-white border-b border-slate-200/80"
+        dark ? "bg-[#11151B] text-white border-b border-[#2A3441]" : "bg-gradient-to-b from-blue-50/40 via-white to-white border-b border-slate-200/80"
       }`}
     >
       {/* Subtle architectural background grid */}

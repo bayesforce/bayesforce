@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, type ReactNode } from "react";
+import { ToastProvider } from "@bayesforce/ui";
 
 interface AppContextType {
   isBookingModalOpen: boolean;
@@ -27,7 +28,10 @@ export const Providers: React.FC<{ children: ReactNode }> = ({ children }) => {
         closeBookingModal: () => setIsBookingModalOpen(false),
       }}
     >
-      {children}
+      <ToastProvider>
+        {children}
+      </ToastProvider>
     </AppContext.Provider>
   );
 };
+

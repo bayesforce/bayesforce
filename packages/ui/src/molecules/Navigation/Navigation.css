@@ -1,0 +1,261 @@
+/* ==========================================================================
+   BayesForce Navigation Suite (Breadcrumbs, Tabs, Stepper)
+   Cobalt Blue & Obsidian Black Design System
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Breadcrumbs
+   ========================================================================== */
+.bf-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--bf-font-sans);
+  font-size: 0.875rem; /* 14px */
+  color: var(--bf-ink-secondary);
+}
+
+.bf-breadcrumbs--dark {
+  color: var(--bf-dark-text-muted);
+}
+
+.bf-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--bf-ink-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--bf-transition-fast);
+}
+
+.bf-breadcrumbs--dark .bf-breadcrumb-item {
+  color: var(--bf-dark-text-muted);
+}
+
+.bf-breadcrumb-item:hover {
+  color: var(--bf-cobalt-500);
+}
+
+.bf-breadcrumbs--dark .bf-breadcrumb-item:hover {
+  color: #FFFFFF;
+}
+
+.bf-breadcrumb-item--active {
+  color: var(--bf-ink-900);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.bf-breadcrumbs--dark .bf-breadcrumb-item--active {
+  color: var(--bf-cobalt-300);
+}
+
+.bf-breadcrumb-separator {
+  display: inline-flex;
+  align-items: center;
+  color: var(--bf-ink-400);
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.bf-breadcrumbs--dark .bf-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================================
+   2. Tabs
+   ========================================================================== */
+.bf-tabs {
+  display: flex;
+  box-sizing: border-box;
+  font-family: var(--bf-font-sans);
+}
+
+.bf-tabs--row {
+  flex-direction: row;
+  align-items: center;
+}
+
+.bf-tabs--column {
+  flex-direction: column;
+}
+
+/* Tab Item */
+.bf-tab-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  font-family: var(--bf-font-display);
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--bf-ink-secondary);
+  transition: all var(--bf-transition-fast);
+  white-space: nowrap;
+}
+
+.bf-tab-item:hover:not(:disabled) {
+  color: var(--bf-ink-900);
+}
+
+.bf-tab-item--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.bf-tabs--sm .bf-tab-item { font-size: 0.8125rem; padding: 0.375rem 0.75rem; }
+.bf-tabs--md .bf-tab-item { font-size: 0.9375rem; padding: 0.5rem 1rem; }
+.bf-tabs--lg .bf-tab-item { font-size: 1rem; padding: 0.625rem 1.25rem; }
+
+/* Line Variant */
+.bf-tabs--line {
+  border-bottom: 1px solid var(--bf-line);
+  gap: 0.5rem;
+}
+
+.bf-tabs--line .bf-tab-item {
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.bf-tabs--line .bf-tab-item--active {
+  color: var(--bf-cobalt-500);
+  border-bottom-color: var(--bf-cobalt-500);
+}
+
+/* Pill / Segmented Variant */
+.bf-tabs--pill {
+  background: var(--bf-canvas-subtle);
+  border: 1px solid var(--bf-line);
+  border-radius: var(--bf-radius-full);
+  padding: 4px;
+  gap: 4px;
+}
+
+.bf-tabs--pill .bf-tab-item {
+  border-radius: var(--bf-radius-full);
+}
+
+.bf-tabs--pill .bf-tab-item--active {
+  background: #FFFFFF;
+  color: var(--bf-cobalt-600);
+  box-shadow: 0 1px 4px rgba(17, 21, 27, 0.08);
+}
+
+/* Obsidian Dark Pill Variant */
+.bf-tabs--pill.bf-tabs--dark {
+  background: var(--bf-obsidian-850);
+  border-color: var(--bf-dark-line);
+}
+
+.bf-tabs--pill.bf-tabs--dark .bf-tab-item {
+  color: var(--bf-dark-text-muted);
+}
+
+.bf-tabs--pill.bf-tabs--dark .bf-tab-item:hover:not(:disabled) {
+  color: #FFFFFF;
+}
+
+.bf-tabs--pill.bf-tabs--dark .bf-tab-item--active {
+  background: var(--bf-cobalt-500);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(1, 62, 250, 0.4);
+}
+
+/* ==========================================================================
+   3. Stepper
+   ========================================================================== */
+.bf-stepper {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--bf-font-sans);
+}
+
+.bf-stepper--horizontal {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bf-stepper--vertical {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bf-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  user-select: none;
+}
+
+.bf-step-icon-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  background: var(--bf-canvas-subtle);
+  border: 1px solid var(--bf-line);
+  color: var(--bf-ink-secondary);
+  transition: all var(--bf-transition-base);
+  flex-shrink: 0;
+}
+
+.bf-step--active .bf-step-icon-circle {
+  background: var(--bf-cobalt-50);
+  border-color: var(--bf-cobalt-500);
+  color: var(--bf-cobalt-500);
+  box-shadow: 0 0 0 4px rgba(1, 62, 250, 0.12);
+}
+
+.bf-step--completed .bf-step-icon-circle {
+  background: var(--bf-cobalt-500);
+  border-color: var(--bf-cobalt-500);
+  color: #FFFFFF;
+}
+
+.bf-step-title {
+  font-family: var(--bf-font-display);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--bf-ink-700);
+}
+
+.bf-step--active .bf-step-title {
+  color: var(--bf-cobalt-500);
+  font-weight: 600;
+}
+
+.bf-step--completed .bf-step-title {
+  color: var(--bf-ink-900);
+}
+
+.bf-step-description {
+  font-size: 0.75rem;
+  color: var(--bf-ink-secondary);
+  margin-top: 1px;
+}
+
+.bf-step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--bf-line);
+  margin: 0 1rem;
+  transition: background-color var(--bf-transition-base);
+}
+
+.bf-step-line--completed {
+  background: var(--bf-cobalt-500);
+}

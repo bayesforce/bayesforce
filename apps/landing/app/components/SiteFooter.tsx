@@ -7,7 +7,7 @@ import { CAPABILITIES, WORKFLOWS } from "../data/site-data";
 
 export const SiteFooter: React.FC = () => {
   return (
-    <footer className="bg-[#08090C] text-slate-300 border-t border-white/10 pt-20 pb-12">
+    <footer className="bg-[#11151B] text-slate-300 border-t border-[#2A3441] pt-20 pb-12 font-sans">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         {/* Main 5-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
@@ -17,20 +17,20 @@ export const SiteFooter: React.FC = () => {
               <BayesforceLogo variant="full" theme="dark" size="lg" />
             </Link>
 
-            <p className="text-sm text-slate-400 leading-relaxed max-w-md">
+            <p className="text-sm text-slate-400 leading-relaxed max-w-md font-normal">
               Bayesforce builds AI capabilities inside organizations so their systems can carry more of the machinery of work and their people can carry more of their ambition.
             </p>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-slate-300 leading-relaxed">
-              <span className="text-amber-400 font-bold">&ldquo;We update our beliefs based on evidence.&rdquo;</span>
+            <div className="p-4 rounded-2xl bg-white/[0.04] border border-white/10 text-xs text-slate-300 leading-relaxed">
+              <span className="text-blue-400 font-bold">&ldquo;We update our beliefs based on evidence.&rdquo;</span>
               <p className="mt-1 text-slate-400">
-                Named in honor of Thomas Bayes (1701–1761), University of Edinburgh alumnus.
+                Named in honor of Thomas Bayes (1701–1761), pioneer of probabilistic inference.
               </p>
             </div>
 
             <div className="pt-2 text-xs text-slate-400 space-y-1">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="font-semibold text-white">100% Client Code & Capability Ownership</span>
               </div>
               <p className="text-slate-400 pl-4">No black-box traps. We engineer sovereign operational capability.</p>
@@ -39,8 +39,8 @@ export const SiteFooter: React.FC = () => {
 
           {/* Col 2: What We Build */}
           <div>
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-white mb-4">
-              <Link href="/what-we-build" className="hover:text-[#1637F5] transition-colors">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+              <Link href="/what-we-build" className="hover:text-[#013EFA] transition-colors">
                 What We Build
               </Link>
             </h4>
@@ -68,8 +68,8 @@ export const SiteFooter: React.FC = () => {
 
           {/* Col 3: Workflows */}
           <div>
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-white mb-4">
-              <Link href="/workflows" className="hover:text-[#1637F5] transition-colors">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+              <Link href="/workflows" className="hover:text-[#013EFA] transition-colors">
                 Workflows
               </Link>
             </h4>
@@ -97,8 +97,8 @@ export const SiteFooter: React.FC = () => {
 
           {/* Col 4: Insights & Company */}
           <div>
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-white mb-4">
-              <Link href="/insights" className="hover:text-[#1637F5] transition-colors">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+              <Link href="/insights" className="hover:text-[#013EFA] transition-colors">
                 Insights
               </Link>
             </h4>
@@ -137,7 +137,7 @@ export const SiteFooter: React.FC = () => {
               </li>
             </ul>
 
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-white mb-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
               Company
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -149,14 +149,14 @@ export const SiteFooter: React.FC = () => {
               <li>
                 <Link href="/careers" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2">
                   <span>Careers</span>
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#1637F5]/40 text-blue-300 font-bold">
-                    We&apos;re Hiring
+                  <span className="px-2 py-0.5 rounded-full text-[11px] bg-[#013EFA]/30 text-blue-300 font-semibold border border-[#013EFA]/30">
+                    Hiring
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-400 hover:text-white transition-colors">
-                  Show Us Your Workflow →
+                <Link href="/contact" className="text-slate-400 hover:text-[#013EFA] transition-colors">
+                  Show Us Your Workflow
                 </Link>
               </li>
             </ul>
@@ -164,7 +164,7 @@ export const SiteFooter: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
           <div>
             &copy; {new Date().getFullYear()} Bayesforce. All rights reserved. Make More Happen.
           </div>
@@ -176,7 +176,7 @@ export const SiteFooter: React.FC = () => {
               Contact
             </Link>
             <span className="text-slate-600">•</span>
-            <span>Mumbai & Pune Centers • Global Engagements</span>
+            <span>Mumbai &amp; Pune Centers &bull; Global Engagements</span>
           </div>
         </div>
       </div>

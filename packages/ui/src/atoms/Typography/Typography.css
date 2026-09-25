@@ -1,46 +1,48 @@
 /* ==========================================================================
-   BayesForce Typography (Manrope & JetBrains Mono)
-   Strict Rule: No typography below 11pt (14.67px / 0.9375rem)
+   BayesForce Typography (Outfit & Inter)
+   Authoritative Specification: docs/bayesforce/02_design_principles/design_principles.md (Sections 6 & 7)
+   Primary display: Outfit (Display, Headings, Navigation, Labels, Buttons)
+   Secondary: Inter (Body, UI, Metadata, Specifications)
    ========================================================================== */
 
 .bf-heading {
-  font-family: var(--bf-font-display);
-  color: var(--bf-ink-900);
-  font-weight: 700;
+  font-family: var(--font-display, var(--bf-font-display));
+  color: var(--color-text);
+  font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
 .bf-heading--sans {
-  font-family: var(--bf-font-sans);
+  font-family: var(--font-body, var(--bf-font-sans));
 }
 
 .bf-heading--hero {
-  font-size: clamp(3rem, 6.2vw, 5.25rem);
-  line-height: 1.04;
-  letter-spacing: -0.038em;
-  font-weight: 800;
-}
-
-.bf-heading--h1 {
-  font-size: clamp(2.25rem, 4.4vw, 3.6rem);
-  line-height: 1.08;
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  line-height: 1.06;
   letter-spacing: -0.03em;
   font-weight: 700;
 }
 
-.bf-heading--h2 {
-  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
-  line-height: 1.18;
+.bf-heading--h1 {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  line-height: 1.12;
   letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.bf-heading--h2 {
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   font-weight: 600;
 }
 
 .bf-heading--h3 {
-  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  line-height: 1.28;
+  letter-spacing: -0.015em;
   font-weight: 600;
 }
 
@@ -48,26 +50,28 @@
   font-size: 1.1875rem; /* 19px */
   line-height: 1.35;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 .bf-heading--gradient {
-  color: var(--bf-ink-900);
+  background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .bf-heading--dark {
-  color: #FFFFFF;
+  color: var(--color-text-on-dark);
 }
 
 .bf-text {
-  font-family: var(--bf-font-sans);
-  color: var(--bf-ink-600);
+  font-family: var(--font-body, var(--bf-font-sans));
+  color: var(--color-text-secondary);
   line-height: 1.65;
   margin: 0;
 }
 
 .bf-text--lead {
-  font-size: clamp(1.1875rem, 1.8vw, 1.375rem);
+  font-size: clamp(1.125rem, 1.6vw, 1.35rem);
   line-height: 1.6;
   color: var(--bf-ink-700);
   font-weight: 400;
@@ -78,19 +82,18 @@
   font-size: 1.0625rem; /* 17px */
 }
 
-/* Strict Rule: Smallest text must be at least 11pt (14.67px / 0.9375rem) */
 .bf-text--sm {
   font-size: 0.9375rem; /* 15px */
   line-height: 1.55;
 }
 
 .bf-text--xs {
-  font-size: 0.9375rem; /* Elevated to 15px / 11.25pt */
+  font-size: 0.8125rem; /* 13px */
   line-height: 1.5;
 }
 
 .bf-text--muted {
-  color: var(--bf-muted);
+  color: var(--color-text-muted);
 }
 
 .bf-text--dark {
@@ -104,20 +107,24 @@
 .bf-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--bf-font-mono);
-  font-size: 0.9375rem; /* 15px / 11.25pt */
-  font-weight: 700;
+  gap: 0.45rem;
+  font-family: var(--font-display, var(--bf-font-display));
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--bf-brand-primary);
-  margin-bottom: 0.875rem;
+  color: var(--color-brand);
+  margin-bottom: 0.75rem;
+}
+
+.bf-kicker--cobalt {
+  color: var(--color-brand);
 }
 
 .bf-kicker--gold {
-  color: var(--bf-brand-accent);
+  color: #C2410C;
 }
 
 .bf-kicker--dark {
-  color: #93C5FD;
+  color: var(--color-brand-light);
 }

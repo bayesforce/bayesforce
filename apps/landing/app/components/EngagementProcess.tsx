@@ -42,13 +42,13 @@ export const EngagementProcess: React.FC = () => {
                 onClick={() => setActiveStep(s.step)}
                 className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between ${
                   isActive
-                    ? "bg-[#1637F5] text-white border-[#1637F5] shadow-lg scale-105"
-                    : "bg-slate-50 border-slate-200/90 text-slate-800 hover:bg-blue-50/50 hover:border-blue-200"
+                    ? "bg-[#013EFA] text-white border-[#013EFA] shadow-lg shadow-blue-500/25 scale-105"
+                    : "bg-slate-50 border-slate-200 text-slate-800 hover:bg-blue-50/50 hover:border-blue-200"
                 }`}
               >
                 <div>
                   <span
-                    className={`font-mono text-xs font-bold block mb-1 ${
+                    className={`text-xs font-bold block mb-1 ${
                       isActive ? "text-blue-200" : "text-slate-400"
                     }`}
                   >
@@ -57,11 +57,11 @@ export const EngagementProcess: React.FC = () => {
                   <div className="font-bold text-sm leading-snug">{s.name}</div>
                 </div>
                 <div
-                  className={`w-4 h-4 rounded-full mt-4 flex items-center justify-center text-[10px] ${
-                    isActive ? "bg-white text-[#1637F5]" : "bg-slate-200 text-slate-500"
+                  className={`w-5 h-5 rounded-full mt-4 flex items-center justify-center text-[10px] ${
+                    isActive ? "bg-white text-[#013EFA]" : "bg-slate-200 text-slate-500"
                   }`}
                 >
-                  <Icon name="arrow-right" size={10} />
+                  <Icon name="arrow-right" size={11} />
                 </div>
               </button>
             );
@@ -69,24 +69,24 @@ export const EngagementProcess: React.FC = () => {
         </div>
 
         {/* Detail Box for Selected Stage */}
-        <div className="p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="p-8 rounded-3xl bg-[#11151B] text-white border border-[#2A3441] flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2">
             <div className="flex items-center gap-3">
-              <span className="w-9 h-9 rounded-xl bg-[#1637F5] text-white font-mono font-bold flex items-center justify-center text-sm">
+              <span className="w-9 h-9 rounded-xl bg-[#013EFA] text-white font-bold flex items-center justify-center text-sm shadow-md shadow-blue-500/30">
                 0{activeStep}
               </span>
               <h3 className="text-2xl font-black text-white">
                 Stage {activeStep}: {ENGAGEMENT_STAGES[activeStep - 1].name}
               </h3>
             </div>
-            <p className="text-slate-300 text-sm leading-relaxed max-w-2xl">
+            <p className="text-slate-300 text-sm leading-relaxed max-w-2xl font-normal">
               {ENGAGEMENT_STAGES[activeStep - 1].desc}
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs font-mono text-slate-300 shrink-0 space-y-1">
-            <div className="text-blue-400 font-bold">ENGAGEMENT EVOLUTION:</div>
-            <div>Diagnose → Design → Build → Integrate → Deploy → Operate → Measure → Improve</div>
+          <div className="p-4 rounded-2xl bg-white/[0.05] border border-white/10 text-xs text-slate-300 shrink-0 space-y-1">
+            <div className="text-blue-400 font-bold tracking-wider uppercase">Lifecycle Flow</div>
+            <div className="font-medium text-slate-400">Diagnose &bull; Design &bull; Build &bull; Integrate &bull; Deploy &bull; Operate &bull; Measure</div>
           </div>
         </div>
       </div>

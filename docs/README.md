@@ -13,7 +13,8 @@ bayesforce/docs/
 ├── README.md                                    # Master Documentation Hub (You are here)
 │
 ├── bayesforce/                                  # FOLDER 1: Everything About Bayesforce
-│   └── 01_initial_thoughts/                     # Serialized: Initial Thoughts & Strategy (Ready)
+│   ├── 01_initial_thoughts/                     # Serialized: Initial Thoughts & Strategy (Ready)
+│   └── 02_design_principles/                    # Serialized: Brand Identity & Design Principles (Ready)
 │
 ├── competition/                                 # FOLDER 2: Competitive Companies (Ready)
 │
@@ -33,6 +34,7 @@ bayesforce/docs/
 
 ### 1. Folder 1: [Bayesforce (`bayesforce/`)](file:///home/sagar/Desktop/BAYES/bayesforce/docs/bayesforce/)
 - Contains `01_initial_thoughts/` prepared for the serialized foundational thinking and strategy documents.
+- Contains `02_design_principles/` with [`design_principles.md`](file:///home/sagar/Desktop/BAYES/bayesforce/docs/bayesforce/02_design_principles/design_principles.md) — The authoritative brand identity, Cobalt Blue (`#013EFA`) × Obsidian Black (`#11151B`) color system, and UI principles.
 
 ---
 

@@ -1,14 +1,19 @@
 import React from "react";
-import { WorkflowDetailTemplate } from "../../components/WorkflowDetailTemplate";
-import { WORKFLOWS } from "../../data/site-data";
+import type { Metadata } from "next";
+import { RoutePlaceholder } from "../../components/RoutePlaceholder";
 
-export const metadata = {
-  title: "Finance & Accounting AI Workflows | BayesForce",
+export const metadata: Metadata = {
+  title: "Finance & Accounting | Bayesforce",
   description:
-    "Automate 3-way invoice matching, month-end ledger reconciliation, and vendor dispute resolution with mathematical precision.",
+    "Streamline invoice reconciliation, ledger anomalies detection, and financial reporting across enterprise ERPs.",
 };
 
-export default function FinanceAndAccountingWorkflowPage() {
-  const workflow = WORKFLOWS.find((w) => w.slug === "finance-and-accounting")!;
-  return <WorkflowDetailTemplate workflow={workflow} />;
+export default function FinanceAndAccountingPage() {
+  return (
+    <RoutePlaceholder
+      route="/workflows/finance-and-accounting"
+      title="Finance & Accounting"
+      description="Streamline invoice reconciliation, ledger anomalies detection, and financial reporting across enterprise ERPs and accounting systems."
+    />
+  );
 }

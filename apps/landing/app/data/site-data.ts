@@ -256,7 +256,7 @@ export const CAPABILITIES: CapabilityItem[] = [
     ],
     relatedWorkflows: ["finance-and-accounting", "revenue-ops", "legal-risk-and-compliance", "technology-ops"],
     relatedInsights: ["enterprise-second-brain-architecture", "unstructured-document-parsing-at-scale", "tier-1-fintech-recon"],
-    ctaText: "See workflows that depend on AI data engineering →",
+    ctaText: "See workflows that depend on AI data engineering",
     ctaHref: "/workflows",
   },
   {
@@ -360,7 +360,7 @@ export const CAPABILITIES: CapabilityItem[] = [
     ],
     relatedWorkflows: ["revenue-ops", "customer-ops", "finance-and-accounting", "procurement-and-supply", "business-ops"],
     relatedInsights: ["human-in-the-loop-escalation-design", "midmarket-b2b-saas-revops", "the-unit-economics-of-digital-labor"],
-    ctaText: "Explore workflows →",
+    ctaText: "Explore workflows",
     ctaHref: "/workflows",
   },
   {
@@ -464,7 +464,7 @@ export const CAPABILITIES: CapabilityItem[] = [
     ],
     relatedWorkflows: ["legal-risk-and-compliance", "finance-and-accounting", "technology-ops"],
     relatedInsights: ["statistical-evaluation-harness", "prompt-injection-red-teaming-guide", "statistical-trust-in-mission-critical-ai"],
-    ctaText: "Build AI that can operate in production →",
+    ctaText: "Build AI that can operate in production",
     ctaHref: "/contact",
   },
   {
@@ -568,7 +568,7 @@ export const CAPABILITIES: CapabilityItem[] = [
     ],
     relatedWorkflows: ["business-ops", "technology-ops", "people-ops"],
     relatedInsights: ["state-of-enterprise-agent-readiness-2026", "the-unit-economics-of-digital-labor"],
-    ctaText: "Build AI capability in-house →",
+    ctaText: "Build AI capability in-house",
     ctaHref: "/contact",
   },
 ];

@@ -32,9 +32,9 @@ export const InsightArticleTemplate: React.FC<InsightArticleTemplateProps> = ({ 
         subtitle={insight.subtitle}
       >
         {/* Author and Date metadata bar */}
-        <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-slate-200/60 text-xs font-mono text-slate-500">
+        <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-slate-200/60 text-xs font-sans text-slate-500">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-[#1637F5] text-white flex items-center justify-center font-bold text-[10px]">
+            <div className="w-6 h-6 rounded-full bg-[#013EFA] text-white flex items-center justify-center font-bold text-[10px]">
               SU
             </div>
             <span className="font-bold text-slate-800">{insight.author.name}</span>
@@ -50,18 +50,18 @@ export const InsightArticleTemplate: React.FC<InsightArticleTemplateProps> = ({ 
 
       {/* 2. Key Metrics Delta Banner (If Present) */}
       {insight.metricsDelta && insight.metricsDelta.length > 0 && (
-        <section className="py-8 px-4 sm:px-6 bg-slate-900 text-white border-b border-slate-800">
+        <section className="py-8 px-4 sm:px-6 bg-[#11151B] text-white border-b border-[#2A3441]">
           <div className="max-w-[1240px] mx-auto">
-            <div className="flex items-center gap-2 font-mono text-xs font-bold text-blue-400 uppercase tracking-wider mb-4">
+            <div className="flex items-center gap-2 font-sans text-xs font-bold text-blue-400 uppercase tracking-wider mb-4">
               <Icon name="activity" size={15} /> Verified Operational Delta
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {insight.metricsDelta.map((m, idx) => (
                 <div key={idx} className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <div className="font-mono text-xl md:text-2xl font-black text-emerald-400">
+                  <div className="font-sans text-xl md:text-2xl font-black text-emerald-400">
                     {m.value}
                   </div>
-                  <div className="text-xs text-slate-400 mt-1 font-mono">{m.label}</div>
+                  <div className="text-xs text-slate-400 mt-1 font-sans">{m.label}</div>
                 </div>
               ))}
             </div>
@@ -73,18 +73,18 @@ export const InsightArticleTemplate: React.FC<InsightArticleTemplateProps> = ({ 
       <article className="py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-[860px] mx-auto">
           {/* Executive Abstract Box */}
-          <div className="p-8 rounded-3xl bg-blue-50/50 border border-blue-100 mb-14">
-            <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[#1637F5] mb-2">
+          <div className="p-8 rounded-3xl bg-[#013EFA]/5 border border-[#013EFA]/15 mb-14">
+            <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-[#013EFA] mb-2">
               Executive Abstract
             </h3>
             <p className="text-slate-800 text-base leading-relaxed font-medium">
               {insight.summary}
             </p>
-            <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-blue-100/80">
+            <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-[#013EFA]/10">
               {insight.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white text-slate-700 border border-slate-200"
+                  className="px-2.5 py-1 rounded-full text-xs font-sans font-medium bg-white text-slate-700 border border-slate-200"
                 >
                   #{tag}
                 </span>
@@ -123,7 +123,7 @@ export const InsightArticleTemplate: React.FC<InsightArticleTemplateProps> = ({ 
                         : "bg-blue-50 border-blue-200 text-blue-950"
                     }`}
                   >
-                    <div className="font-bold flex items-center gap-2 mb-1.5 font-mono text-xs uppercase">
+                    <div className="font-bold flex items-center gap-2 mb-1.5 font-sans text-xs uppercase tracking-wider">
                       <Icon name="bolt" size={15} />
                       Strategic Note
                     </div>
@@ -133,11 +133,11 @@ export const InsightArticleTemplate: React.FC<InsightArticleTemplateProps> = ({ 
 
                 {/* Code Block */}
                 {sec.codeBlock && (
-                  <div className="my-6 rounded-2xl bg-slate-900 text-slate-100 overflow-hidden border border-slate-800 shadow-xl">
+                  <div className="my-6 rounded-2xl bg-[#11151B] text-slate-100 overflow-hidden border border-[#2A3441] shadow-xl">
                     {sec.codeBlock.caption && (
-                      <div className="py-2.5 px-5 bg-slate-950 border-b border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <div className="py-2.5 px-5 bg-black/40 border-b border-[#2A3441] flex items-center justify-between text-xs font-sans text-slate-400">
                         <span>{sec.codeBlock.caption}</span>
-                        <span className="uppercase text-blue-400 font-bold">{sec.codeBlock.language}</span>
+                        <span className="uppercase text-blue-400 font-bold font-mono">{sec.codeBlock.language}</span>
                       </div>
                     )}
                     <pre className="p-6 font-mono text-xs md:text-sm overflow-x-auto leading-relaxed text-blue-200">
@@ -151,7 +151,7 @@ export const InsightArticleTemplate: React.FC<InsightArticleTemplateProps> = ({ 
                   <div className="overflow-x-auto my-6">
                     <table className="w-full bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm text-left">
                       <thead>
-                        <tr className="bg-slate-100/80 border-b border-slate-200 font-mono text-xs uppercase text-slate-600">
+                        <tr className="bg-slate-100/80 border-b border-slate-200 font-sans text-xs uppercase text-slate-600 tracking-wider">
                           {sec.tableData.headers.map((h, hIdx) => (
                             <th key={hIdx} className="py-3 px-5 font-bold">
                               {h}
@@ -179,13 +179,13 @@ export const InsightArticleTemplate: React.FC<InsightArticleTemplateProps> = ({ 
 
           {/* Author Card */}
           <div className="mt-16 pt-10 border-t border-slate-200 flex items-start gap-5 bg-slate-50 p-6 rounded-2xl">
-            <div className="w-12 h-12 rounded-2xl bg-[#1637F5] text-white flex items-center justify-center font-bold font-mono text-base shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-[#013EFA] text-white flex items-center justify-center font-bold font-sans text-base shrink-0 shadow-sm">
               SU
             </div>
             <div>
               <div className="font-bold text-slate-900 text-base">{insight.author.name}</div>
-              <div className="text-xs font-mono text-slate-500 mb-2">{insight.author.role}</div>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <div className="text-xs font-sans text-slate-500 mb-2">{insight.author.role}</div>
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
                 MSc Statistics (University of Edinburgh). Ex-Morgan Stanley AI & Quantzig. Founder & Principal Systems Architect at BayesForce, engineering high-trust digital labor systems for modern enterprises.
               </p>
             </div>
@@ -207,32 +207,36 @@ export const InsightArticleTemplate: React.FC<InsightArticleTemplateProps> = ({ 
           {prevInsight ? (
             <Link
               href={`/insights/${prevInsight.type}/${prevInsight.slug}`}
-              className="text-xs font-mono font-bold text-slate-600 hover:text-[#1637F5] flex items-center gap-1.5"
+              className="text-xs font-sans font-bold text-slate-600 hover:text-[#013EFA] flex items-center gap-1.5 transition-colors"
             >
-              ← Prev: {prevInsight.title}
+              <Icon name="arrow-left" size={13} />
+              <span>Prev: {prevInsight.title}</span>
             </Link>
           ) : (
             <Link
               href={`/insights/${insight.type}`}
-              className="text-xs font-mono font-bold text-slate-600 hover:text-[#1637F5]"
+              className="text-xs font-sans font-bold text-slate-600 hover:text-[#013EFA] flex items-center gap-1.5 transition-colors"
             >
-              ← All {insight.typeLabel}s
+              <Icon name="arrow-left" size={13} />
+              <span>All {insight.typeLabel}s</span>
             </Link>
           )}
 
           {nextInsight ? (
             <Link
               href={`/insights/${nextInsight.type}/${nextInsight.slug}`}
-              className="text-xs font-mono font-bold text-[#1637F5] hover:underline flex items-center gap-1.5"
+              className="text-xs font-sans font-bold text-[#013EFA] hover:underline flex items-center gap-1.5 transition-colors"
             >
-              Next: {nextInsight.title} →
+              <span>Next: {nextInsight.title}</span>
+              <Icon name="arrow-right" size={13} />
             </Link>
           ) : (
             <Link
               href="/insights"
-              className="text-xs font-mono font-bold text-[#1637F5] hover:underline"
+              className="text-xs font-sans font-bold text-[#013EFA] hover:underline flex items-center gap-1.5 transition-colors"
             >
-              Explore All Insights →
+              <span>Explore All Insights</span>
+              <Icon name="arrow-right" size={13} />
             </Link>
           )}
         </div>

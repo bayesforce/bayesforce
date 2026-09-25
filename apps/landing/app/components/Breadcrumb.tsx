@@ -12,11 +12,11 @@ export const Breadcrumb: React.FC<{ items: BreadcrumbItem[]; dark?: boolean }> =
   dark = false,
 }) => {
   return (
-    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono mb-6 flex-wrap">
+    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium font-sans mb-6 flex-wrap">
       <Link
         href="/"
         className={`transition-colors ${
-          dark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-[#1637F5]"
+          dark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-[#013EFA]"
         }`}
       >
         Home
