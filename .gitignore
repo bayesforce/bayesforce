@@ -1,5 +1,6 @@
 node_modules/
 .next/
+.next-cache/
 .next-stale-build-cache/
 out/
 dist/
@@ -7,6 +8,7 @@ storybook-static/
 *.log
 .env*
 !.env.example
+.creds/
 
 # Tooling and caches
 .turbo/

@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "../components/RoutePlaceholder";
+import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
 
 export const metadata: Metadata = {
   title: "Workflows | Bayesforce",

@@ -1,7 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import { RoutePlaceholder } from "../../../components/RoutePlaceholder";
-import { INSIGHTS } from "../../../data/site-data";
+import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
+import { INSIGHTS } from "@/content/catalog";
 
 interface PageProps {
   params: Promise<{

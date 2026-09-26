@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import "./globals.css";
-import { Providers } from "./providers";
+import "./styles/base.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3005"),
@@ -52,8 +51,8 @@ export const metadata: Metadata = {
   },
 };
 
-import { SiteHeader } from "./components/SiteHeader";
-import { SiteFooter } from "./components/SiteFooter";
+import { SiteFooter } from "./components/layout/SiteFooter";
+import { SiteHeader } from "./components/layout/SiteHeader";
 
 export default function RootLayout({
   children,
@@ -66,16 +65,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="flex flex-col min-h-screen">
-        <Providers>
-          <SiteHeader />
-          <div className="flex-grow">{children}</div>
-          <SiteFooter />
-        </Providers>
+        <SiteHeader />
+        <div className="flex-grow">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "../../components/RoutePlaceholder";
-import { INSIGHTS } from "../../data/site-data";
+import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
+import { INSIGHTS } from "@/content/catalog";
 
 export const metadata: Metadata = {
   title: "Reports | Bayesforce",
