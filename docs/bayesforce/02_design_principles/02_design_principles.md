@@ -1,5 +1,8 @@
 # BayesForce — Design Principles
 
+> **Serial Position:** Document 02 of 03 in `02_design_principles/`  
+> **Parent Hub:** [Design Principles & Visual System](README.md) | [Bayesforce Hub](../README.md)  
+> **Series Navigation:** [`01_website_architecture_and_routes.md`](01_website_architecture_and_routes.md) ← **`02_design_principles.md`** → [`03_page_designs_and_specifications.md`](03_page_designs_and_specifications.md)  
 > **Cobalt Blue × Obsidian Black**  
 > **Design direction:** Premium AI engineering / systems engineering  
 > **Brand:** BayesForce  

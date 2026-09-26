@@ -13,4 +13,4 @@
 
 2. **[02_design_principles/](02_design_principles/README.md)**  
    - Authoritative brand identity, design principles, Cobalt Blue & Obsidian Black color system, tokens, and UI guidelines.
-   - **Lead Document:** [`design_principles.md`](02_design_principles/design_principles.md)
+   - **Lead Documents:** [`01_website_architecture_and_routes.md`](02_design_principles/01_website_architecture_and_routes.md) | [`02_design_principles.md`](02_design_principles/02_design_principles.md)
