@@ -1,3 +1,7 @@
+"use client";
+
+import React, { useRef } from "react";
+import { gsap, useGSAP } from "@/lib/gsap";
 import styles from "./home.module.css";
 import s from "./OperationalDrag.module.css";
 
@@ -10,19 +14,69 @@ const FRICTION = [
 ];
 
 export function OperationalDrag() {
-  return (
-    <section className={`${styles.section} ${styles.dark}`}>
-      <div className={styles.inner}>
-        <span className={`${styles.kicker} ${s.kicker}`}>Operational Drag</span>
-        <h2 className={`${styles.headline} ${s.headline}`}>
-          Your people are the most expensive
-          <br />integration layer in the business.
-        </h2>
-        <p className={s.sub}>
-          Not because they're inefficient. Because the systems around them weren't built to connect — so people became the bridge. Every hour spent as the bridge is an hour not spent on work that actually matters.
-        </p>
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const quoteRef = useRef<HTMLQuoteElement>(null);
 
-        <div className={s.grid}>
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      // Animate Header
+      tl.fromTo(
+        headerRef.current?.children || [],
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: "power3.out" }
+      )
+        // Stagger Friction Cards
+        .fromTo(
+          gridRef.current?.children || [],
+          { opacity: 0, y: 36, scale: 0.97 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+        // Quote Reveal
+        .fromTo(
+          quoteRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+          "-=0.2"
+        );
+    },
+    { scope: sectionRef }
+  );
+
+  return (
+    <section ref={sectionRef} className={`${styles.section} ${styles.dark}`}>
+      <div className={styles.inner}>
+        <div ref={headerRef}>
+          <span className={`${styles.kicker} ${s.kicker}`}>Operational Drag</span>
+          <h2 className={`${styles.headline} ${s.headline}`}>
+            Your people are the most expensive
+            <br />integration layer in the business.
+          </h2>
+          <p className={s.sub}>
+            Not because they're inefficient. Because the systems around them weren't built to connect — so people became the bridge. Every hour spent as the bridge is an hour not spent on work that actually matters.
+          </p>
+        </div>
+
+        <div ref={gridRef} className={s.grid}>
           {FRICTION.map((f) => (
             <div key={f.num} className={s.card}>
               <span className={s.cardNum}>{f.num}</span>
@@ -32,7 +86,7 @@ export function OperationalDrag() {
           ))}
         </div>
 
-        <blockquote className={s.quote}>
+        <blockquote ref={quoteRef} className={s.quote}>
           "The question isn't whether to fix the workflow. It's whether you'll fix it before it costs you compounding capacity."
         </blockquote>
       </div>

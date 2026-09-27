@@ -1,3 +1,7 @@
+"use client";
+
+import React, { useRef } from "react";
+import { gsap, useGSAP } from "@/lib/gsap";
 import styles from "./home.module.css";
 import s from "./WhatWeDo.module.css";
 
@@ -11,11 +15,47 @@ const STEPS = [
 ];
 
 export function WhatWeDo() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const stepsRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      tl.fromTo(
+        leftRef.current?.children || [],
+        { opacity: 0, x: -30 },
+        { opacity: 1, x: 0, duration: 0.8, stagger: 0.12, ease: "power3.out" }
+      ).fromTo(
+        stepsRef.current?.children || [],
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.09,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
+    },
+    { scope: sectionRef }
+  );
+
   return (
-    <section className={`${styles.section} ${styles.light}`}>
+    <section ref={sectionRef} className={`${styles.section} ${styles.light}`}>
       <div className={styles.inner}>
         <div className={s.layout}>
-          <div className={s.left}>
+          <div ref={leftRef} className={s.left}>
             <span className={`${styles.kicker} ${s.kicker}`}>What Bayesforce Builds</span>
             <h2 className={`${styles.headline} ${s.headline}`}>
               We engineer AI into the workflow itself.
@@ -25,7 +65,7 @@ export function WhatWeDo() {
             </p>
           </div>
 
-          <div className={s.steps}>
+          <div ref={stepsRef} className={s.steps}>
             {STEPS.map((step) => (
               <div key={step.num} className={s.step}>
                 <span className={s.stepNum}>{step.num}</span>

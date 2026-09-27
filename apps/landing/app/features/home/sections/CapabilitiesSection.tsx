@@ -1,13 +1,54 @@
+"use client";
+
+import React, { useRef } from "react";
 import Link from "next/link";
+import { gsap, useGSAP } from "@/lib/gsap";
 import styles from "./home.module.css";
 import s from "./CapabilitiesSection.module.css";
 import { CAPABILITIES, getCapabilityHref } from "@/content/catalog";
 
 export function CapabilitiesSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      tl.fromTo(
+        headerRef.current?.children || [],
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: "power3.out" }
+      ).fromTo(
+        gridRef.current?.children || [],
+        { opacity: 0, y: 40, scale: 0.96 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.65,
+          stagger: 0.1,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
+    },
+    { scope: sectionRef }
+  );
+
   return (
-    <section className={`${styles.section} ${styles.raised}`}>
+    <section ref={sectionRef} className={`${styles.section} ${styles.raised}`}>
       <div className={styles.inner}>
-        <div className={s.header}>
+        <div ref={headerRef} className={s.header}>
           <span className={`${styles.kicker} ${s.kicker}`}>Our Capabilities</span>
           <h2 className={`${styles.headline} ${s.headline}`}>
             A workflow is only as capable as the system around it.
@@ -17,7 +58,7 @@ export function CapabilitiesSection() {
           </p>
         </div>
 
-        <div className={s.grid}>
+        <div ref={gridRef} className={s.grid}>
           {CAPABILITIES.map((cap, i) => (
             <Link
               key={cap.slug}

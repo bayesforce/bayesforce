@@ -1,0 +1,159 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem var(--bf-page-gutter) 7.5rem;
+  background-color: #0b0f17;
+  color: #f1f5f9;
+  border-top: 1px solid #1a2230;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 50rem;
+  margin-bottom: 3.5rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.headline {
+  margin: 0 0 1.25rem;
+  font-family: var(--bf-font-display);
+  font-size: clamp(2.25rem, 4.2vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.subtext {
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
+  color: #94a3b8;
+  max-width: 44rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  background: #111622;
+  border: 1px solid #232d3f;
+  border-radius: 1rem;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.4);
+}
+
+.railTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 800px;
+}
+
+.thStage,
+.thFocus,
+.thMechanism,
+.thTelemetry {
+  padding: 1.15rem 1.25rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  border-bottom: 1px solid #1e2633;
+  background: #0d121c;
+}
+
+.tableRow {
+  border-bottom: 1px solid #1a2230;
+  transition: background-color 140ms ease;
+}
+
+.tableRow:hover {
+  background-color: #161f30;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tdStage {
+  padding: 1.15rem 1.25rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #38bdf8;
+  white-space: nowrap;
+}
+
+.stageIndicator {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #013efa;
+  margin-right: 0.6rem;
+}
+
+.tdFocus {
+  padding: 1.15rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.tdMechanism {
+  padding: 1.15rem 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+.tdTelemetry {
+  padding: 1.15rem 1.25rem;
+  white-space: nowrap;
+}
+
+.telemetryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}

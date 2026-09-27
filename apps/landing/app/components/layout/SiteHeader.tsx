@@ -60,6 +60,9 @@ const NAV_ITEMS: NavItem[] = [
 /** Converts a nav label to a valid HTML id segment. */
 const toId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
+const isObsidianRoute = (p: string) =>
+  p === "/capabilities/ai-data-engineering";
+
 export const SiteHeader: React.FC = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen]   = useState(false);
@@ -81,14 +84,24 @@ export const SiteHeader: React.FC = () => {
     setActiveDropdown(null);
   }, [pathname]);
 
-  /* Scroll progress for home-page header fade */
+  const isHomePage     = pathname === "/";
+  const isObsidianPage = isObsidianRoute(pathname);
+
+  /* Scroll progress for home-page and obsidian-page header */
   useEffect(() => {
-    if (pathname !== "/") { setScrollY(999); return; }
+    if (!isHomePage && !isObsidianPage) {
+      setScrollY(999);
+      return;
+    }
     const update = () => setScrollY(window.scrollY);
     update();
+    const frameId = requestAnimationFrame(update);
     window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
-  }, [pathname]);
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", update);
+    };
+  }, [pathname, isHomePage, isObsidianPage]);
 
   /* Focus first dropdown link when opened by keyboard */
   useEffect(() => {
@@ -113,8 +126,10 @@ export const SiteHeader: React.FC = () => {
   }, [mobileMenuOpen]);
 
   /* Derived state */
-  const progress     = Math.min(scrollY / 64, 1);
-  const isHeroState  = pathname === "/" && progress < 1;
+  const homeProgress       = Math.min(scrollY / 64, 1);
+  const isHomeHeroState    = isHomePage && homeProgress < 1;
+  const isObsidianScrolled = isObsidianPage && scrollY > 20;
+  const isDarkTheme        = isHomeHeroState || isObsidianPage;
 
   /* ── Dropdown helpers ─────────────────────────────────────────────────── */
 
@@ -139,24 +154,28 @@ export const SiteHeader: React.FC = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
   };
 
-  /* ── Inline styles for home-page header ──────────────────────────────── */
+  /* ── Header style & class resolution ─────────────────────────────────── */
 
-  const homeHeaderStyle: React.CSSProperties | undefined =
-    pathname === "/"
-      ? {
-          background:          `rgba(255,255,255,${progress * 0.97})`,
-          backdropFilter:      `blur(${progress * 20}px)`,
-          WebkitBackdropFilter:`blur(${progress * 20}px)`,
-          borderBottomColor:   `rgba(214,222,234,${progress * 0.85})`,
-          boxShadow:           `0 1px 12px rgba(17,21,27,${progress * 0.06})`,
-        }
-      : undefined;
+  let headerClass = styles.solid;
+  let headerStyle: React.CSSProperties | undefined = undefined;
+
+  if (isHomePage) {
+    headerClass = styles.home;
+    headerStyle = {
+      background:          `rgba(255,255,255,${homeProgress * 0.97})`,
+      backdropFilter:      `blur(${homeProgress * 20}px)`,
+      WebkitBackdropFilter:`blur(${homeProgress * 20}px)`,
+      borderBottomColor:   `rgba(214,222,234,${homeProgress * 0.85})`,
+      boxShadow:           `0 1px 12px rgba(17,21,27,${homeProgress * 0.06})`,
+    };
+  } else if (isObsidianPage) {
+    headerClass = isObsidianScrolled
+      ? `${styles.obsidian} ${styles.obsidianScrolled}`
+      : styles.obsidian;
+  }
 
   return (
-    <header
-      className={`${styles.header} ${pathname === "/" ? styles.home : styles.solid}`}
-      style={homeHeaderStyle}
-    >
+    <header className={`${styles.header} ${headerClass}`} style={headerStyle}>
       <div className={styles.inner}>
 
         {/* ── Brand ──────────────────────────────────────────────────────── */}
@@ -165,7 +184,7 @@ export const SiteHeader: React.FC = () => {
           className={styles.brandLink}
           aria-label="Bayesforce — go to homepage"
         >
-          <BrandLogo theme={isHeroState ? "dark" : "light"} size="md" />
+          <BrandLogo theme={isDarkTheme ? "dark" : "light"} size="md" />
         </Link>
 
         {/* ── Desktop navigation ─────────────────────────────────────────── */}
@@ -189,7 +208,7 @@ export const SiteHeader: React.FC = () => {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   aria-haspopup="true"
-                  className={`${styles.link} ${isHeroState ? styles.heroLink : styles.solidLink} ${isActive ? styles.active : ""}`}
+                  className={`${styles.link} ${isDarkTheme ? styles.heroLink : styles.solidLink} ${isActive ? styles.active : ""}`}
                   onClick={() => {
                     if (isOpen) closeDropdown(item.label);
                     else        openDropdown(item.label, true);
@@ -250,7 +269,7 @@ export const SiteHeader: React.FC = () => {
 
           <Link
             href="/about"
-            className={`${styles.link} ${isHeroState ? styles.heroLink : styles.solidLink} ${pathname === "/about" ? styles.active : ""}`}
+            className={`${styles.link} ${isDarkTheme ? styles.heroLink : styles.solidLink} ${pathname === "/about" ? styles.active : ""}`}
           >
             About
           </Link>
@@ -262,7 +281,7 @@ export const SiteHeader: React.FC = () => {
             <Button
               variant="primary"
               size="md"
-              className={`font-medium shadow-none rounded-xl ${isHeroState ? styles.heroCta : ""}`}
+              className={`font-medium shadow-none rounded-xl ${isDarkTheme ? styles.heroCta : ""}`}
             >
               Talk to an Expert
             </Button>
@@ -271,7 +290,7 @@ export const SiteHeader: React.FC = () => {
           <button
             ref={hamburgerRef}
             type="button"
-            className={`${styles.menuButton} ${isHeroState ? styles.menuButtonHero : styles.menuButtonSolid}`}
+            className={`${styles.menuButton} ${isDarkTheme ? styles.menuButtonHero : styles.menuButtonSolid}`}
             aria-label="Open navigation menu"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-drawer"

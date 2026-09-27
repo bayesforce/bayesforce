@@ -1,0 +1,997 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem var(--bf-page-gutter) 8rem;
+  background-color: #0d1117;
+  color: #f1f5f9;
+  border-top: 1px solid #1e2633;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+}
+
+/* ─── Macro Blueprint Header (Section 3.1) ─────────────────────────────── */
+
+.macroHeader {
+  max-width: 52rem;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.macroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.macroHeadline {
+  margin: 0 auto 1.25rem;
+  font-family: var(--bf-font-display);
+  font-size: clamp(2.25rem, 4.5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.macroSub {
+  margin: 0 auto 2.5rem;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.65;
+  color: #94a3b8;
+  max-width: 44rem;
+}
+
+/* Quick Stage Tabs */
+.stageTabsBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.stageTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  background: #161e2e;
+  border: 1px solid #283449;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.stageTab:hover {
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.stageTabActive {
+  background: #013efa !important;
+  border-color: #013efa !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(1, 62, 250, 0.35);
+}
+
+.stageTabNum {
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+.stageTabName {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Dual-Pane Layout Standard (Section 3.2) ─────────────────────────── */
+
+.dualPaneContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+@media (min-width: 64rem) {
+  .dualPaneContainer {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 3.5rem;
+    align-items: start;
+  }
+}
+
+/* ─── LEFT PANE: Sticky Narrative ─────────────────────────────────────── */
+
+.leftPane {
+  position: relative;
+}
+
+@media (min-width: 64rem) {
+  .stickyNarrative {
+    position: sticky;
+    top: 6rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.stageBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.stageTag {
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+}
+
+.stageIndexPill {
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  color: #64748b;
+  background: #161e2e;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid #283449;
+}
+
+.questionBlock {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid #013efa;
+}
+
+.questionQuote {
+  position: absolute;
+  left: -0.5rem;
+  top: -0.5rem;
+  font-size: 2rem;
+  color: #013efa;
+  opacity: 0.4;
+  line-height: 1;
+}
+
+.questionText {
+  margin: 0;
+  font-family: var(--bf-font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: #e2e8f0;
+}
+
+.stageHeadline {
+  margin: 0 0 1rem;
+  font-family: var(--bf-font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.stageCopy {
+  margin: 0 0 1.75rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #94a3b8;
+}
+
+/* Vocabulary cluster */
+.vocabCluster {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #1e2633;
+}
+
+.vocabLabel {
+  display: block;
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 0.6rem;
+}
+
+.vocabChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.vocabChip {
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  background: #111827;
+  color: #cbd5e1;
+  border: 1px solid #1f2937;
+  border-radius: 0.375rem;
+}
+
+/* Proof grid */
+.proofGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.proofCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.proofIndex {
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #013efa;
+  background: rgba(1, 62, 250, 0.12);
+  border: 1px solid rgba(1, 62, 250, 0.25);
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.35rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.proofTitle {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 0.25rem;
+}
+
+.proofDesc {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+/* Security Rail Block */
+.securityRailBlock {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-left: 3px solid #10b981;
+  border-radius: 0.625rem;
+  padding: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.securityHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #10b981;
+  margin-bottom: 0.45rem;
+}
+
+.invariantName {
+  display: block;
+  font-size: 0.875rem;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.invariantDesc {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+/* Stage CTA */
+.ctaWrapper {
+  margin-top: 1.5rem;
+}
+
+.stageCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.35rem;
+  background: #013efa;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 140ms ease, transform 140ms ease;
+}
+
+.stageCtaBtn:hover {
+  background: #0033cc;
+  transform: translateY(-1px);
+}
+
+/* ─── RIGHT PANE: Stage Visuals ────────────────────────────────────────── */
+
+.rightPane {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.stageVisualCard {
+  position: relative;
+  background: #111622;
+  border: 1px solid #232d3f;
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.45);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.stageVisualActive {
+  border-color: #013efa;
+  box-shadow: 0 0 0 1px #013efa, 0 20px 48px -8px rgba(1, 62, 250, 0.25);
+}
+
+.visualCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #1e2633;
+}
+
+.visualHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.visualStepBadge {
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.35rem;
+}
+
+.visualStepTitle {
+  font-family: var(--bf-font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  letter-spacing: 0.04em;
+}
+
+.visualStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  color: #10b981;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.visualCanvasContent {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ─── Stage 01 Connect Visual ──────────────────────────────────────────── */
+
+.connectGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.connectTopTier {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.connectSourceBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.85rem 0.5rem;
+  background: #182234;
+  border: 1px solid #2d3b52;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.connectLogoWrapper {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0e1522;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+}
+
+.connectSourceName {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.conduitsWrapper {
+  height: 4.5rem;
+  width: 100%;
+}
+
+.conduitSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.conduitLine {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+
+.gatewayBox {
+  background: #091224;
+  border: 1px solid #013efa;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(1, 62, 250, 0.2);
+}
+
+.gatewayHeader {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 0.35rem;
+}
+
+.gatewayDetails {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* ─── Stage 02 Ingest Visual ───────────────────────────────────────────── */
+
+.ingestGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dualFlowSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.flowColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.flowPillRealtime {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  align-self: flex-start;
+}
+
+.flowPillBatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  align-self: flex-start;
+}
+
+.flowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #38bdf8;
+  animation: pulseBeacon 1.6s infinite;
+}
+
+.flowStreamBox {
+  background: #182234;
+  border: 1px solid #2d3b52;
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.streamLineRealtime {
+  height: 4px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  border-radius: 2px;
+}
+
+.streamLineBatch {
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #fbbf24, #fbbf24 10px, transparent 10px, transparent 20px);
+  border-radius: 2px;
+}
+
+.streamMetric {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-family: var(--bf-font-mono);
+}
+
+.busGateway {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.15rem;
+  background: #091224;
+  border: 1px solid #3b82f6;
+  border-radius: 0.75rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Stage 03 Transform Visual ────────────────────────────────────────── */
+
+.transformGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.transformHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transTag {
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f87171;
+  letter-spacing: 0.05em;
+}
+
+.transArrow {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.entityComparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mismatchedCard {
+  background: #182234;
+  border: 1px solid #334155;
+  border-radius: 0.625rem;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+.mismatchedTitle {
+  font-size: 0.78rem;
+  color: #f87171;
+  margin-bottom: 0.25rem;
+}
+
+.mergeIconWrapper {
+  color: #38bdf8;
+}
+
+.goldenRecordBox {
+  background: #06241b;
+  border: 1px solid #10b981;
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+}
+
+.goldenBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34d399;
+  margin-bottom: 0.5rem;
+}
+
+.goldenContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: #d1fae5;
+}
+
+.exceptionPath {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: #fbbf24;
+  padding: 0.65rem 0.85rem;
+  background: #1f1b0a;
+  border: 1px dashed #78350f;
+  border-radius: 0.5rem;
+}
+
+/* ─── Stage 04 Architect Visual ────────────────────────────────────────── */
+
+.architectGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cloudSwitcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cloudBtn {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  background: #182234;
+  border: 1px solid #2d3b52;
+  border-radius: 0.5rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.cloudBtn:hover {
+  color: #ffffff;
+  border-color: #475569;
+}
+
+.cloudBtnActive {
+  background: #013efa !important;
+  border-color: #013efa !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(1, 62, 250, 0.35);
+}
+
+.cloudTopologyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.cloudNode {
+  background: #182234;
+  border: 1px solid #2d3b52;
+  border-radius: 0.625rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cloudNodeLabel {
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cloudNodeVal {
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.vpcIsolationTag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #38bdf8;
+  padding: 0.65rem 0.85rem;
+  background: #081a2e;
+  border: 1px solid #0369a1;
+  border-radius: 0.5rem;
+}
+
+/* ─── Stage 05 Store Visual ────────────────────────────────────────────── */
+
+.storeGraphic {
+  display: flex;
+  flex-direction: column;
+}
+
+.storeTiersGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .storeTiersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.storeTierCard {
+  background: #182234;
+  border: 1px solid #2d3b52;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.storeIcon {
+  color: #38bdf8;
+  margin-bottom: 0.65rem;
+}
+
+.storeTierTitle {
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.storeTierSub {
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  color: #60a5fa;
+  margin-bottom: 0.6rem;
+}
+
+.storeTierDetail {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #94a3b8;
+}
+
+/* ─── Stage 06 Serve Visual ────────────────────────────────────────────── */
+
+.serveGraphic {
+  display: flex;
+  flex-direction: column;
+}
+
+.serveDestinations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .serveDestinations {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.serveDest {
+  background: #182234;
+  border: 1px solid #2d3b52;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.serveDestTag {
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.45rem;
+}
+
+.serveDestTitle {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.serveDestDesc {
+  margin: 0 0 0.85rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #94a3b8;
+  flex: 1;
+}
+
+.serveLatency {
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.3rem;
+  align-self: flex-start;
+}
+
+/* ─── Stage 07 Context Visual ──────────────────────────────────────────── */
+
+.contextGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.illustrativeBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid #1e2633;
+}
+
+.illustrativePill {
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.12);
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.35rem;
+}
+
+.illustrativeTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.contextAssemblyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.contextNode {
+  background: #182234;
+  border: 1px solid #2d3b52;
+  border-radius: 0.625rem;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.contextType {
+  font-family: var(--bf-font-mono);
+  font-size: 0.6875rem;
+  color: #38bdf8;
+}
+
+.contextNode strong {
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+
+.aiInjectionBox {
+  background: #0d2818;
+  border: 1px solid #10b981;
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+}
+
+.aiInjectionTop {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34d399;
+  margin-bottom: 0.45rem;
+}
+
+.aiInjectionText {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #d1fae5;
+}
+
+@keyframes pulseBeacon {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(56, 189, 248, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+  }
+}

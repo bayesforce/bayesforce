@@ -1,0 +1,219 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem var(--bf-page-gutter) 8rem;
+  background-color: #0b0f17;
+  color: #f1f5f9;
+  border-top: 1px solid #1a2230;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 50rem;
+  margin-bottom: 4rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 1.25rem;
+}
+
+.headline {
+  margin: 0 0 1.25rem;
+  font-family: var(--bf-font-display);
+  font-size: clamp(2.25rem, 4.2vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.subtext {
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
+  color: #94a3b8;
+  max-width: 44rem;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 56rem) {
+  .stepsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+.stepCard {
+  background: #111622;
+  border: 1px solid #232d3f;
+  border-radius: 1rem;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.35);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.stepCard:hover {
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.stepHeader {
+  margin-bottom: 1.25rem;
+}
+
+.stepPill {
+  display: inline-block;
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.35rem;
+}
+
+.stepTitle {
+  margin: 0 0 0.85rem;
+  font-family: var(--bf-font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.stepDesc {
+  margin: 0 0 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  flex: 1;
+}
+
+.focusList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.focusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  color: #cbd5e1;
+  background: #182234;
+  border: 1px solid #2d3b52;
+  padding: 0.25rem 0.55rem;
+  border-radius: 0.35rem;
+}
+
+.focusBadge svg {
+  color: #38bdf8;
+}
+
+/* CTA Box */
+.ctaBox {
+  background: linear-gradient(135deg, #111827 0%, #0d121c 100%);
+  border: 1px solid #283449;
+  border-radius: 1.25rem;
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 52rem) {
+  .ctaBox {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 3rem;
+  }
+}
+
+.ctaContent {
+  max-width: 32rem;
+}
+
+.ctaHeadline {
+  margin: 0 0 0.75rem;
+  font-family: var(--bf-font-display);
+  font-size: clamp(1.45rem, 2.2vw, 1.85rem);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.ctaSub {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #94a3b8;
+}
+
+.ctaAction {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+@media (min-width: 52rem) {
+  .ctaAction {
+    align-items: flex-end;
+  }
+}
+
+.primaryCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.75rem;
+  background: #013efa;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(1, 62, 250, 0.35);
+  transition: background-color 140ms ease, transform 140ms ease;
+}
+
+.primaryCtaBtn:hover {
+  background: #0033cc;
+  transform: translateY(-1px);
+}
+
+.reassuranceNote {
+  margin: 0;
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}

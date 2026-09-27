@@ -35,6 +35,28 @@
   -webkit-backdrop-filter: blur(20px);
 }
 
+/* Obsidian translucent strip for dark capability pages */
+.obsidian {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(4, 8, 14, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: none;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.obsidianScrolled {
+  background: rgba(4, 8, 14, 0.94);
+  border-bottom: none;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
 /* ─── Brand link ────────────────────────────────────────────────────────── */
 
 .brandLink {
@@ -112,9 +134,10 @@
 }
 
 /* Hero state — white on dark */
-.heroLink           { color: rgba(255, 255, 255, 0.88); }
-.heroLink:hover,
-.heroLink.active    { color: #fff; background: rgba(255, 255, 255, 0.13); }
+.heroLink           { color: rgba(255, 255, 255, 0.88); background: transparent; }
+.heroLink:hover     { color: #fff; background: rgba(255, 255, 255, 0.12); }
+.heroLink.active    { color: #ffffff; background: transparent; font-weight: 600; }
+.heroLink.active:hover { background: rgba(255, 255, 255, 0.12); }
 .heroLink:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;

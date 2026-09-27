@@ -89,9 +89,11 @@ const ALL_FOUR = [
 /* ── Props ──────────────────────────────────────────────────── */
 interface Props {
   capability: CapabilityItem;
+  customHero?: React.ReactNode;
+  customRecognition?: React.ReactNode;
 }
 
-export function CapabilityPage({ capability }: Props) {
+export function CapabilityPage({ capability, customHero, customRecognition }: Props) {
   const headline = HEADLINES[capability.id] ?? capability.tagline;
   const flowSteps = FLOW_STEPS[capability.id] ?? [];
   const quadrantCells = QUADRANT_DATA[capability.id];
@@ -114,57 +116,65 @@ export function CapabilityPage({ capability }: Props) {
   return (
     <>
       {/* 1 — Hero */}
-      <header className={s.hero}>
-        <div className={s.heroInner}>
-          <div>
-            <span className={s.eyebrow}>{capability.kicker}</span>
-            <h1 className={s.heroHeadline}>{headline}</h1>
-            <p className={s.heroSub}>{capability.tagline}</p>
-            <div className={s.heroActions}>
-              <Link href="/workflows" className={s.btnPrimary}>
-                Explore Workflows →
-              </Link>
-              <Link href="/talk" className={s.btnSecondary}>
-                Talk to Bayesforce
-              </Link>
+      {customHero ? (
+        customHero
+      ) : (
+        <header className={s.hero}>
+          <div className={s.heroInner}>
+            <div>
+              <span className={s.eyebrow}>{capability.kicker}</span>
+              <h1 className={s.heroHeadline}>{headline}</h1>
+              <p className={s.heroSub}>{capability.tagline}</p>
+              <div className={s.heroActions}>
+                <Link href="/workflows" className={s.btnPrimary}>
+                  Explore Workflows →
+                </Link>
+                <Link href="/talk" className={s.btnSecondary}>
+                  Talk to Bayesforce
+                </Link>
+              </div>
             </div>
-          </div>
 
-          {/* Architecture flow visual */}
-          {flowSteps.length > 0 && (
-            <div className={s.flowVisual} aria-hidden="true">
-              {flowSteps.map((step, i) => (
-                <div key={step.label}>
-                  <div className={s.flowNode}>
-                    <div className={`${s.flowBox} ${step.accent ? s.flowBoxAccent : ""}`}>
-                      {step.label}
+            {/* Architecture flow visual */}
+            {flowSteps.length > 0 && (
+              <div className={s.flowVisual} aria-hidden="true">
+                {flowSteps.map((step, i) => (
+                  <div key={step.label}>
+                    <div className={s.flowNode}>
+                      <div className={`${s.flowBox} ${step.accent ? s.flowBoxAccent : ""}`}>
+                        {step.label}
+                      </div>
                     </div>
+                    {i < flowSteps.length - 1 && <div className={s.flowArrow} />}
                   </div>
-                  {i < flowSteps.length - 1 && <div className={s.flowArrow} />}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </header>
+                ))}
+              </div>
+            )}
+          </div>
+        </header>
+      )}
 
-      {/* 2 — Why This Exists */}
-      <section className={`${s.section} ${s.light}`}>
-        <div className={s.inner}>
-          <span className={s.eyebrow}>The Problem This Solves</span>
-          <h2 className={`${s.headline} ${s.headlineLg}`} style={{ maxWidth: "32rem", color: "#11151b" }}>
-            Why this engineering layer exists.
-          </h2>
-          <div className={s.problemGrid}>
-            <div>
-              <p className={s.lead}>{capability.problemStatement}</p>
-            </div>
-            <div>
-              <p className={s.body}>{capability.bayesforceApproach}</p>
+      {/* 2 — Why This Exists / Recognition */}
+      {customRecognition ? (
+        customRecognition
+      ) : (
+        <section id="recognition" className={`${s.section} ${s.light}`}>
+          <div className={s.inner}>
+            <span className={s.eyebrow}>The Problem This Solves</span>
+            <h2 className={`${s.headline} ${s.headlineLg}`} style={{ maxWidth: "32rem", color: "#11151b" }}>
+              Why this engineering layer exists.
+            </h2>
+            <div className={s.problemGrid}>
+              <div>
+                <p className={s.lead}>{capability.problemStatement}</p>
+              </div>
+              <div>
+                <p className={s.body}>{capability.bayesforceApproach}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* 3 — Key Pillars */}
       <section className={`${s.section} ${s.raised}`}>

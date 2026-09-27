@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { gsap, useGSAP } from "@/lib/gsap";
 import styles from "./home.module.css";
 import s from "./WorkflowInAction.module.css";
 
@@ -69,20 +70,64 @@ const ACTOR_COLORS: Record<string, string> = {
 
 export function WorkflowInAction() {
   const [active, setActive] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
   const step = STEPS[active];
 
-  return (
-    <section className={`${styles.section} ${styles.raised}`}>
-      <div className={styles.inner}>
-        <span className={`${styles.kicker} ${s.kicker}`}>Workflow in Action</span>
-        <h2 className={`${styles.headline} ${s.headline}`}>
-          From request to resolution in seconds.
-        </h2>
-        <p className={s.sub}>
-          Invoice exception handling — a real workflow, traced end to end.
-        </p>
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
 
-        <div className={s.player}>
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      tl.fromTo(
+        headerRef.current?.children || [],
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: "power3.out" }
+      ).fromTo(
+        playerRef.current,
+        { opacity: 0, y: 32, scale: 0.98 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.65, ease: "power2.out" },
+        "-=0.3"
+      );
+    },
+    { scope: sectionRef }
+  );
+
+  // Animate panel transitions on step change
+  useEffect(() => {
+    if (panelRef.current) {
+      gsap.fromTo(
+        panelRef.current,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }
+      );
+    }
+  }, [active]);
+
+  return (
+    <section ref={sectionRef} className={`${styles.section} ${styles.raised}`}>
+      <div className={styles.inner}>
+        <div ref={headerRef}>
+          <span className={`${styles.kicker} ${s.kicker}`}>Workflow in Action</span>
+          <h2 className={`${styles.headline} ${s.headline}`}>
+            From request to resolution in seconds.
+          </h2>
+          <p className={s.sub}>
+            Invoice exception handling — a real workflow, traced end to end.
+          </p>
+        </div>
+
+        <div ref={playerRef} className={s.player}>
           <div className={s.strip} role="tablist" aria-label="Workflow steps">
             {STEPS.map((st, i) => (
               <button
@@ -101,6 +146,7 @@ export function WorkflowInAction() {
           </div>
 
           <div
+            ref={panelRef}
             id={`workflow-panel-${step.id}`}
             role="tabpanel"
             className={s.panel}

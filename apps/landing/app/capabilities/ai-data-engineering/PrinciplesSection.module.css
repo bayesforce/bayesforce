@@ -1,0 +1,115 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem var(--bf-page-gutter) 7.5rem;
+  background-color: #11151b;
+  color: #f1f5f9;
+  border-top: 1px solid #1e2633;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 50rem;
+  margin-bottom: 4rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+}
+
+.headline {
+  margin: 0 0 1.25rem;
+  font-family: var(--bf-font-display);
+  font-size: clamp(2.25rem, 4.2vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.leadCopy {
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
+  color: #94a3b8;
+  max-width: 44rem;
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 56rem) {
+  .principlesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+.principleCard {
+  background: #161c24;
+  border: 1px solid #282e38;
+  border-radius: 1rem;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.35);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.principleCard:hover {
+  border-color: #3e4a5c;
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.principleNum {
+  display: inline-block;
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.35rem;
+}
+
+.principleTitle {
+  margin: 0 0 1rem;
+  font-family: var(--bf-font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #ffffff;
+}
+
+.principleCopy {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  flex: 1;
+}
