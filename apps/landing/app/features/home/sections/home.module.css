@@ -1,0 +1,34 @@
+.section {
+  width: 100%;
+  padding: 5rem var(--bf-page-gutter);
+}
+
+.inner {
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.headline {
+  font-family: var(--bf-font-display);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin: 0 0 1.25rem;
+}
+
+.dark { background: #11151b; color: #f1f5f9; }
+.veryDark { background: #080d15; color: #f1f5f9; }
+.light { background: #fff; color: #11151b; }
+.raised { background: #f8fafc; color: #11151b; }
+
+@media (min-width: 64rem) { .section { padding: 7rem 0; } }
+@media (min-width: 90rem) { .section { padding: 8.5rem 0; } }

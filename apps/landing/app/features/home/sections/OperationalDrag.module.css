@@ -1,0 +1,75 @@
+.kicker { color: #94a3b8; }
+
+.headline {
+  font-size: clamp(2rem, 3.5vw, 2.85rem);
+  max-width: 28rem;
+  color: #f1f5f9;
+}
+
+.sub {
+  font-size: clamp(1rem, 1.3vw, 1.08rem);
+  line-height: 1.7;
+  color: #94a3b8;
+  max-width: 40rem;
+  margin: 0 0 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.card {
+  padding: 1.75rem 1.5rem;
+  background: #11151b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cardNum {
+  font-family: var(--bf-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: #013efa;
+}
+
+.cardLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #f1f5f9;
+}
+
+.cardBody {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.quote {
+  font-size: 0.9rem;
+  color: rgba(241,245,249,0.42);
+  font-style: italic;
+  max-width: 38rem;
+  border: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+@media (min-width: 48rem) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 64rem) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  .headline { font-size: clamp(2.4rem, 3vw, 3rem); }
+}

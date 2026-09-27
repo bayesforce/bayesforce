@@ -1,26 +1,21 @@
-import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
 import { INSIGHTS } from "@/content/catalog";
+import { InsightListPage } from "@/components/shared/InsightListPage";
 
 export const metadata: Metadata = {
-  title: "Playbooks | Bayesforce",
-  description:
-    "Engineering playbooks and operating patterns for deploying production-grade AI systems.",
+  title: "Engineering Playbooks | Bayesforce",
+  description: "Architectural blueprints for building specific workflow automation systems.",
 };
 
-export default function PlaybooksIndexPage() {
-  const playbooks = INSIGHTS.filter((i) => i.type === "playbooks");
-
+export default function PlaybooksPage() {
+  const items = INSIGHTS.filter((i) => i.type === "playbooks");
   return (
-    <RoutePlaceholder
-      route="/insights/playbooks"
-      title="Engineering Playbooks"
-      description="Production-grade playbooks, evaluation harnesses, and architectural patterns for deploying reliable enterprise AI capabilities."
-      subRoutes={playbooks.map((pb) => ({
-        label: pb.title,
-        href: `/insights/playbooks/${pb.slug}`,
-      }))}
+    <InsightListPage
+      type="playbooks"
+      typeLabel="Engineering Playbooks"
+      headline="How we build, made legible."
+      description="Step-by-step architectural blueprints for specific workflow automation systems. Each playbook explains the decomposition model, technology choices, and governance design."
+      items={items}
     />
   );
 }

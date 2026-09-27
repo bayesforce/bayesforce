@@ -1,0 +1,85 @@
+.kicker { color: #94a3b8; }
+
+.headline {
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  color: #f1f5f9;
+  max-width: 28rem;
+}
+
+.sub {
+  font-size: 1rem;
+  color: #94a3b8;
+  max-width: 40rem;
+  line-height: 1.7;
+  margin: 0 0 3rem;
+}
+
+.pipeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.stage {
+  display: flex;
+  gap: 1.25rem;
+  padding-bottom: 1.75rem;
+}
+
+.stageTrack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 2rem;
+}
+
+.stageNode {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(1,62,250,0.15);
+  border: 1px solid rgba(1,62,250,0.4);
+  font-family: var(--bf-font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #013efa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stageLine {
+  width: 1px;
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  margin-top: 4px;
+}
+
+.stageContent { padding-top: 0.25rem; }
+
+.stageLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.2rem;
+}
+
+.stageDesc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 64rem) {
+  .pipeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 3rem;
+  }
+  .stage:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.05); padding-right: 3rem; }
+}

@@ -1,44 +1,24 @@
-import React from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
 import { INSIGHTS } from "@/content/catalog";
+import { InsightDetailPage } from "@/components/shared/InsightDetailPage";
 
-interface PageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
+interface Props { params: Promise<{ slug: string }>; }
 
 export async function generateStaticParams() {
-  return INSIGHTS.filter((i) => i.type === "case-studies").map((item) => ({
-    slug: item.slug,
-  }));
+  return INSIGHTS.filter((i) => i.type === "case-studies").map((i) => ({ slug: i.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const item = INSIGHTS.find((i) => i.type === "case-studies" && i.slug === slug);
-  if (!item) return { title: "Case Study Not Found | Bayesforce" };
-
-  return {
-    title: `${item.title} | Bayesforce`,
-    description: item.summary,
-  };
+  const item = INSIGHTS.find((i) => i.slug === slug && i.type === "case-studies");
+  if (!item) return {};
+  return { title: `${item.title} | Bayesforce`, description: item.summary };
 }
 
-export default async function CaseStudyDetailPage({ params }: PageProps) {
+export default async function CaseStudyDetailPage({ params }: Props) {
   const { slug } = await params;
-  const item = INSIGHTS.find((i) => i.type === "case-studies" && i.slug === slug);
-
-  if (!item) {
-    notFound();
-  }
-
-  return (
-    <RoutePlaceholder
-      route={`/insights/case-studies/${slug}`}
-      title={item.title}
-      description={item.summary}
-    />
-  );
+  const item = INSIGHTS.find((i) => i.slug === slug && i.type === "case-studies");
+  if (!item) notFound();
+  return <InsightDetailPage item={item} backHref="/insights/case-studies" backLabel="Case Studies" />;
 }

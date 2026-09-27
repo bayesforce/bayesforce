@@ -5,7 +5,7 @@ import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
 export const metadata: Metadata = {
   title: "Workflows | Bayesforce",
   description:
-    "Explore mission-critical enterprise workflows transformed by Bayesforce AI capabilities across key functional domains.",
+    "Eight operational workflow families where Bayesforce engineers AI into the actual work.",
 };
 
 export default function WorkflowsPage() {
@@ -13,16 +13,16 @@ export default function WorkflowsPage() {
     <RoutePlaceholder
       route="/workflows"
       title="Operational Workflows"
-      description="Explore mission-critical enterprise workflows transformed by Bayesforce AI capabilities across key functional departments."
+      description="Eight business functions. The same underlying problem — operational drag — applied at different points in the organization. Explore each to see where AI creates leverage."
       subRoutes={[
-        { label: "Revenue Operations", href: "/workflows/revenue-ops" },
-        { label: "Customer Operations", href: "/workflows/customer-ops" },
-        { label: "Finance & Accounting", href: "/workflows/finance-and-accounting" },
-        { label: "People Operations", href: "/workflows/people-ops" },
-        { label: "Legal, Risk & Compliance", href: "/workflows/legal-risk-and-compliance" },
-        { label: "Technology Operations", href: "/workflows/technology-ops" },
-        { label: "Procurement & Supply Chain", href: "/workflows/procurement-and-supply" },
-        { label: "Business Operations", href: "/workflows/business-ops" },
+        { label: "Revenue Operations",             href: "/workflows/revenue-operations" },
+        { label: "Customer Operations",            href: "/workflows/customer-operations" },
+        { label: "Finance Operations",             href: "/workflows/finance-operations" },
+        { label: "Procurement & Vendor Operations",href: "/workflows/procurement-vendor-operations" },
+        { label: "Business Operations",            href: "/workflows/business-operations" },
+        { label: "Technology Operations",          href: "/workflows/technology-operations" },
+        { label: "Legal, Risk & Compliance",       href: "/workflows/legal-risk-compliance-operations" },
+        { label: "People Operations",              href: "/workflows/people-operations" },
       ]}
     />
   );

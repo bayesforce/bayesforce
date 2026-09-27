@@ -1,0 +1,73 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.left { max-width: 36rem; }
+
+.kicker { color: #013efa; }
+
+.headline {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: #11151b;
+  max-width: 22rem;
+}
+
+.sub {
+  font-size: clamp(1rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
+  color: #596172;
+  max-width: 38rem;
+  margin: 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #edf1f7;
+}
+
+.step:first-child { border-top: 1px solid #edf1f7; }
+
+.stepNum {
+  font-family: var(--bf-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: #013efa;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+  width: 2rem;
+}
+
+.stepLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #11151b;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.stepBody {
+  font-size: 0.82rem;
+  color: #67707e;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (min-width: 64rem) {
+  .layout { grid-template-columns: 5fr 7fr; gap: 5rem; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .step { border-left: none; }
+  .step:nth-child(odd) { border-right: 1px solid #edf1f7; padding-right: 1.5rem; }
+  .step:nth-child(even) { padding-left: 1.5rem; }
+}

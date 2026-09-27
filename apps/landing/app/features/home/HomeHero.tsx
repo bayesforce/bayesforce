@@ -19,8 +19,8 @@ export const HomeHero = () => (
           Find Your Automation Opportunities
           <Icon name="arrow-right" size={17} />
         </Link>
-        <Link href="/contact" className={`${styles.button} ${styles.secondaryButton}`}>
-          Talk to an AI Expert
+        <Link href="/talk" className={`${styles.button} ${styles.secondaryButton}`}>
+          Talk to Bayesforce
           <Icon name="arrow-up-right" size={15} />
         </Link>
       </div>

@@ -1,26 +1,21 @@
-import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
 import { INSIGHTS } from "@/content/catalog";
+import { InsightListPage } from "@/components/shared/InsightListPage";
 
 export const metadata: Metadata = {
-  title: "Reports | Bayesforce",
-  description:
-    "In-depth research and benchmark reports analyzing the state of enterprise AI adoption and operational performance.",
+  title: "Research Reports | Bayesforce",
+  description: "Market analysis and worldview on enterprise AI operations.",
 };
 
-export default function ReportsIndexPage() {
-  const reports = INSIGHTS.filter((i) => i.type === "reports");
-
+export default function ReportsPage() {
+  const items = INSIGHTS.filter((i) => i.type === "reports");
   return (
-    <RoutePlaceholder
-      route="/insights/reports"
-      title="Research Reports"
-      description="In-depth research and benchmark reports analyzing the state of enterprise AI adoption, operational maturity, and digital labor performance."
-      subRoutes={reports.map((r) => ({
-        label: r.title,
-        href: `/insights/reports/${r.slug}`,
-      }))}
+    <InsightListPage
+      type="reports"
+      typeLabel="Research Reports"
+      headline="What we&apos;re observing."
+      description="Empirical analysis of enterprise AI adoption, unit economics, and structural failure modes. How organizations are shifting from chatbots to systems of action."
+      items={items}
     />
   );
 }

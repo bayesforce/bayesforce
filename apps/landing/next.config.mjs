@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
+const requestedDistDir = process.env.BAYESFORCE_NEXT_DIST_DIR;
+const distDir = requestedDistDir === ".next-dev-cache" || requestedDistDir === ".next-production-cache"
+  ? requestedDistDir
+  : ".next-production-cache";
+
 const nextConfig = {
   reactStrictMode: true,
-  // The local launcher links this generated directory outside OneDrive on Windows.
-  distDir: ".next-cache",
+  // The local launcher links generated directories outside OneDrive on Windows.
+  distDir,
   cleanDistDir: false,
   async redirects() {
     return [

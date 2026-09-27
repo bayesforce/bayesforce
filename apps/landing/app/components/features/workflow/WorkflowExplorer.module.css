@@ -1,0 +1,343 @@
+/* ─── Container ─────────────────────────────────────────────────────────── */
+
+.container {
+  width: 100%;
+}
+
+/* ─── Filter chips ──────────────────────────────────────────────────────── */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.filtersLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #94a3b8;
+  margin-right: 0.25rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0.2rem 0.75rem;
+  border: 1px solid #dde2ea;
+  border-radius: 100px;
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #596172;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.chip:hover { border-color: #013efa; color: #013efa; background: #f0f4ff; }
+
+.chipActive {
+  border-color: #013efa;
+  background: #013efa;
+  color: #fff;
+}
+
+.chipActive:hover { background: #0030cc; border-color: #0030cc; color: #fff; }
+
+.clearChip {
+  border-color: transparent;
+  color: #94a3b8;
+}
+
+.clearChip:hover { border-color: #dde2ea; color: #596172; background: transparent; }
+
+/* ─── Workflow list ─────────────────────────────────────────────────────── */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dde2ea;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.empty {
+  padding: 2.5rem;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* ─── Accordion row ─────────────────────────────────────────────────────── */
+
+.row {
+  border-bottom: 1px solid #edf1f7;
+}
+
+.row:last-child { border-bottom: none; }
+
+.rowTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  min-height: 44px;
+  transition: background 120ms ease;
+}
+
+.rowTrigger:hover { background: #f8fafc; }
+
+.rowTrigger:focus-visible {
+  outline: 2px solid #013efa;
+  outline-offset: -2px;
+}
+
+.rowTriggerOpen { background: #f8faff; }
+
+.rowIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #dde2ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  transition: border-color 120ms ease, color 120ms ease;
+}
+
+.rowTriggerOpen .rowIcon {
+  border-color: #013efa;
+  color: #013efa;
+}
+
+.rowMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.rowName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #11151b;
+  letter-spacing: -0.01em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.rowMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.rowArchetype {
+  font-family: var(--bf-font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #f0f4ff;
+  color: #013efa;
+  border-radius: 4px;
+  padding: 0.12rem 0.4rem;
+}
+
+.rowSystem {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.rowSystemSep {
+  font-size: 0.68rem;
+  color: #dde2ea;
+}
+
+/* ─── Detail panel ──────────────────────────────────────────────────────── */
+
+.panel {
+  padding: 1.5rem 1.25rem 1.75rem;
+  background: #f8fafc;
+  border-top: 1px solid #edf1f7;
+}
+
+.panelDesc {
+  font-size: 0.875rem;
+  color: #3e4555;
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+  max-width: 44rem;
+}
+
+.panelDrag {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin: -0.75rem 0 1.5rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(239,68,68,0.3);
+}
+
+.panelGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.panelSection {}
+
+.panelSectionTitle {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin: 0 0 0.5rem;
+}
+
+.panelList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.panelListItem {
+  font-size: 0.82rem;
+  color: #596172;
+  line-height: 1.5;
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+
+.panelListItem::before {
+  content: "·";
+  color: #013efa;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.panelStepList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  counter-reset: step;
+}
+
+.panelStepItem {
+  font-size: 0.82rem;
+  color: #596172;
+  line-height: 1.5;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  counter-increment: step;
+}
+
+.panelStepItem::before {
+  content: counter(step);
+  font-family: var(--bf-font-mono);
+  font-size: 0.62rem;
+  color: #013efa;
+  padding-top: 0.12rem;
+  flex-shrink: 0;
+  width: 1rem;
+  text-align: right;
+}
+
+.panelHumanBoundary .panelListItem::before {
+  content: "·";
+  color: #d97706;
+}
+
+.panelFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #dde2ea;
+}
+
+.panelSystems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.panelSystemTag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #67707e;
+  background: #fff;
+  border: 1px solid #dde2ea;
+  border-radius: 100px;
+  padding: 0.15rem 0.5rem;
+}
+
+.panelLinks {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.panelLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.4rem 0.875rem;
+  border: 1px solid #013efa;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #013efa;
+  text-decoration: none;
+  transition: background 120ms ease;
+}
+
+.panelLink:hover { background: #f0f4ff; }
+.panelLink:focus-visible { outline: 2px solid #013efa; outline-offset: 2px; }
+
+.panelCapabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.capBadge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: #eef2ff;
+  color: #3e4555;
+  border-radius: 100px;
+  padding: 0.15rem 0.55rem;
+  text-decoration: none;
+  transition: background 110ms ease;
+}
+
+.capBadge:hover { background: #e0e7ff; }
+
+@media (min-width: 64rem) {
+  .panelGrid { grid-template-columns: 1fr 1fr; }
+}

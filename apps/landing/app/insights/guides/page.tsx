@@ -1,26 +1,21 @@
-import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
 import { INSIGHTS } from "@/content/catalog";
+import { InsightListPage } from "@/components/shared/InsightListPage";
 
 export const metadata: Metadata = {
-  title: "Guides | Bayesforce",
-  description:
-    "Practical guides and technical documentation for implementing AI coworkers, data pipelines, and governance.",
+  title: "Practitioner Guides | Bayesforce",
+  description: "Technical guides on evaluation, context engineering, and production AI patterns.",
 };
 
-export default function GuidesIndexPage() {
-  const guides = INSIGHTS.filter((i) => i.type === "guides");
-
+export default function GuidesPage() {
+  const items = INSIGHTS.filter((i) => i.type === "guides");
   return (
-    <RoutePlaceholder
-      route="/insights/guides"
-      title="Implementation Guides"
-      description="Practical guides and technical documentation for configuring, deploying, and maintaining enterprise AI workflows."
-      subRoutes={guides.map((g) => ({
-        label: g.title,
-        href: `/insights/guides/${g.slug}`,
-      }))}
+    <InsightListPage
+      type="guides"
+      typeLabel="Practitioner Guides"
+      headline="Technical depth without ceremony."
+      description="Deep practitioner knowledge on building, evaluating, and operating production AI systems. Written for engineers and operators who need to make real decisions."
+      items={items}
     />
   );
 }

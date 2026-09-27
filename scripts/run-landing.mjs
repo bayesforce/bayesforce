@@ -23,8 +23,10 @@ const cacheRoot = process.platform === "win32"
   ? process.env.LOCALAPPDATA ?? resolve(homedir(), "AppData", "Local")
   : process.env.XDG_CACHE_HOME ?? resolve(homedir(), ".cache");
 const checkoutKey = createHash("sha256").update(applicationDirectory).digest("hex").slice(0, 12);
-const cacheDirectory = resolve(cacheRoot, "Bayesforce", "workspaces", checkoutKey, "next");
-const projectCacheDirectory = resolve(applicationDirectory, ".next-cache");
+const cacheMode = action === "dev" ? "development" : "production";
+const projectCacheName = action === "dev" ? ".next-dev-cache" : ".next-production-cache";
+const cacheDirectory = resolve(cacheRoot, "Bayesforce", "workspaces", checkoutKey, cacheMode, "next");
+const projectCacheDirectory = resolve(applicationDirectory, projectCacheName);
 const applicationDependencies = resolve(applicationDirectory, "node_modules");
 const cacheDependencies = resolve(cacheDirectory, "..", "node_modules");
 
@@ -39,17 +41,21 @@ if (action === "build") {
   );
 }
 
-async function ensureDirectoryLink(linkPath, targetPath) {
+async function ensureDirectoryLink(linkPath, targetPath, { replaceGeneratedDirectory = false } = {}) {
   try {
     const link = await lstat(linkPath);
     if (!link.isSymbolicLink()) {
-      throw new Error(`${linkPath} must be removed before the local cache link can be created.`);
+      if (!replaceGeneratedDirectory) {
+        throw new Error(`${linkPath} must be removed before the local cache link can be created.`);
+      }
+
+      await rm(linkPath, { recursive: true, force: true });
+    } else {
+      const [currentTarget, expectedTarget] = await Promise.all([realpath(linkPath), realpath(targetPath)]);
+      if (currentTarget.toLowerCase() === expectedTarget.toLowerCase()) return;
+
+      await rm(linkPath, { recursive: true, force: true });
     }
-
-    const [currentTarget, expectedTarget] = await Promise.all([realpath(linkPath), realpath(targetPath)]);
-    if (currentTarget.toLowerCase() === expectedTarget.toLowerCase()) return;
-
-    await rm(linkPath, { recursive: true, force: true });
   } catch (error) {
     if (!(error && typeof error === "object" && "code" in error && error.code === "ENOENT")) {
       throw error;
@@ -59,13 +65,13 @@ async function ensureDirectoryLink(linkPath, targetPath) {
   await symlink(targetPath, linkPath, process.platform === "win32" ? "junction" : "dir");
 }
 
-await ensureDirectoryLink(projectCacheDirectory, cacheDirectory);
+await ensureDirectoryLink(projectCacheDirectory, cacheDirectory, { replaceGeneratedDirectory: true });
 await ensureDirectoryLink(cacheDependencies, applicationDependencies);
 
 const nextCli = resolve(applicationDirectory, "node_modules", "next", "dist", "bin", "next");
 const child = spawn(process.execPath, [nextCli, ...nextCommands[action]], {
   cwd: applicationDirectory,
-  env: process.env,
+  env: { ...process.env, BAYESFORCE_NEXT_DIST_DIR: projectCacheName },
   stdio: "inherit",
 });
 

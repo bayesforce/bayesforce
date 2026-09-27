@@ -1,6 +1,8 @@
 node_modules/
 .next/
 .next-cache/
+.next-dev-cache/
+.next-production-cache/
 .next-stale-build-cache/
 out/
 dist/

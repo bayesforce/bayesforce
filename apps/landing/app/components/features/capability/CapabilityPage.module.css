@@ -1,0 +1,489 @@
+/* ── Section scaffold ───────────────────────────────────────── */
+.section {
+  width: 100%;
+  padding: 5rem var(--bf-page-gutter);
+}
+.inner {
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+}
+.dark   { background: #11151b; color: #f1f5f9; }
+.vDark  { background: #080d15; color: #f1f5f9; }
+.light  { background: #fff;    color: #11151b; }
+.raised { background: #f8fafc; color: #11151b; }
+
+@media (min-width: 64rem) { .section { padding: 7rem 0; } }
+
+/* ── Typography helpers ─────────────────────────────────────── */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #013efa;
+  margin-bottom: 1.25rem;
+}
+.eyebrowMuted { color: #94a3b8; }
+.headline {
+  font-family: var(--bf-font-display);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin: 0 0 1.25rem;
+}
+.headlineLg { font-size: clamp(2rem, 3.5vw, 2.85rem); }
+.headlineXl { font-size: clamp(2.2rem, 4vw, 3.25rem); }
+.sub {
+  font-size: clamp(1rem, 1.3vw, 1.08rem);
+  line-height: 1.7;
+  margin: 0 0 2.5rem;
+}
+.subDark  { color: #94a3b8; }
+.subLight { color: #596172; }
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero {
+  padding: 6rem var(--bf-page-gutter) 5rem;
+  background: #11151b;
+}
+.heroInner {
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+.heroHeadline {
+  font-family: var(--bf-font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  color: #f1f5f9;
+  margin: 0 0 1.25rem;
+  max-width: 28rem;
+}
+.heroSub {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  color: #94a3b8;
+  line-height: 1.7;
+  margin: 0 0 2.25rem;
+  max-width: 32rem;
+}
+.heroActions { display: flex; flex-wrap: wrap; gap: 0.875rem; }
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  background: #013efa;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: background 140ms ease;
+}
+.btnPrimary:hover { background: #0030cc; }
+.btnPrimary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255,255,255,0.06);
+  color: rgba(241,245,249,0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+}
+.btnSecondary:hover { background: rgba(255,255,255,0.1); color: #f1f5f9; }
+.btnSecondary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* ── Hero flow visual ───────────────────────────────────────── */
+.flowVisual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+.flowNode {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.flowBox {
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 0.5rem 0.875rem;
+  white-space: nowrap;
+}
+.flowBoxAccent {
+  color: #013efa;
+  border-color: rgba(1,62,250,0.4);
+  background: rgba(1,62,250,0.08);
+}
+.flowArrow {
+  width: 1px;
+  height: 1.5rem;
+  background: rgba(255,255,255,0.12);
+  margin-left: 1.5rem;
+}
+
+/* ── Problem section ────────────────────────────────────────── */
+.problemGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+.lead {
+  font-size: 1.1rem;
+  color: #3e4555;
+  line-height: 1.75;
+  border-left: 3px solid #013efa;
+  padding-left: 1.25rem;
+  margin: 0 0 1.25rem;
+}
+.body {
+  font-size: 0.95rem;
+  color: #596172;
+  line-height: 1.75;
+  margin: 0;
+}
+@media (min-width: 64rem) {
+  .problemGrid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+}
+
+/* ── Key pillars grid ───────────────────────────────────────── */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+.pillarCard {
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #dde2ea;
+  border-radius: 12px;
+}
+.pillarNum {
+  font-family: var(--bf-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #013efa;
+  margin-bottom: 0.625rem;
+}
+.pillarTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #11151b;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+.pillarDesc {
+  font-size: 0.82rem;
+  color: #596172;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+}
+.pillarDetails {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.pillarDetail {
+  font-size: 0.78rem;
+  color: #67707e;
+  line-height: 1.5;
+  padding-left: 0.875rem;
+  position: relative;
+}
+.pillarDetail::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: #013efa;
+}
+@media (min-width: 64rem) {
+  .pillarsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Architecture section ───────────────────────────────────── */
+.archInner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.archFlow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.archNode {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.archBox {
+  font-family: var(--bf-font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 7px;
+  padding: 0.6rem 1rem;
+  white-space: nowrap;
+  min-width: 10rem;
+  text-align: center;
+}
+.archBoxAccent {
+  color: #013efa;
+  border-color: rgba(1,62,250,0.5);
+  background: rgba(1,62,250,0.1);
+}
+.archConnector {
+  width: 1px;
+  height: 2rem;
+  background: rgba(255,255,255,0.1);
+  margin-left: calc(5rem - 0.5px);
+}
+.archTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.archTh {
+  text-align: left;
+  padding: 0.625rem 0.875rem;
+  background: rgba(255,255,255,0.04);
+  color: #94a3b8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.archTd {
+  padding: 0.75rem 0.875rem;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.archTdMono {
+  font-family: var(--bf-font-mono);
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+@media (min-width: 64rem) {
+  .archInner { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Quadrant diagram (Trust & Governance) ──────────────────── */
+.quadrant {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.quadCell {
+  padding: 1.25rem;
+  background: #11151b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.quadLabel {
+  font-family: var(--bf-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #013efa;
+}
+.quadDesc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* ── Where it applies ───────────────────────────────────────── */
+.workflowGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: #dde2ea;
+  border: 1px solid #dde2ea;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.workflowCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: #fff;
+  text-decoration: none;
+  transition: background 120ms ease;
+}
+.workflowCard:hover { background: #f0f4ff; }
+.workflowCard:focus-visible { outline: 2px solid #013efa; outline-offset: -2px; }
+.workflowName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #11151b;
+  letter-spacing: -0.01em;
+}
+.workflowArrow { color: #013efa; font-size: 1rem; transition: transform 120ms ease; }
+.workflowCard:hover .workflowArrow { transform: translateX(3px); }
+@media (min-width: 48rem) {
+  .workflowGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 64rem) {
+  .workflowGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Four-cap architecture ──────────────────────────────────── */
+.fourCapDiagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 32rem;
+  margin: 0 auto 3rem;
+}
+.fourCapWorkflow {
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 0.625rem 2rem;
+  margin-bottom: 0.5rem;
+}
+.fourCapBranch {
+  display: flex;
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.fourCapCell {
+  flex: 1;
+  padding: 1rem;
+  background: #11151b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: background 120ms ease;
+}
+.fourCapCell:hover { background: rgba(1,62,250,0.08); }
+.fourCapCellActive { background: rgba(1,62,250,0.06); }
+.fourCapCellLabel {
+  font-family: var(--bf-font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #013efa;
+}
+.fourCapCellDesc {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+.fourCapEnablement {
+  font-family: var(--bf-font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.625rem 1.5rem;
+  text-decoration: none;
+  transition: border-color 120ms ease, color 120ms ease;
+}
+.fourCapEnablement:hover { color: #f1f5f9; border-color: rgba(255,255,255,0.25); }
+
+/* ── Insights cards ─────────────────────────────────────────── */
+.insightsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+}
+.insightCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #dde2ea;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.insightCard:hover { border-color: #013efa; box-shadow: 0 4px 16px rgba(1,62,250,0.07); }
+.insightCard:focus-visible { outline: 2px solid #013efa; outline-offset: 2px; }
+.insightType {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #013efa;
+}
+.insightTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #11151b;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin: 0;
+}
+.insightSummary {
+  font-size: 0.8rem;
+  color: #67707e;
+  line-height: 1.55;
+  margin: 0;
+}
+.emptyState {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+@media (min-width: 64rem) {
+  .insightsGrid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -16,7 +16,8 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    ".next-cache/types/**/*.ts",
+    ".next-dev-cache/types/**/*.ts",
+    ".next-production-cache/types/**/*.ts",
     "next-env.d.ts"
   ],
   "exclude": [

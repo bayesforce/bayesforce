@@ -1,26 +1,21 @@
-import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
 import { INSIGHTS } from "@/content/catalog";
+import { InsightListPage } from "@/components/shared/InsightListPage";
 
 export const metadata: Metadata = {
   title: "Case Studies | Bayesforce",
-  description:
-    "Real-world accounts of how organizations deploy Bayesforce AI capabilities to transform critical workflows.",
+  description: "Real production deployments with measurable outcomes. AI systems that operate end-to-end in organizations.",
 };
 
-export default function CaseStudiesIndexPage() {
-  const caseStudies = INSIGHTS.filter((i) => i.type === "case-studies");
-
+export default function CaseStudiesPage() {
+  const items = INSIGHTS.filter((i) => i.type === "case-studies");
   return (
-    <RoutePlaceholder
-      route="/insights/case-studies"
-      title="Case Studies"
-      description="Real-world accounts and measured outcomes of how organizations deploy Bayesforce AI capabilities to transform critical workflows."
-      subRoutes={caseStudies.map((cs) => ({
-        label: cs.title,
-        href: `/insights/case-studies/${cs.slug}`,
-      }))}
+    <InsightListPage
+      type="case-studies"
+      typeLabel="Case Studies"
+      headline="Proof over promise."
+      description="Production deployments. Measured deltas. Every case study documents a real workflow, a real implementation, and a verifiable operational outcome."
+      items={items}
     />
   );
 }

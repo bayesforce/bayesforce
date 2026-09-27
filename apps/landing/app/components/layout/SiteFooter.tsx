@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { BrandLogo, Icon } from "@/components/ui";
 import { CAPABILITIES, WORKFLOWS, getCapabilityHref } from "@/content/catalog";
+import { WORKFLOW_CATALOG_TO_ROUTE } from "@/content/businessFunctions";
 import styles from "./SiteFooter.module.css";
 
 export const SiteFooter: React.FC = () => {
@@ -86,7 +87,7 @@ export const SiteFooter: React.FC = () => {
               {WORKFLOWS.map((wf) => (
                 <li key={wf.slug}>
                   <Link
-                    href={`/workflows/${wf.slug}`}
+                    href={`/workflows/${WORKFLOW_CATALOG_TO_ROUTE[wf.slug] ?? wf.slug}`}
                     className="text-slate-400 hover:text-white transition-colors"
                   >
                     {wf.shortTitle}
@@ -156,8 +157,13 @@ export const SiteFooter: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-400 hover:text-[#013EFA] transition-colors">
-                  Show Us Your Workflow
+                <Link href="/talk" className="text-slate-400 hover:text-white transition-colors">
+                  Talk to Bayesforce
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className="text-slate-400 hover:text-white transition-colors">
+                  Search
                 </Link>
               </li>
             </ul>
@@ -173,8 +179,11 @@ export const SiteFooter: React.FC = () => {
             <Link href="/about" className="hover:text-slate-300 transition-colors">
               Philosophy
             </Link>
-            <Link href="/contact" className="hover:text-slate-300 transition-colors">
-              Contact
+            <Link href="/privacy" className="hover:text-slate-300 transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-slate-300 transition-colors">
+              Terms
             </Link>
             <span className="text-slate-600">•</span>
             <span>Mumbai &amp; Pune Centers &bull; Global Engagements</span>

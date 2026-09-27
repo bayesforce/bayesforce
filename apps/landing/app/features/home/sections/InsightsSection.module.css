@@ -1,0 +1,71 @@
+.header { max-width: 36rem; margin-bottom: 3rem; }
+.kicker { color: #013efa; }
+.headline { font-size: clamp(1.85rem, 3vw, 2.5rem); color: #11151b; }
+.sub { font-size: 1rem; color: #596172; margin: 0; line-height: 1.65; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #dde2ea;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: border-color 130ms ease, box-shadow 130ms ease;
+}
+
+.card:hover {
+  border-color: #013efa;
+  box-shadow: 0 4px 16px rgba(1,62,250,0.07);
+}
+
+.card:focus-visible {
+  outline: 2px solid #013efa;
+  outline-offset: 2px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardType {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #11151b;
+  letter-spacing: -0.01em;
+}
+
+.cardCount {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.cardDesc {
+  font-size: 0.82rem;
+  color: #67707e;
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+.cardCta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #013efa;
+}
+
+@media (min-width: 48rem) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}

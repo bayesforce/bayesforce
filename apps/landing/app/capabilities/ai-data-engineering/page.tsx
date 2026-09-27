@@ -1,19 +1,20 @@
-import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
+import { CAPABILITIES } from "@/content/catalog";
+import { CapabilityPage } from "@/components/features/capability/CapabilityPage";
 
 export const metadata: Metadata = {
   title: "AI Data Engineering | Bayesforce",
   description:
-    "Modern data pipelines, semantic layers, and real-time context engines designed to turn messy enterprise data into reliable inputs for AI models.",
+    "Connect enterprise source systems, build AI-ready data pipelines, and engineer organizational context so intelligent systems have the information they need to operate reliably.",
+  openGraph: {
+    title: "AI Data Engineering | Bayesforce",
+    description:
+      "Connect enterprise source systems, build AI-ready data pipelines, and engineer organizational context for reliable AI workflows.",
+    type: "website",
+  },
 };
 
 export default function AIDataEngineeringPage() {
-  return (
-    <RoutePlaceholder
-      route="/capabilities/ai-data-engineering"
-      title="AI Data Engineering"
-      description="Modern data pipelines, semantic layers, and real-time context engines designed to turn messy enterprise data into reliable inputs for AI models."
-    />
-  );
+  const capability = CAPABILITIES.find((c) => c.id === "ai-data-engineering")!;
+  return <CapabilityPage capability={capability} />;
 }

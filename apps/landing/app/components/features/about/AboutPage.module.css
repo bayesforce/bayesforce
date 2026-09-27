@@ -1,0 +1,253 @@
+/* ── Section scaffold ──────────────────────────────────────── */
+.section { width: 100%; padding: 5rem var(--bf-page-gutter); }
+.inner {
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+}
+.dark   { background: #11151b; }
+.vDark  { background: #080d15; }
+.light  { background: #fff; }
+.raised { background: #f8fafc; }
+
+@media (min-width: 64rem) { .section { padding: 7rem 0; } }
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+  background: #080d15;
+  padding: 8rem var(--bf-page-gutter) 6rem;
+}
+.heroInner {
+  width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2));
+  margin: 0 auto;
+}
+.heroStatement {
+  font-family: var(--bf-font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+  color: #f1f5f9;
+  margin: 0 0 1.5rem;
+  max-width: 44rem;
+}
+.heroSub {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  color: #94a3b8;
+  line-height: 1.7;
+  max-width: 38rem;
+  margin: 0;
+}
+
+/* ── Category section ──────────────────────────────────────── */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+.categoryModel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.modelStep {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+.modelBox {
+  font-family: var(--bf-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #11151b;
+  border: 1px solid #dde2ea;
+  border-radius: 7px;
+  padding: 0.5rem 0.875rem;
+  white-space: nowrap;
+  background: #f8fafc;
+}
+.modelBoxAccent { color: #013efa; border-color: rgba(1,62,250,0.3); background: #f0f4ff; }
+.modelArrow {
+  width: 1px;
+  height: 1.5rem;
+  background: #dde2ea;
+  margin-left: 2rem;
+}
+@media (min-width: 64rem) {
+  .categoryGrid { grid-template-columns: 5fr 4fr; gap: 5rem; }
+}
+
+/* ── Thesis section ────────────────────────────────────────── */
+.thesisParagraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 38rem;
+  margin-bottom: 3rem;
+}
+.thesisP {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.75;
+  margin: 0;
+}
+.frictionList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.frictionItem {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #94a3b8;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px;
+  padding: 0.3rem 0.8rem;
+}
+
+/* ── Principles ────────────────────────────────────────────── */
+.principlesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.principle {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid #edf1f7;
+  align-items: flex-start;
+}
+.principle:first-child { border-top: 1px solid #edf1f7; }
+.principleNum {
+  font-family: var(--bf-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: #013efa;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+  width: 2rem;
+}
+.principleTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #11151b;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+.principleDesc {
+  font-size: 0.82rem;
+  color: #67707e;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Lifecycle pipeline ────────────────────────────────────── */
+.pipeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+.stage { display: flex; gap: 1.25rem; padding-bottom: 1.75rem; }
+.stageTrack { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 2rem; }
+.stageNode {
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: rgba(1,62,250,0.12); border: 1px solid rgba(1,62,250,0.35);
+  font-family: var(--bf-font-mono); font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.04em; color: #013efa;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.stageLine { width: 1px; flex: 1; background: rgba(255,255,255,0.06); margin-top: 4px; }
+.stageLabel { display: block; font-size: 0.875rem; font-weight: 600; color: #f1f5f9; letter-spacing: -0.01em; margin-bottom: 0.2rem; padding-top: 0.25rem; }
+.stageDesc { font-size: 0.8rem; color: #94a3b8; line-height: 1.5; margin: 0; }
+
+@media (min-width: 64rem) {
+  .pipeline { grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
+  .stage:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.05); padding-right: 3rem; }
+}
+
+/* ── Standard section ──────────────────────────────────────── */
+.standardBody {
+  max-width: 40rem;
+}
+.standardLead {
+  font-size: 1.15rem;
+  color: #3e4555;
+  line-height: 1.75;
+  border-left: 3px solid #013efa;
+  padding-left: 1.25rem;
+  margin: 0 0 1.25rem;
+}
+.standardP {
+  font-size: 0.95rem;
+  color: #596172;
+  line-height: 1.75;
+  margin: 0;
+}
+.metricsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.metricBadge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #f0f4ff;
+  color: #3e4555;
+  border-radius: 100px;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid rgba(1,62,250,0.15);
+}
+
+/* ── Team section ──────────────────────────────────────────── */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.teamCard {
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #dde2ea;
+  border-radius: 12px;
+}
+.teamName { font-size: 0.95rem; font-weight: 600; color: #11151b; letter-spacing: -0.01em; margin-bottom: 0.2rem; }
+.teamRole { font-size: 0.8rem; color: #013efa; font-weight: 500; margin-bottom: 0.625rem; }
+.teamBio { font-size: 0.82rem; color: #67707e; line-height: 1.55; margin: 0; }
+
+/* ── Bayes section ─────────────────────────────────────────── */
+.bayesQuote {
+  max-width: 38rem;
+}
+.bayesStatement {
+  font-family: var(--bf-font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: #f1f5f9;
+  margin: 0 0 1.25rem;
+}
+.bayesExplain {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Final CTA ─────────────────────────────────────────────── */
+.ctaSection { background: #080d15; padding: 5rem var(--bf-page-gutter); text-align: center; }
+.ctaInner { width: min(var(--bf-content-width), calc(100% - var(--bf-page-gutter) * 2)); margin: 0 auto; }
+.ctaHeadline { font-family: var(--bf-font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #f1f5f9; margin: 0 0 1rem; }
+.ctaSub { font-size: 1rem; color: rgba(241,245,249,0.5); line-height: 1.65; margin: 0 0 2.25rem; }
+.ctaActions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btnPrimary { display: inline-flex; align-items: center; min-height: 3rem; padding: 0.75rem 1.5rem; background: #013efa; color: #fff; font-size: 0.875rem; font-weight: 600; border-radius: 0.75rem; text-decoration: none; transition: background 140ms ease; }
+.btnPrimary:hover { background: #0030cc; }
+.btnSecondary { display: inline-flex; align-items: center; min-height: 3rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.06); color: rgba(241,245,249,0.7); font-size: 0.875rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.12); border-radius: 0.75rem; text-decoration: none; transition: background 140ms ease, color 140ms ease; }
+.btnSecondary:hover { background: rgba(255,255,255,0.1); color: #f1f5f9; }

@@ -1,19 +1,20 @@
-import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
+import { CAPABILITIES } from "@/content/catalog";
+import { CapabilityPage } from "@/components/features/capability/CapabilityPage";
 
 export const metadata: Metadata = {
   title: "AI Enablement | Bayesforce",
   description:
-    "End-to-end AI systems engineered to solve high-value operational bottlenecks within your enterprise architecture.",
+    "Transfer AI engineering capability directly into your organization. We co-engineer, train, and hand over — so your team can operate, govern, and improve AI workflows without ongoing dependency.",
+  openGraph: {
+    title: "AI Enablement | Bayesforce",
+    description:
+      "Turn an AI implementation into organizational capability. We transfer the engineering knowledge, playbooks, and evaluation frameworks so your team can operate independently.",
+    type: "website",
+  },
 };
 
 export default function AIEnablementPage() {
-  return (
-    <RoutePlaceholder
-      route="/capabilities/ai-enablement"
-      title="AI Enablement"
-      description="End-to-end AI systems engineered to solve high-value operational bottlenecks and transfer production AI engineering capability to your team."
-    />
-  );
+  const capability = CAPABILITIES.find((c) => c.id === "ai-capability")!;
+  return <CapabilityPage capability={capability} />;
 }

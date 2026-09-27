@@ -1,19 +1,18 @@
-import React from "react";
 import type { Metadata } from "next";
-import { RoutePlaceholder } from "@/components/shared/RoutePlaceholder";
+import { AboutPage } from "@/components/features/about/AboutPage";
 
 export const metadata: Metadata = {
   title: "About | Bayesforce",
   description:
-    "We believe systems should carry more of the machinery of work so people can carry more ambition. We build sovereign AI capabilities inside organizations.",
+    "Bayesforce is an AI capability engineering firm. We believe systems should carry more of the machinery of an organization so its people can carry more of its ambition.",
+  openGraph: {
+    title: "About Bayesforce — AI Capability Engineering",
+    description:
+      "We engineer AI into the workflows organizations already operate. Our principles: Work Before Technology, Earn Autonomy, Prove the Delta, Design for Ownership.",
+    type: "website",
+  },
 };
 
-export default function AboutPage() {
-  return (
-    <RoutePlaceholder
-      route="/about"
-      title="About Bayesforce"
-      description="Systems should carry more of the machinery of work so people can carry more ambition. We build sovereign AI capabilities directly inside modern enterprise systems."
-    />
-  );
+export default function AboutRoutePage() {
+  return <AboutPage />;
 }
